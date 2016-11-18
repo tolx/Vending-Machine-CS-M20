@@ -2,7 +2,7 @@
 #include <fstream> // file I/O
 bool read();
 
-into main()
+int main()
 {
 
 return 0;
