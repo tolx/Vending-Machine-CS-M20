@@ -1,3 +1,6 @@
+# Debugging info
 Debug/
 x64/
-FinalProject.VC.VC.opendb
+# Open Files info
+*.opendb
+.~lock*
