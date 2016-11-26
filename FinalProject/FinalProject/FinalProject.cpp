@@ -47,13 +47,20 @@ int main()
 	
 	vector<vector<drinkSlot>> machine;
 	if (!inputMachine(machine))
-		endProgram(1);
+		endProgram(1); //Input file cancle
 
 	displayMachine(machine); //This is more for debugging, and probably won't be here on final version.
 	cout << endl;
 
-	if (!simulateMachine(machine))
-		endProgram(2);
+	switch (simulateMachine(machine))
+	{
+		case 0:
+			//Do nothing, no errors!
+		case 1:
+			endProgram(2); //Input file cancle
+		default:
+			endProgram(3); //All other errors
+	}
 
 	consoleOutput(); //this might merge with machineOutput, or we might not even have machine output on the final version
 	//^ or this might be ongoing in the simulate machine function...
@@ -117,9 +124,35 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 		row.clear();
 	} // end for (letter rows)
 	inFile.close();
+
+
+	//Now, inspect the machine to ensure every slot is filled with something. If not, fill it with Empty 0
+	input.amount = 0;
+	input.name = "Empty";
+	//row.clear(); redundant, the last thing row did is clear()
+
+	for (size_t i{ 0 }; i < 9; i++)
+		row.push_back(input); //generate a row of 9 empty inputs
+
+	while (inputMachine.size() < 4)
+		inputMachine.push_back(row); //while there are less than 4 rows, append empty rows
+
+	while (inputMachine.size() > 4)
+		inputMachine.pop_back(); //while there are more than 4 rows, remove the extra data
+
+	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
+	{
+		while (inputMachine.at(j).size() < 9)
+			inputMachine.at(j).push_back(input); //while there are less than 9 colums, append empty slots
+
+		while (inputMachine.at(j).size() > 9)
+			inputMachine.at(j).pop_back(); //while there are more than 9 colums, remove the extra data
+	}
+
 	return true;
 }
 
+//Pre-Condition: There are exactly 4 rows, and exactly 9 colums for every row
 void displayMachine(const vector<vector<drinkSlot>> inputMachine)
 {
 	if (inputMachine.size() != 4)
