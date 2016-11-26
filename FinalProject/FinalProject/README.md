@@ -1,2 +1,2 @@
-# Vending Machine CS M20
-Team Water's consumer vending machine
+# Project Source Folder
+This directory is for files and folders that will be directly accessed by the program. Do NOT put junk here.

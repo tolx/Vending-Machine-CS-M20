@@ -1,5 +1,19 @@
 // FinalProject.cpp : Defines the entry point for the console application.
-// Rice, Sammuel
+// CS M20 - Object Oreinted Data Structure and Algorithm Detection
+/*	Team Water
+* Group Members:
+*	Sam Rice
+*	Ivan Martinez
+*	Justin Kephart
+*	Kelton Malhotra
+*	Jake Lyon
+*	Kiefer Soldberg
+*	Riley Wallace
+* Program Status:
+*	Complete:	No
+*	Builds:		Yes
+*	Errors:		No
+*/
 
 #include <iostream>
 #include <iomanip>
