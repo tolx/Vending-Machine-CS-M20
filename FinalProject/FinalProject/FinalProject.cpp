@@ -135,11 +135,12 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 	input.name = "Empty";
 	//row.clear(); redundant, the last thing row did is clear()
 
-	for (size_t i{ 0 }; i < 9; i++)
-		row.push_back(input); //generate a row of 9 empty inputs
-
 	if (inputMachine.size() != 4)
+	{
+		for (size_t i{ 0 }; i < 9; i++)
+			row.push_back(input); //generate a row of 9 empty inputs
 		inputMachine.resize(4, row); //resize will remove extra data, or fill missing data with empty row
+	}
 
 	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
 	{
@@ -240,8 +241,36 @@ void consoleOutput()
 
 void machineOutput(const vector<vector<drinkSlot>> inputMachine)
 {
-	
 	const string filename("VM001-Machine-Output.csv");
+	ifstream checkFile(filename);
+	if (checkFile)
+	{
+		cout << filename << " already exists, do you want to overwrite? [Y]/[N]" << endl;
+		string input;
+		cin >> input;
+		cin.ignore();  // get rid of newline after filename entry
+		if (!(input == "Y" || input == "y" || input == "[Y]" || input == "[y]" || input == "Yes" || input == "yes" || input == "YES"))
+			return;
+	}
+	checkFile.clear();
+	checkFile.close();
+	ofstream outFile(filename, ios::trunc);
+
+	//Output current amount of drinks
+	if (inputMachine.size() != 4)
+		return; //Error, there are not exactly 4 rows (A->D)
+
+	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
+	{
+		if (inputMachine.at(j).size() != 9)
+			return; //Error, atleast one row doesn't have exactly 9 colums
+
+		for (size_t i{ 0 }; i < 8; i++) //numbered colums 1->9
+			outFile << inputMachine.at(j).at(i).name << "," << inputMachine.at(j).at(i).amount << ",";
+		outFile << inputMachine.at(j).at(8).name << "," << inputMachine.at(j).at(8).amount << endl; //the last item is different
+	} //end for (letter rows)
+
+	outFile.close();
 	cout << "And the vending machine quantities in the file:" << endl
 		 << filename << endl;
 } // end machineOutput

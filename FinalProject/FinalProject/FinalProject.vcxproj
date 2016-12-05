@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="VM001-Drinks-Input.csv" />
+    <None Include="VM001-Machine-Output.csv" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Products.h" />

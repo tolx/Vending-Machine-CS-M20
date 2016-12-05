@@ -29,6 +29,9 @@
     <None Include="VM001-Drinks-Input.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="VM001-Machine-Output.csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Products.h">
