@@ -90,7 +90,7 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 	{
 		cout << filename << " cannot be opened. Please enter another file name, or [C]ancle: ";
 		cin >> filename;
-		if (filename == "C" || filename == "c")
+		if (filename == "C" || filename == "c" || filename == "[C]ancle" || filename == "[C]" || filename == "[c]" || filename == "Cancle") //for the smart @$$ out there
 			return false;
 		cin.ignore();  // get rid of newline after filename entry
 		inFile.clear();
@@ -99,7 +99,10 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 
 	char *endPtr; //for strtol
 	//vector<vector<drinkSlot>> machine; //passed as an argument now
+	inputMachine.clear(); //This function will empty the machine and fill exactly per the input file, any previous drinks will no longer be present
+	inputMachine.reserve(4); //reserving the space before push_back apparently is more effecient, according to http://lemire.me/blog/2012/06/20/do-not-waste-time-with-stl-vectors/
 	vector<drinkSlot> row;
+	row.reserve(9); //reserve does NOT change the .size, and push_back still starts at 0
 	drinkSlot input;
 	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
 	{
@@ -134,19 +137,13 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 	for (size_t i{ 0 }; i < 9; i++)
 		row.push_back(input); //generate a row of 9 empty inputs
 
-	while (inputMachine.size() < 4)
-		inputMachine.push_back(row); //while there are less than 4 rows, append empty rows
-
-	while (inputMachine.size() > 4)
-		inputMachine.pop_back(); //while there are more than 4 rows, remove the extra data
+	if (inputMachine.size() != 4)
+		inputMachine.resize(4, row); //resize will remove extra data, or fill missing data with empty row
 
 	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
 	{
-		while (inputMachine.at(j).size() < 9)
-			inputMachine.at(j).push_back(input); //while there are less than 9 colums, append empty slots
-
-		while (inputMachine.at(j).size() > 9)
-			inputMachine.at(j).pop_back(); //while there are more than 9 colums, remove the extra data
+		if (inputMachine.at(j).size() != 9)
+			inputMachine.at(j).resize(9, input); //resize will remove extra data, or fill missing data with empty input
 	}
 
 	return true;
