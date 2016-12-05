@@ -1,3 +1,10 @@
+/*
+CS M20 - Final Project
+Team Water
+Members who worked on this:
+Kelton Malhotra
+*/
+
 #include "VendingMachine.h"
 using namespace std;
 #include <iostream>

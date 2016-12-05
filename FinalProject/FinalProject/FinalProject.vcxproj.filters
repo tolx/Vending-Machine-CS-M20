@@ -24,6 +24,9 @@
     <ClCompile Include="VendingMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrecondViolatedExcept.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="VM001-Drinks-Input.csv">
@@ -38,6 +41,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VendingMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrecondViolatedExcept.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

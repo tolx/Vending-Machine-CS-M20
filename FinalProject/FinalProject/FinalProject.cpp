@@ -13,9 +13,15 @@
 *	Complete:	No
 *	Builds:		Yes
 *	Errors:		No
+* Members who worked on this file:
+*   Sam Rice
+*   Kelton Malhotra
 */
 
+#pragma warning( disable: 4290 )  // disable warnings about the use of throw in function headers
+
 #include "VendingMachine.h"
+#include "PrecondViolatedExcept.h"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -30,7 +36,7 @@ struct drinkSlot
 };
 
 bool inputMachine(vector<vector<drinkSlot>> &inputMachine);
-void displayMachine(const vector<vector<drinkSlot>> inputMachine);
+void displayMachine(const vector<vector<drinkSlot>> inputMachine) throw(PrecondViolatedExcept);
 char simulateMachine(vector<vector<drinkSlot>> &inputMachine);
 void consoleOutput();
 void machineOutput(const vector<vector<drinkSlot>> inputMachine);
@@ -48,10 +54,17 @@ int main()
 	
 	vector<vector<drinkSlot>> machine;
 	if (!inputMachine(machine))
-		endProgram(1); //Input file cancle
+		endProgram(1); //Input file cancel
 
-	displayMachine(machine); //This is more for debugging, and probably won't be here on final version.
-	cout << endl;
+	try
+	{
+		displayMachine(machine); //This is more for debugging, and probably won't be here on final version.
+		cout << endl;
+	}
+	catch (PrecondViolatedExcept &exc)
+	{
+		cout << exc.what();
+	}
 
 	switch (simulateMachine(machine))
 	{
@@ -152,16 +165,16 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 }
 
 //Pre-Condition: There are exactly 4 rows, and exactly 9 colums for every row
-void displayMachine(const vector<vector<drinkSlot>> inputMachine)
+void displayMachine(const vector<vector<drinkSlot>> inputMachine) throw(PrecondViolatedExcept)
 {
 	if (inputMachine.size() != 4)
-		return; //Error, there are not exactly 4 rows (A->D)
+		throw PrecondViolatedExcept("Incorrect rows in Machine"); //Error, there are not exactly 4 rows (A->D)
 
 	char posL{ 'A' }, posN{ '1' }; //A = 65, 1 = 49
 	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
 	{
 		if (inputMachine.at(j).size() != 9)
-			return; //Error, atleast one row doesn't have exactly 9 colums
+			throw PrecondViolatedExcept("Incorrect colums in the Machine"); //Error, atleast one row doesn't have exactly 9 colums
 
 		for (size_t i{ 0 }; i < 9; i++) //numbered colums 1->9
 			cout << (posL = 65 + (char)j) << (posN = 49 + (char)i) << " = " << inputMachine.at(j).at(i).name << ", " << inputMachine.at(j).at(i).amount << endl;
