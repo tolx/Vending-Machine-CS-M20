@@ -18,13 +18,29 @@
     <ClCompile Include="FinalProject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Products.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VendingMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="VM001-Drinks-Input.csv">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </None>
-    <None Include="..\..\VM001-Drinks-Input.ods">
-      <Filter>Source Files</Filter>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Products.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VendingMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="VM001-Command-Input.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

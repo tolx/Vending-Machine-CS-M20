@@ -147,10 +147,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FinalProject.cpp" />
+    <ClCompile Include="Products.cpp" />
+    <ClCompile Include="VendingMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\VM001-Drinks-Input.ods" />
     <None Include="VM001-Drinks-Input.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Products.h" />
+    <ClInclude Include="VendingMachine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="VM001-Command-Input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,6 +15,7 @@
 *	Errors:		No
 */
 
+#include "VendingMachine.h"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -54,12 +55,12 @@ int main()
 
 	switch (simulateMachine(machine))
 	{
-		case 0:
-			//Do nothing, no errors!
 		case 1:
 			endProgram(2); //Input file cancle
 		default:
 			endProgram(3); //All other errors
+		case 0:
+			cout << endl;//Do nothing, no errors!
 	}
 
 	consoleOutput(); //this might merge with machineOutput, or we might not even have machine output on the final version
@@ -173,11 +174,59 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 		 << filename << endl;
 	programWait();
 
-	if (false)
-		return 1; //for file open cancled
-
+	ifstream inFile(filename);
+	while (!inFile)
+	{
+		cout << filename << " cannot be opened. Please enter another file name, or [C]ancle: ";
+		cin >> filename;
+		if (filename == "C" || filename == "c" || filename == "[C]ancle" || filename == "[C]" || filename == "[c]" || filename == "Cancle") //for the smart @$$ out there
+			return 1;
+		cin.ignore();  // get rid of newline after filename entry
+		inFile.clear();
+		inFile.open(filename);
+	} // end while
+	
 	//File opened success
-	cout << lineH << endl;
+	VendingMachine vm;
+	/*vm.PushButton("D4");
+	vm.InsertCash(1.50);
+	vm.PushButton("D6");
+	vm.swipeCard("VISA");
+	vm.PushButton("D4");
+	vm.swipeCard("AMX");
+	vm.PushButton("D4");
+	vm.InsertCash(0.70);
+	vm.CancelOrder();*/
+
+	string action, entry;
+	double cash;
+	while (!inFile.eof())
+	{
+
+		inFile >> action;
+		inFile >> entry;
+		if (action == "PressButton")
+		{
+			if (entry == "Cancel")
+			{
+				vm.CancelOrder();
+			}
+			else
+			{
+				vm.PushButton(entry);
+			}
+		}
+		else if (action == "Swipe")
+		{
+			vm.swipeCard(entry);
+		}
+		else
+		{
+			cash = stod(entry);
+			vm.InsertCash(cash);
+		}
+
+	}
 
 	return 0; //or any other number for an error at anypoint!
 } // end simulateMachine
