@@ -22,10 +22,12 @@ enum Actions
 	PUSH_BUTTON,
 	INSERT_CASH,
 	SWIPE_CREDIT_CARD,
-
 	CANCEL_ORDER
 
 };
+
+
+
 
 class VendingMachine
 {
@@ -41,21 +43,46 @@ private:
 	*/
 
 	map <string, class prod> prodList;
+
+	typedef void (VendingMachine::*DoAction)(void);
+
+
+	struct StateMachine
+	{
+		int curState;
+		int action;
+		DoAction cb;
+
+	};
+	StateMachine sm[20];
 	void BuildProdList();
+	void BuildStateMachine();
 	void GoToIDleState();
-	void DispenseProduct(string prodName);
-	void DisplayProdPrice(string prodCode);
+
+	// Callbacks called by state machine
+
+	void DispenseProduct();
+	void DisplayProdPrice();
+	void CardSwiped();
+	void CashInserted();
+	void OrderCancelled();
+
+
 	void CancelCardTransaction();
 	void Refund(double coins);
-	bool paidByCreditCard;
-	double  total_coins;
+	bool GoToNextState(int action);
+
+	string ProdCodePushed;
+	bool  paidByCreditCard;
+	double total_coins;
 	int currentState;
+
 
 public:
 	VendingMachine();
 
 	void PushButton(string prodCode);
-	void InsertCash(double amt);
+	void InsertCash(int amt);
 	void swipeCard(string cardType);
 	void CancelOrder();
 
