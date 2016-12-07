@@ -222,7 +222,7 @@ void VendingMachine::PushButton(string prodCode)
 
 }
 
-void VendingMachine::InsertCash(int amt)
+void VendingMachine::InsertCash(double amt)
 {
 
 	total_coins += amt;
