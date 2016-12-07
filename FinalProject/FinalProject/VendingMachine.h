@@ -82,7 +82,7 @@ public:
 	VendingMachine();
 
 	void PushButton(string prodCode);
-	void InsertCash(int amt);
+	void InsertCash(double amt);
 	void swipeCard(string cardType);
 	void CancelOrder();
 
