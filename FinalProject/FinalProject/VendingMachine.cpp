@@ -460,7 +460,7 @@ void VendingMachine::PushButton(string prodCode)
 
 void VendingMachine::InsertCash(double amt)
 {
-	if (amt == 0.25 || amt == 0.05 || amt == 0.10 || amt == 1.00 || amt == 5.00)
+	if (amt == 0.25 || amt == 0.05 ||  amt == 0.5 ||amt == 0.10 || amt == 1.00 || amt == 5.00)
 	{
 		if (total_coins < 1.5)
 		{
