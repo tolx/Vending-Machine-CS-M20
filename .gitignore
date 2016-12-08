@@ -1,9 +1,12 @@
 # Debugging info
 Debug/
 x64/
-FinalProject/.vs/FinalProject/v14/.suo
+#.vs/ - Discovered this folder has a purpose! Oops!
+
 # Open Files info
 *.opendb
 .~lock*
-FinalProject/FinalProject.VC.db
 ~AutoRecover*
+
+#Other Junk
+*.VC.db
