@@ -178,7 +178,7 @@ bool VendingMachine::GoToNextState(string transition)
 
 			if (currentState == "ShowPrice")
 			{
-				cout << "Price is 1.5$ for " << ProdCodePushed << endl;
+				cout << "Price is $" << coin_max << " for " << ProdCodePushed << endl;
 				if (total_coins > 0)
 				{
 					GoToNextState("Has Cash");
@@ -196,7 +196,7 @@ bool VendingMachine::GoToNextState(string transition)
 			else if (currentState == "CancelCard")
 			{
 				paidByCreditCard = false;
-				total_coins -= 1.5;
+				total_coins -= coin_max;
 				cout << "Card Transaction Canceled" << endl;
 				if (total_coins > 0)
 				{
@@ -210,7 +210,7 @@ bool VendingMachine::GoToNextState(string transition)
 			else if (currentState == "DispenseDrink")
 			{
 				cout << "Dispensing Drink.." << endl;
-				total_coins -= 1.5;
+				total_coins -= coin_max;
 				paidByCreditCard = false;
 				if (total_coins == 0)
 				{
@@ -223,9 +223,7 @@ bool VendingMachine::GoToNextState(string transition)
 			}
 			else if (currentState == "CheckCard")
 			{
-				
-
-				bool is_card_approved = true;
+				bool is_card_approved = true; //FIX THIS!!?!?!?!? -- Set to the bank class function call
 
 				if (is_card_approved)
 				{
@@ -237,7 +235,7 @@ bool VendingMachine::GoToNextState(string transition)
 					cout << "Checking Card... Declined" << endl;
 				}
 				
-				total_coins += 1.5;
+				total_coins += coin_max;
 				if (is_card_approved || (!is_card_approved && total_coins > 0))
 				{
 					GoToNextState("Card Approved Or Declined and Has Cash");
@@ -260,7 +258,7 @@ bool VendingMachine::GoToNextState(string transition)
 					else
 					{
 						cout << "Dispensing cash " << (total_coins - 1.5) << endl;
-						total_coins = 1.5;
+						total_coins = coin_max;
 						GoToNextState("Has Credit");
 					}
 					
@@ -423,7 +421,7 @@ void VendingMachine::pushButton(string prodCode)
 		}
 		else
 		{
-			if (total_coins >= 1.5)
+			if (total_coins >= coin_max)
 			{
 
 				if (GoToNextState("Valid Position & Enough Cash/Credit"))
@@ -458,7 +456,7 @@ void VendingMachine::insertCash(double amt)
 {
 	if (amt == 0.25 || amt == 0.05 ||  amt == 0.5 ||amt == 0.10 || amt == 1.00 || amt == 5.00)
 	{
-		if (total_coins < 1.5)
+		if (total_coins < coin_max)
 		{
 			total_coins += amt;
 			if (GoToNextState("Insert Cash"))
@@ -484,7 +482,7 @@ void VendingMachine::insertCash(double amt)
 
 void VendingMachine::swipeCard(string cardType)
 {
-	if (total_coins < 1.5)
+	if (total_coins < coin_max)
 	{
 		if (GoToNextState("Card Swiped"))
 		{
@@ -550,4 +548,3 @@ void VendingMachine::CancelCardTransaction()
 }
 
 */
-
