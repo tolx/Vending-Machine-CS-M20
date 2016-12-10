@@ -17,7 +17,7 @@ CoinReturn? return to idle state
 
 A Block can have up to 5 user commands
 
-1. Cash (value>)
+1. Cash (value)
 
 2. Credit (AP|DC)
 
