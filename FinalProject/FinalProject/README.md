@@ -1,7 +1,7 @@
 # Project Source Folder
 This directory is for files and folders that will be directly accessed by the program. Do NOT put junk here.
 
-##Input file documentation
+##Input file documentation (VM001-Command-Input.txt)
 
 Return to idle After making selection (i.e. A5 goes back to idle state)
 
