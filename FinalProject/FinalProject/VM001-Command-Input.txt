@@ -1,446 +1,100 @@
-$1
-.50
-A5
-
-1.00
-.25
-.25
-D2
-
-.50
-Credit
-D2
-Cancel
-
-.50
-Credit
-D2
-
-.25
-.25
-.25
-.25
-.25
-Credit
-.25
-Cancel
-
-$1
-.10
-.10
-.10
-.10
-.10
-CoinReturn
-
-$5
-C3
-
-.25
-.25
-.25
-.25
-.25
-Credit
-.25
-C4
-
-1.00
-CoinReturn 
-
-.25
-$1
-.25
-A2 
-
-$1
-.10
-.10
-.10
-.25
-.50
-1.00
-CoinReturn
-
-$1
-.50
-A5
-
-$1
-.50
-A1
-
-1.00
-.25
-.25
-C4
-
-$1
-.10
-.10
-CoinReturn
-
-.25
-Credit
-D2
-
-1.00
-.25
-.25
-F4
-
-$1
-.50
-A3
-
-.25
-.25
-.25
-.25
-.25
-Credit
-.25
-E4
-
-$1
-.25
-.25
-C3
-
-$1
-.25
-.25
-C1
-
-$1
-.25
-.25
-C5
-
-$1
-.25
-.25
-C3
-
-$1
-.25
-.25
-C1
-
-
-.25
-CoinReturn 
-
-$1
-.25
-.25
-B3
-
-$1
-.25
-.25
-C2
-
-$1
-.25
-.25
-C1
-
-$1
-.25
-.25
-C3
-
-$1
-.25
-.25
-C4
-
-$1
-.25
-.25
-C1
-
-$1
-Cancel
-
-$1
-.25
-.25
-D1
-
-.25
-.5
-.5
-.5
-Credit
-C1
-
-.25
-.25
-$1
-F4
-
-.25
-.25
-$1
-CoinReturn
-
-.25
-.25
-$1
-C4
-
-$5
-.25
-D1
-
-.50
-.50
-$1
-F4
-
-.50
-$1
-F1
-
-.25
-.25
-$1
-C4
-
-.5
-.5
-.5
-.5
-.5
-.25
-$1
-Cancel 
-
-
-$1
-CoinReturn
-
-
-$1
-C2
-
-.5
-.5
-.5
-.5
-.5
-.25
-$1
-A2
-
-$1
-.50
-C5
-
-.5
-.5
-.5
-.5
-.5
-.25
-$1
-A1
-
-.25
-.25
-$1
-F3
-
-.25
-.25
-$1
-F1
-
-.25
-.25
-$1
-CoinReturn
-
-.25
-.25
-$1
-A3
-
-.25
-.25
-$1
-C5
-
-.10
-.10
-.5
-$1
-.25
-D1
-
-.05
-A3
-
-.25
-.25
-.25
-.25
-.25
-Credit
-Cancel
-
-Credit
-C1
-
-Credit
-C3
-
-Credit
-D3
-
-.25
-.5
-Credit
-Cancel
-
-.25
-.5
-.5
-.5
-Credit
-D3
-
-$1
-.50
-C1
-
-$1
-.50
-Cancel
-
-
-.25
-.25
-.25
-.25
-.25
-Credit
-.25
-E1
-
-$1
-.10
-.10
-.10
-.10
-.10
-CoinReturn
-
-$5
-$5
-$5
-CoinReturn
-
-$5
-Cancel
-
-$1
-.50
-Cancel
-
-$100
-.33
-Cancel
-
-$75
-.75
-A1
-
-$1
-.50
-C3
-
-.50
-CoinReturn 
-
-$1
-.50
-C4
-
-$5
-CoinReturn
-
-$1
-.25
-.25
-F2
-
-$1
-.25
-Credit
-C1
-
-$1
-Credit
-F2
-
-$1
-.25
-F1
-
-.05
-A3
-
-.05
-CoinReturn
-
-.25
-CoinReturn 
-
-Credit
-F4
-
-.22
-.11
-Cancel
-
-$5
-F4
-
-$3
-F7
-
-$100
-A5
-
-.25
-.25
-.25
-.25
-.25
-Credit
-.25
-A5
-
-.25
-.25
-.25
-A2
-
-$1
-.50
-D5
-
-$1
-.50
-C4
-
-$1
-.10
-.50
-CoinReturn
-
-$1
-CoinReturn
+PressButton D4
+PressButton ZD4
+PressButton Cancel
+PressButton CoinReturn
+InsertCash 1.00
+PressButton CoinReturn
+InsertCash 1.00
+PressButton D4
+PressButton ZD4
+InsertCash 0.5
+InsertCash 0.25
+Swipe VISA
+Swipe VISA
+InsertCash 0.25
+PressButton D4
+Swipe VISA
+PressButton ZD4
+PressButton D4
+InsertCash 0.25
+Swipe VISA
+PressButton CoinReturn
+PressButton Cancel
+InsertCash 0.25
+Swipe VISA
+PressButton Cancel
+PressButton CoinReturn
+InsertCash 0.10
+InsertCash 0.05
+PressButton Cancel
+InsertCash 0.25
+PressButton CoinReturn
+Swipe VISA
+PressButton A100
+InsertCash 0.01
+InsertCash 0.99
+PressButton CoinReturn
+InsertCash 1.00
+InsertCash 0.25
+InsertCash 0.25
+PressButton A3
+PressButton D4
+InsertCash 1.00
+PressButton D4
+Swipe VISA
+Swipe VISA
+PressButton D6
+PressButton D1
+PressButton CoinReturn
+InsertCash 1.00
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.10
+InsertCash 0.05
+InsertCash 0.10
+InsertCash 0.05
+InsertCash 0.10
+InsertCash 0.05
+Swipe VISA
+PressButton A9
+PressButton A1
+PressButton CoinReturn
+PressButton Cancel
+Swipe VISA
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+Swipe Visa
+PressButton CoinReturn
+PressButton D1
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+PressButton F1
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+InsertCash 0.25
+PressButton CoinReturn
+InsertCash 1.00
+InsertCash 1.00
+InsertCash 5.00
+PressButton F2
+InsertCash 1.00
+InsertCash 100.00
+PressButton Cancel
+Swipe VISA
+PressButton Cancel
+Swipe VISA
+PressButton CoinReturn
+InsertCash 1.00
+InsertCash 0.50
+PressButton A1
