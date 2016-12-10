@@ -13,11 +13,12 @@ using namespace std;
 
 VendingMachine::VendingMachine()
 {
+	coin_max = COIN_MAX;
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	BuildStateMachine();
 	BuildProdList();
-	GoToIDleState();
+	GoToIdleState();
 }
 
 void VendingMachine::BuildStateMachine()
@@ -143,13 +144,11 @@ void VendingMachine::BuildStateMachine()
 
 }
 
-
-
 void VendingMachine::BuildProdList()
 {
-	prod p1("Costco Water", 1.50);
-	prod p2("Crystal Geyser", 1.50);
-	prod p3("Aquafina", 1.50);
+	prod p1("Costco Water", coin_max);
+	prod p2("Crystal Geyser", coin_max);
+	prod p3("Aquafina", coin_max);
 
 
 	prodList.insert(make_pair("D4", p1));
@@ -162,8 +161,7 @@ void VendingMachine::BuildProdList()
 
 }
 
-
-void VendingMachine::GoToIDleState()
+void VendingMachine::GoToIdleState()
 {
 
 	currentState = "Idle";
@@ -338,7 +336,7 @@ void VendingMachine::DispenseProduct()
 			{
 				Refund(total_coins - prodCost);
 			}
-			GoToIDleState();
+			GoToIdleState();
 		}
 		else
 		{
@@ -349,7 +347,7 @@ void VendingMachine::DispenseProduct()
 	{
 		cout << "Please pick up " << prodname << endl;
 
-		GoToIDleState();
+		GoToIdleState();
 	}
 
 
@@ -390,15 +388,16 @@ void VendingMachine::OrderCancelled()
 	if (paidByCreditCard)
 		CancelCardTransaction();
 
-	GoToIDleState();
+	GoToIdleState();
 
 
 }
 // end of callbacks
 */
+
 // Public functions called by client
 
-void VendingMachine::PushButton(string prodCode)
+void VendingMachine::pushButton(string prodCode)
 {
 
 	ProdCodePushed = prodCode;
@@ -458,7 +457,7 @@ void VendingMachine::PushButton(string prodCode)
 
 }
 
-void VendingMachine::InsertCash(double amt)
+void VendingMachine::insertCash(double amt)
 {
 	if (amt == 0.25 || amt == 0.05 ||  amt == 0.5 ||amt == 0.10 || amt == 1.00 || amt == 5.00)
 	{
@@ -485,6 +484,7 @@ void VendingMachine::InsertCash(double amt)
 	//CashInserted();
 
 }
+
 void VendingMachine::swipeCard(string cardType)
 {
 	if (total_coins < 1.5)
@@ -504,7 +504,8 @@ void VendingMachine::swipeCard(string cardType)
 
 	}
 }
-void VendingMachine::CancelOrder()
+
+void VendingMachine::cancelOrder()
 {
 	if (paidByCreditCard)
 	{
@@ -519,7 +520,7 @@ void VendingMachine::CancelOrder()
 	}
 }
 
-void VendingMachine::CoinReturn()
+void VendingMachine::coinReturn()
 {
 		if (GoToNextState("Coin Return"))
 		{
@@ -530,6 +531,7 @@ void VendingMachine::CoinReturn()
 		cout << "Coin Return is not available!" << endl;
 	}
 }
+
 // END of Client functions
 
 // Private (utility functions)

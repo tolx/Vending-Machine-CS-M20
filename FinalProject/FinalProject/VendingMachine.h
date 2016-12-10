@@ -3,10 +3,13 @@ CS M20 - Final Project
 Team Water
 Members who worked on this:
 Kelton Malhotra
+Justin Kephart
 */
 
 #include "Products.h"
 #include "Graph.h"
+
+static const double COIN_MAX = 1.50;
 
 /*
 enum States
@@ -45,7 +48,7 @@ private:
 
 	void BuildProdList();
 	void BuildStateMachine();
-	void GoToIDleState();
+	void GoToIdleState();
 
 	// Callbacks called by state machine
 
@@ -64,6 +67,7 @@ private:
 
 	bool GoToNextState(string transition);
 
+	double coin_max;
 	string ProdCodePushed;
 	bool  paidByCreditCard;
 	double total_coins;
@@ -74,10 +78,10 @@ private:
 public:
 	VendingMachine();
 
-	void PushButton(string prodCode);
-	void InsertCash(double amt);
+	void pushButton(string prodCode);
+	void insertCash(double amt);
 	void swipeCard(string cardType);
-	void CancelOrder();
-	void CoinReturn();
+	void cancelOrder();
+	void coinReturn();
 
 };

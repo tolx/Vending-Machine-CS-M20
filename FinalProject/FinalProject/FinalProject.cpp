@@ -202,15 +202,15 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 	
 	//File opened success
 	VendingMachine vm;
-	/*vm.PushButton("D4");
-	vm.InsertCash(1.50);
-	vm.PushButton("D6");
+	/*vm.pushButton("D4");
+	vm.insertCash(1.50);
+	vm.pushButton("D6");
 	vm.swipeCard("VISA");
-	vm.PushButton("D4");
+	vm.pushButton("D4");
 	vm.swipeCard("AMX");
-	vm.PushButton("D4");
-	vm.InsertCash(0.70);
-	vm.CancelOrder();*/
+	vm.pushButton("D4");
+	vm.insertCash(0.70);
+	vm.cancelOrder();*/
 
 	string action, entry;
 	double cash;
@@ -227,15 +227,15 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 		{
 			if (entry == "Cancel")
 			{
-				vm.CancelOrder();
+				vm.cancelOrder();
 			}
 			else if (entry == "CoinReturn")
 			{
-				vm.CoinReturn();
+				vm.coinReturn();
 			}
 			else
 			{
-				vm.PushButton(entry);
+				vm.pushButton(entry);
 			}
 		}
 		else if (action == "Swipe")
@@ -245,7 +245,7 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 		else if (action == "InsertCash")
 		{
 			cash = stod(entry);
-			vm.InsertCash(cash);
+			vm.insertCash(cash);
 		}
 
 	}
