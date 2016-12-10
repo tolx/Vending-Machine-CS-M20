@@ -1,0 +1,7 @@
+To Do:
+
+FinalProject.cpp
+- Configure inputMachine() to work with any dimension of machine
+
+Configure VendingMachine.cpp and split letters from numbers
+- Add Timeou
