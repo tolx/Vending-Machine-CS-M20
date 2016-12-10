@@ -27,6 +27,9 @@
     <ClCompile Include="PrecondViolatedExcept.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CreditCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="VM001-Drinks-Input.csv">
@@ -50,6 +53,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Edge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditCard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

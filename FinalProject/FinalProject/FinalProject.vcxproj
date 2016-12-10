@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CreditCard.cpp" />
     <ClCompile Include="FinalProject.cpp" />
     <ClCompile Include="PrecondViolatedExcept.cpp" />
     <ClCompile Include="Products.cpp" />
@@ -156,6 +157,7 @@
     <None Include="VM001-Machine-Output.csv" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CreditCard.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="PrecondViolatedExcept.h" />
