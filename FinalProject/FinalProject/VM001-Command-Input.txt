@@ -8,12 +8,12 @@ A5
 D2
 
 .50
-Credit
+Credit Ap
 D2
 Cancel
 
 .50
-Credit
+Credit Ap
 D2
 
 .25
@@ -21,7 +21,7 @@ D2
 .25
 .25
 .25
-Credit
+Credit DC
 .25
 Cancel
 
@@ -41,7 +41,7 @@ C3
 .25
 .25
 .25
-Credit
+Credit DC
 .25
 C4
 
@@ -81,7 +81,7 @@ $1
 CoinReturn
 
 .25
-Credit
+Credit Ap
 D2
 
 1.00
@@ -98,7 +98,7 @@ A3
 .25
 .25
 .25
-Credit
+Credit DC
 .25
 E4
 
@@ -173,7 +173,7 @@ D1
 .5
 .5
 .5
-Credit
+Credit Ap
 C1
 
 .25
@@ -288,28 +288,28 @@ A3
 .25
 .25
 .25
-Credit
+Credit Ap
 Cancel
 
-Credit
+Credit Ap
 C1
 
-Credit
+Credit Ap
 C3
 
-Credit
+Credit Ap
 D3
 
 .25
 .5
-Credit
+Credit Ap
 Cancel
 
 .25
 .5
 .5
 .5
-Credit
+Credit Ap
 D3
 
 $1
@@ -326,7 +326,7 @@ Cancel
 .25
 .25
 .25
-Credit
+Credit DC
 .25
 E1
 
@@ -379,11 +379,11 @@ F2
 
 $1
 .25
-Credit
+Credit Ap
 C1
 
 $1
-Credit
+Credit Ap
 F2
 
 $1
@@ -399,7 +399,7 @@ CoinReturn
 .25
 CoinReturn 
 
-Credit
+Credit Ap
 F4
 
 .22
@@ -420,7 +420,7 @@ A5
 .25
 .25
 .25
-Credit
+Credit DC
 .25
 A5
 
