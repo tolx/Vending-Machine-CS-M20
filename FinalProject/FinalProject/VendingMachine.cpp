@@ -482,7 +482,7 @@ void VendingMachine::insertCash(double amt)
 
 void VendingMachine::swipeCard(string cardType)
 {
-	if (total_coins < coin_max)
+	if ((total_coins < coin_max) && !paidByCreditCard)
 	{
 		if (GoToNextState("Card Swiped"))
 		{
@@ -491,12 +491,7 @@ void VendingMachine::swipeCard(string cardType)
 	}
 	else
 	{
-		cout << "Swipe card is not available!" << endl;
-	}
-
-	if (paidByCreditCard)
-	{
-
+		//cout << "Card already used, no more credit has been added." << endl; //This should not do anything
 	}
 }
 
