@@ -21,9 +21,9 @@ A Block can have up to 5 user commands
 
 2. Credit <AP|DC>
 
-3. Selection A1 -> D7 (After selection go to CoinReturn state)
+3. Selection A1 -> F5 (After selection go to CoinReturn state)
 
-4. Cancel  (Exit point to return to idle state)
+4. Cancel  (Exit point to return to idle state) -> automatically actives coinReturn if coins were inserted. 
 
 5. CoinReturn (Exit point to return to idle state)
 
