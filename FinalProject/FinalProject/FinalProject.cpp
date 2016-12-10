@@ -38,7 +38,6 @@ struct drinkSlot
 bool inputMachine(vector<vector<drinkSlot>> &inputMachine);
 void displayMachine(const vector<vector<drinkSlot>> inputMachine) throw(PrecondViolatedExcept);
 char simulateMachine(vector<vector<drinkSlot>> &inputMachine);
-void consoleOutput();
 void machineOutput(const vector<vector<drinkSlot>> inputMachine);
 void programWait();
 void endProgram(const int reason);
@@ -75,9 +74,6 @@ int main()
 		case 0:
 			cout << endl;//Do nothing, no errors!
 	}
-
-	consoleOutput(); //this might merge with machineOutput, or we might not even have machine output on the final version
-	//^ or this might be ongoing in the simulate machine function...
 
 	machineOutput(machine);
 
@@ -252,13 +248,6 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 
 	return 0; //or any other number for an error at anypoint!
 } // end simulateMachine
-
-void consoleOutput()
-{
-	const string filename("VM001-Console-Output.txt");
-	cout << "This program has completed running. You can find the console data in the file:" << endl
-		 << filename << endl;
-} // end consoleOutput
 
 void machineOutput(const vector<vector<drinkSlot>> inputMachine)
 {
