@@ -3,11 +3,17 @@ To Do:
 FinalProject.cpp
 - Configure inputMachine() to work with any dimension of machine
 - Have the output function actually make an console output file
+- Have the input function actually interact with the vending machine
 
 VendingMachine.cpp
 - Split Letters from Numbers 
 - Add Timeout function
 - Add Clear Button function (a manual timeout button)
+- CheckCard should interact with a bank class
+
+Bank.h
+Bank.cpp
+- Make these
 
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it
