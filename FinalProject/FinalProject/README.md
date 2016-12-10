@@ -7,6 +7,7 @@ Return to idle After making selection (i.e. A5 goes back to idle state)
 Cancel? Return to idle state
 CoinReturn? return to idle state
 
+
 ====  User Commands ==== 
 A Block can have up to 5 user commands
 1. Cash <value> 
@@ -14,6 +15,7 @@ A Block can have up to 5 user commands
 3. Selection A1 -> D7 (After selection go to CoinReturn state)
 4. Cancel  (Exit point to return to idle state)
 5. CoinReturn (Exit point to return to idle state)
+
 
 Currency
 Acceptable input for cash: .01, .05, .1, .25, .5, 1, 5
