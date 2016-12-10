@@ -3,5 +3,11 @@ To Do:
 FinalProject.cpp
 - Configure inputMachine() to work with any dimension of machine
 
-Configure VendingMachine.cpp and split letters from numbers
-- Add Timeou
+VendingMachine.cpp
+- Split Letters from Numbers 
+- Add Timeout function
+
+VM001-Command-Input.txt
+- Make it work with the program or make the program work with it
+
+
