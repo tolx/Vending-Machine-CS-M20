@@ -12,6 +12,5 @@ PrecondViolatedExcept::PrecondViolatedExcept(const string& message): logic_error
 {
 }  // end constructor
 
-
 // End of implementation file.
 
