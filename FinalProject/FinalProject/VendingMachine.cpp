@@ -454,7 +454,7 @@ void VendingMachine::pushButton(string prodCode)
 
 void VendingMachine::insertCash(double amt)
 {
-	if (amt == 0.25 || amt == 0.05 ||  amt == 0.5 ||amt == 0.10 || amt == 1.00 || amt == 5.00)
+	if (amt == 0.01 || amt == 0.05 ||  amt == 0.1 || amt == 0.25 || amt == 0.5 || amt == 1.00 || amt == 5.00)
 	{
 		if (total_coins < coin_max)
 		{
@@ -466,18 +466,13 @@ void VendingMachine::insertCash(double amt)
 		}
 		else
 		{
-			cout << "Cash insert is not available!" << endl;
+			cout << "Too much cash in the machine. $" << amt << " has been returned." << endl;
 		}
 	}
 	else
 	{
-		cout << "Cannot insert this type of cash!" << endl;
+		cout << "Cannot insert this type of cash! $" << amt << " has been returned." << endl;
 	}
-
-	//total_coins += amt;
-	//bool b = GoToNextState(INSERT_CASH);
-	//CashInserted();
-
 }
 
 void VendingMachine::swipeCard(string cardType)
