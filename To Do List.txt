@@ -10,6 +10,7 @@ VendingMachine.cpp
 - Add Timeout function
 - Add Clear Button function (a manual timeout button)
 - CheckCard should interact with a bank class
+- Complete the logic of each transition
 
 Bank.h
 Bank.cpp
