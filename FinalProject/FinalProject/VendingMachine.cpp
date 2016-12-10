@@ -48,40 +48,40 @@ void VendingMachine::BuildStateMachine()
 	Edge<string, string> SP_S("ShowPrice", "Idle", "No Cash");
 	statesMachine.add(SP_S);
 
-	Edge<string, string> U_SP("Update", "ShowPrice", "Valid Position & Not enough cash");
+	Edge<string, string> U_SP("Update", "ShowPrice", "Valid Position & Not Enough Cash");
 	statesMachine.add(U_SP);
 
-	Edge<string, string> U_D("Update", "DispenseDrink", "Valid Position & enough cash");
+	Edge<string, string> U_D("Update", "DispenseDrink", "Valid Position & Enough Cash/Credit");
 	statesMachine.add(U_D);
 
-	Edge<string, string> D_S("DispenseDrink", "Idle", "No leftover cash");
+	Edge<string, string> D_S("DispenseDrink", "Idle", "No Leftover Cash");
 	statesMachine.add(D_S);
 
-	Edge<string, string> D_DC("DispenseDrink", "DispenseChange", "Leftover cash");
+	Edge<string, string> D_DC("DispenseDrink", "DispenseChange", "Cash Leftover");
 	statesMachine.add(D_DC);
 
-	Edge<string, string> DC_S("DispenseChange", "Idle", "Cash returned");
+	Edge<string, string> DC_S("DispenseChange", "Idle", "Change Dispensed");
 	statesMachine.add(DC_S);
 
-	Edge<string, string> IP_U("InvalidPosition", "Update", "Has Cash");
+	Edge<string, string> IP_U("InvalidPosition", "Update", "Has Cash/Credit");
 	statesMachine.add(IP_U);
 
 	Edge<string, string> U_IP("Update", "InvalidPosition", "Invalid Position");
 	statesMachine.add(U_IP);
 
-	Edge<string, string> IP_S("InvalidPosition", "Idle", "No Cash");
+	Edge<string, string> IP_S("InvalidPosition", "Idle", "No Cash/Credit");
 	statesMachine.add(IP_S);
 
 	Edge<string, string> U_CH("Update", "CheckCard", "Card Swiped");
 	statesMachine.add(U_CH);
 
-	Edge<string, string> CH_U("CheckCard", "Update", "Card Approved Or Declined and has cash");
+	Edge<string, string> CH_U("CheckCard", "Update", "Card Approved Or Declined and Has Cash");
 	statesMachine.add(CH_U);
 	
-	Edge<string, string> CH_S("CheckCard", "Idle", "Card Declined and no cash");
+	Edge<string, string> CH_S("CheckCard", "Idle", "Card Declined and No Cash");
 	statesMachine.add(CH_S);
 	
-	Edge<string, string> U_CA("Update", "CancelCard", "Cancel Pressed");
+	Edge<string, string> U_CA("Update", "CancelCard", "Has Credit and Card Cancel Pressed");
 	statesMachine.add(U_CA);
 
 	Edge<string, string> CA_U("CancelCard", "Update", "Has Cash");
@@ -219,11 +219,11 @@ bool VendingMachine::GoToNextState(string transition)
 				paidByCreditCard = false;
 				if (total_coins == 0)
 				{
-					GoToNextState("No leftover cash");
+					GoToNextState("No Leftover Cash");
 				}
 				else
 				{
-					GoToNextState("Leftover cash");
+					GoToNextState("Cash Leftover");
 				}
 			}
 			else if (currentState == "CheckCard")
@@ -245,11 +245,11 @@ bool VendingMachine::GoToNextState(string transition)
 				total_coins += 1.5;
 				if (is_card_approved || (!is_card_approved && total_coins > 0))
 				{
-					GoToNextState("Card Approved Or Declined and has cash");
+					GoToNextState("Card Approved Or Declined and Has Cash");
 				}
 				else if (!is_card_approved && total_coins == 0)
 				{
-					GoToNextState("Card Declined and no cash");
+					GoToNextState("Card Declined and No Cash");
 				}
 
 			}
@@ -260,7 +260,7 @@ bool VendingMachine::GoToNextState(string transition)
 					{
 						cout << "Dispensing cash " << total_coins << endl;
 						total_coins = 0;
-						GoToNextState("Cash returned");
+						GoToNextState("Change Dispensed");
 					}
 					else
 					{
@@ -280,11 +280,11 @@ bool VendingMachine::GoToNextState(string transition)
 				cout << "Invalid Input!" << endl;
 				if (total_coins > 0)
 				{
-					GoToNextState("Has Cash");
+					GoToNextState("Has Cash/Credit");
 				}
 				else
 				{
-					GoToNextState("No Cash");
+					GoToNextState("No Cash/Credit");
 				}
 			}
 
@@ -430,14 +430,14 @@ void VendingMachine::PushButton(string prodCode)
 			if (total_coins >= 1.5)
 			{
 
-				if (GoToNextState("Valid Position & enough cash"))
+				if (GoToNextState("Valid Position & Enough Cash/Credit"))
 				{
 					// Went to DispenseDrink and then to Idle
 				}
 			}
 			else
 			{
-				if (GoToNextState("Valid Position & Not enough cash"))
+				if (GoToNextState("Valid Position & Not Enough Cash"))
 				{
 					// Went to ShowPrice
 				}
@@ -508,7 +508,7 @@ void VendingMachine::CancelOrder()
 {
 	if (paidByCreditCard)
 	{
-		if (GoToNextState("Cancel Pressed"))
+		if (GoToNextState("Has Credit and Card Cancel Pressed"))
 		{
 			// goes from Update to CancelCard and then to Update or Idle
 		}
