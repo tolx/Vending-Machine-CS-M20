@@ -11,4 +11,5 @@ VendingMachine.cpp
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it
 
-
+If we finish early
+- Add different prices for the items
