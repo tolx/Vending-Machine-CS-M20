@@ -156,9 +156,6 @@ void VendingMachine::BuildProdList()
 	prodList.insert(make_pair("D5", p2));
 
 	prodList.insert(make_pair("D6", p3));
-
-
-
 }
 
 void VendingMachine::GoToIdleState()

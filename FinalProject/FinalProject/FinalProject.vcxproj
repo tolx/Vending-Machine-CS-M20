@@ -163,6 +163,7 @@
     <ClInclude Include="VendingMachine.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="VM001-Prices.txt" />
     <Text Include="VM001-Command-Input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

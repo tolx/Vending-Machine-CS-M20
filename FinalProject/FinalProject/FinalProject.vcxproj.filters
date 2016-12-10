@@ -57,5 +57,8 @@
     <Text Include="VM001-Command-Input.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="VM001-Prices.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
