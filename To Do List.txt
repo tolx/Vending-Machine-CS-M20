@@ -6,6 +6,7 @@ FinalProject.cpp
 VendingMachine.cpp
 - Split Letters from Numbers 
 - Add Timeout function
+- Add Clear Button function (a manual timeout button)
 
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it
