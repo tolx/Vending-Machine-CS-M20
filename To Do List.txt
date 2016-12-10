@@ -6,10 +6,12 @@ FinalProject.cpp
 - Have the input function actually interact with the vending machine
 
 VendingMachine.cpp
+- Should not call cout. Replace cout with ostream parameter that main sends cout as an argument.
 - Split Letters from Numbers 
 - Add Timeout function
 - Add Clear Button function (a manual timeout button)
 - CheckCard should interact with a bank class
+- Complete the logic of each transition
 
 Bank.h
 Bank.cpp
