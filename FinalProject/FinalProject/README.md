@@ -8,6 +8,8 @@ Cancel? Return to idle state
 CoinReturn? return to idle state
 
 
+
+
 ====  User Commands ==== 
 A Block can have up to 5 user commands
 1. Cash <value> 
@@ -17,7 +19,11 @@ A Block can have up to 5 user commands
 5. CoinReturn (Exit point to return to idle state)
 
 
+
+
 Currency
+
+
 Acceptable input for cash: .01, .05, .1, .25, .5, 1, 5
 ^NOTE: Leading and trailing zero's will also be accepted, meaning 1.00, 1, or 01 are all okay, but 10 or $1 are not.
 ^Also NOTE: The "$" symbol will be included in our virtual COUT, so the user would not type it.
