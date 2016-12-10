@@ -69,7 +69,7 @@ InsertCash 0.25
 InsertCash 0.25
 InsertCash 0.25
 InsertCash 0.25
-Swipe Visa
+Swipe VISA
 PressButton CoinReturn
 PressButton D1
 InsertCash 0.25
