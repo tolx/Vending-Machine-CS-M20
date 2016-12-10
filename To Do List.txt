@@ -2,6 +2,7 @@ To Do:
 
 FinalProject.cpp
 - Configure inputMachine() to work with any dimension of machine
+- Have the output function actually make an console output file
 
 VendingMachine.cpp
 - Split Letters from Numbers 
