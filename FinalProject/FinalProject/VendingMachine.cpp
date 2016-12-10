@@ -403,7 +403,7 @@ void VendingMachine::pushButton(string prodCode)
 	// Check if it'Idle a valid entry
 	map<string, prod>::iterator it;
 	it = prodList.find(ProdCodePushed);
-	if (it == prodList.end())
+	if (it != prodList.end()) // ensure position is valid / find if no drinks available. 
 	{
 		isValidPosition = false;
 	}
