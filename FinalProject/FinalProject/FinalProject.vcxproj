@@ -149,7 +149,6 @@
     <ClCompile Include="CreditCard.cpp" />
     <ClCompile Include="FinalProject.cpp" />
     <ClCompile Include="PrecondViolatedExcept.cpp" />
-    <ClCompile Include="Products.cpp" />
     <ClCompile Include="VendingMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,7 +160,7 @@
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="PrecondViolatedExcept.h" />
-    <ClInclude Include="Products.h" />
+    <ClInclude Include="Slot.h" />
     <ClInclude Include="VendingMachine.h" />
   </ItemGroup>
   <ItemGroup>
