@@ -20,5 +20,8 @@ Bank.cpp
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it
 
+CreditCard.h and .cpp
+- Change so it only has credit card number, if we want
+
 If we finish early
 - Add different prices for the items
