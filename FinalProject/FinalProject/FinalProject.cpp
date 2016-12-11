@@ -7,7 +7,7 @@
 *	Justin Kephart
 *	Kelton Malhotra
 *	Jake Lyon
-*	Kiefer Soldberg
+*	Kiefer Solberg
 *	Riley Wallace
 * Program Status:
 *	Complete:	No
@@ -217,10 +217,20 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 	while (!inFile.eof())
 	{
 
-		inFile >> action;
-		inFile >> entry;
+	string line;
+	getline(inFile, line);
+	std::istringstream buf(line);
+	std::istream_iterator<std::string> beg(buf), end;
 
-		inFile.ignore();
+	std::vector<std::string> tokens(beg, end);
+
+	if (tokens.size() == 2)
+	{
+
+		action = tokens[0];
+		entry = tokens[1];
+
+
 
 		//Remove?
         //cout << "****Simulating the command " << action << " " << entry << "****" << endl;
@@ -251,8 +261,8 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 			inputMachine.insertCash(cash);
 		}
 
+	   }
 	}
-
 	return 0; //or any other number for an error at anypoint!
 } // end simulateMachine
 
