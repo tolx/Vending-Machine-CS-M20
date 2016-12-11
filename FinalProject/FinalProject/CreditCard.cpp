@@ -7,8 +7,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 #include "CreditCard.h"
 
 CreditCard::CreditCard(const int number)
