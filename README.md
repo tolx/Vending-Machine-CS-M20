@@ -26,6 +26,6 @@ Please note, you can make multiple commits in one push, as that is normal for go
 # Supporting Documents
 You can publicly view and comment on our supporting documents, such as the User's Manual, the Design Document, and the Finite State Automata (FSA) - but if you would like permission to make changes, please message me (Sam Rice/RoboticRice) in our group's Desire 2 Learn.
 
-FSA - https://docs.google.com/drawings/d/19O71XIREYtJoq4PDR7eaAS59T8BUCJI00WtGpt5jmG4/edit?usp=sharing
+FSA - https://docs.google.com/drawings/d/1Vmaf7CKyY93KJc9XiXZk7yghVFZ-R47xLwG8hdUDLBs/edit?usp=sharing
 Design Document - https://docs.google.com/document/d/1x6LC_aTqedr3zIEOl_iJNyCM7QSI3Ppk9a4VLa3Jtk4/edit?usp=sharing
 User's Manual - https://docs.google.com/document/d/1_IDlgwGGZSTuhE-DzauvLyDqxSJso9F3Ur_ph6AyLIM/edit?usp=sharing
