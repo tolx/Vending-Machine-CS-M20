@@ -2,6 +2,7 @@
 *	Final Project 2016
 *	Credit Card implementation file
 *	Jake Lyon
+*	Sam Rice
 ***************************************************/
 #include <iostream>
 #include <string>
@@ -24,6 +25,5 @@ void CreditCard::setCCNum(const int number)
 
 bool CreditCard::is_valid() const
 {
-	bool b = static_cast<bool>(CC_NUM % 2);
-	return b;
+	return (!!(CC_NUM % 2)); //The !! means NOT(NOT(value)), where the value is mod 2 of the card number, so if the number is odd it's 1 (or true), or even its 0 (false). Having two ! means it'll still be the value, and no warning will be cast for unsafe conversion of int and bool
 }
