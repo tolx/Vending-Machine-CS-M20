@@ -9,8 +9,8 @@ Output File
 - Also, make sure to send the simulated input to the output file, so it makes sense
 
 FinalProject.cpp
-- Configure inputMachine() to work with any dimension of machine
-- Have the output function actually make an console output file
+- Configure inputMachine() to work with any dimension of machine //Finished?
+- Have the output function actually make a console output file //Finished?
 - Have the input function actually interact with the vending machine
 
 VendingMachine.cpp
@@ -21,7 +21,7 @@ VendingMachine.cpp
 - Complete the logic of each transition
 
 VM001-Command-Input.txt
-- Make it work with the program or make the program work with it
+- Make it work with the program or make the program work with it //Finished?
 
 If we finish early
 - Add different prices for the items
