@@ -18,11 +18,11 @@ CreditCard::CreditCard(const int number)
 // Recieves number as "####-####-####-####"
 void CreditCard::setCCNum(const int number)
 {
-	CC_NUM == number;
+	CC_NUM = number;
 }
 
 
 bool CreditCard::is_valid() const
 {
-	return CC_NUM % 2;
+	return bool(CC_NUM % 2);
 }
