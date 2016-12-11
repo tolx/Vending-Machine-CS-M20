@@ -2,6 +2,7 @@ In idle state
 ****Simulating the command PressButton D4****
 Price is $1.5 for D4
 In idle state
+In idle state
 ****Simulating the command PressButton ZD4****
 Invalid Input!
 In idle state
@@ -13,10 +14,12 @@ We have 1
 ****Simulating the command PressButton CoinReturn****
 Dispensing cash 1
 In idle state
+In idle state
 ****Simulating the command InsertCash 1.00****
 We have 1
 ****Simulating the command PressButton D4****
 Price is $1.5 for D4
+We have 1
 We have 1
 ****Simulating the command PressButton ZD4****
 Invalid Input!
@@ -32,6 +35,7 @@ Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command PressButton D4****
 Dispensing Drink..
 In idle state
+In idle state
 ****Simulating the command Swipe 7511****
 Checking Card... Approved
 We have 1.5
@@ -40,6 +44,7 @@ Invalid Input!
 We have 1.5
 ****Simulating the command PressButton D4****
 Dispensing Drink..
+In idle state
 In idle state
 ****Simulating the command InsertCash 0.25****
 We have 0.25
@@ -50,77 +55,48 @@ We have 1.75
 Dispensing cash 0.25
 We have 1.5
 ****Simulating the command PressButton Cancel****
-Card Transaction Canceled
-In idle state
 ****Simulating the command InsertCash 0.25****
-We have 0.25
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command Swipe 1220****
-Checking Card... Declined
-We have 1.75
 ****Simulating the command PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Simulating the command PressButton CoinReturn****
-Dispensing cash 1.75
-In idle state
 ****Simulating the command InsertCash 0.10****
-We have 0.1
+Too much cash in the machine. $0.1 has been returned.
 ****Simulating the command InsertCash 0.05****
-We have 0.15
+Too much cash in the machine. $0.05 has been returned.
 ****Simulating the command PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Simulating the command InsertCash 0.25****
-We have 0.4
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command PressButton CoinReturn****
-Dispensing cash 0.4
-In idle state
 ****Simulating the command Swipe 7516****
-Checking Card... Declined
-We have 1.5
 ****Simulating the command PressButton A100****
-Invalid Input!
-We have 1.5
 ****Simulating the command InsertCash 0.01****
 Too much cash in the machine. $0.01 has been returned.
 ****Simulating the command InsertCash 0.99****
 Cannot insert this type of cash! $0.99 has been returned.
 ****Simulating the command PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
 ****Simulating the command InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 1.25
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 1.5
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command PressButton A3****
-Dispensing Drink..
-In idle state
 ****Simulating the command PressButton D4****
-Price is $1.5 for D4
-In idle state
 ****Simulating the command InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****Simulating the command PressButton D4****
-Price is $1.5 for D4
-We have 1
 ****Simulating the command Swipe 1337****
-Checking Card... Approved
-We have 2.5
 ****Simulating the command Swipe 7201****
 ****Simulating the command PressButton D6****
-Dispensing Drink..
-Dispensing cash 1
-In idle state
 ****Simulating the command PressButton D1****
-Price is $1.5 for D1
-In idle state
 ****Simulating the command PressButton CoinReturn****
 ****Simulating the command InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 1.25
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 1.5
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.10****
 Too much cash in the machine. $0.1 has been returned.
 ****Simulating the command InsertCash 0.05****
@@ -135,17 +111,10 @@ Too much cash in the machine. $0.1 has been returned.
 Too much cash in the machine. $0.05 has been returned.
 ****Simulating the command Swipe 9810****
 ****Simulating the command PressButton A9****
-Dispensing Drink..
-In idle state
 ****Simulating the command PressButton A1****
-Price is $1.5 for A1
-In idle state
 ****Simulating the command PressButton CoinReturn****
 ****Simulating the command PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Simulating the command Swipe 1371****
-Checking Card... Approved
-We have 1.5
 ****Simulating the command InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
@@ -164,26 +133,20 @@ Too much cash in the machine. $0.25 has been returned.
 Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command Swipe 9114****
 ****Simulating the command PressButton CoinReturn****
-Dispensing cash 0
-We have 1.5
 ****Simulating the command PressButton D1****
-Dispensing Drink..
-In idle state
 ****Simulating the command InsertCash 0.25****
-We have 0.25
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 0.5
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 0.75
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 1
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
-We have 1.25
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command PressButton F1****
-Invalid Input!
-We have 1.25
 ****Simulating the command InsertCash 0.25****
-We have 1.5
+Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
@@ -193,37 +156,25 @@ Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****Simulating the command PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
 ****Simulating the command InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****Simulating the command InsertCash 1.00****
-We have 2
+Too much cash in the machine. $1 has been returned.
 ****Simulating the command InsertCash 5.00****
 Too much cash in the machine. $5 has been returned.
 ****Simulating the command PressButton F2****
-Invalid Input!
-We have 2
 ****Simulating the command InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
 ****Simulating the command InsertCash 100.00****
 Cannot insert this type of cash! $100 has been returned.
 ****Simulating the command PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Simulating the command Swipe 5640****
 ****Simulating the command PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Simulating the command Swipe 7812****
 ****Simulating the command PressButton CoinReturn****
-Dispensing cash 2
-In idle state
 ****Simulating the command InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****Simulating the command InsertCash 0.50****
-We have 1.5
+Too much cash in the machine. $0.5 has been returned.
 ****Simulating the command PressButton A1****
-Dispensing Drink..
-In idle state
 ****Simulating the command PressButton A1****
-Price is $1.5 for A1
-In idle state

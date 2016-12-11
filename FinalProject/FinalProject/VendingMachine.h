@@ -8,7 +8,6 @@ Riley Wallace
 */
 
 #include "Graph.h"
-#include "Timer.h"
 #include "CreditCard.h"
 #include <fstream>
 #include <iostream>
@@ -24,7 +23,6 @@ private:
 	Graph<string, string> statesMachine;
 	map <string, class Slot> prodList;
 	ostream& displayObj;
-	Timer systemTimer;
 
 	void BuildProdList();
 	void BuildStateMachine();
