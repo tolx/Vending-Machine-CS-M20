@@ -1,5 +1,8 @@
 To Do:
 
+-BEFORE SUBMIT-
+*Make sure the correct #includes are in the correct files
+
 Output File
 - Create it
 - Send the current console output (cout) to the file instead
