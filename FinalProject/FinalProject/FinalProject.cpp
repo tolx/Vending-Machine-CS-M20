@@ -16,6 +16,7 @@
 * Members who worked on this file:
 *   Sam Rice
 *   Kelton Malhotra
+*	Justin Kephart
 */
 
 #pragma warning( disable: 4290 )  // disable warnings about the use of throw in function headers

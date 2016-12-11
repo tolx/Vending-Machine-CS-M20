@@ -4,6 +4,7 @@ Team Water
 Members who worked on this:
 Kelton Malhotra
 Sam Rice
+Justin Kephart
 */
 
 #include "VendingMachine.h"
