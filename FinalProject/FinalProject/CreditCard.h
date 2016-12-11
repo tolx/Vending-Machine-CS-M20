@@ -17,7 +17,7 @@ public:
 
 	const int getCCNum() const { return CC_NUM; }
 
-	bool is_valid() const;
+	bool isValid() const;
 
 private:
 	// No credit card should be constructed with default values.
