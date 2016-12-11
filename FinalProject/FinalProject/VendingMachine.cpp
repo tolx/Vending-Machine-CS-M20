@@ -142,9 +142,11 @@ void VendingMachine::BuildStateMachine()
 
 void VendingMachine::BuildProdList() //Get back to this, needs to be more dynamic
 {
-	prod p1("Costco Water", coin_max);
-	prod p2("Crystal Geyser", coin_max);
-	prod p3("Aquafina", coin_max);
+	//Changed prod to Slot, added default stock of 10, should all 
+	//be replaced later
+	Slot p1("Costco Water", coin_max, 10);
+	Slot p2("Crystal Geyser", coin_max, 10);
+	Slot p3("Aquafina", coin_max, 10);
 
 	prodList.insert(make_pair("D4", p1));
 
@@ -284,7 +286,7 @@ void VendingMachine::pushButton(string prodCode)
 	bool isValidPosition = true;
 
 	// Check if it'Idle a valid entry
-	map<string, prod>::iterator it;
+	map<string, Slot>::iterator it;
 	it = prodList.find(ProdCodePushed);
 	if (it != prodList.end()) // ensure position is valid / find if no drinks available. 
 	{

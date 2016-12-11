@@ -14,7 +14,7 @@ class VendingMachine
 {
 private:
 	Graph<string, string> statesMachine;
-	map <string, class prod> prodList;
+	map <string, class Slot> prodList;
 
 	void BuildProdList();
 	void BuildStateMachine();
