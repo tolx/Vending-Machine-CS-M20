@@ -24,5 +24,6 @@ void CreditCard::setCCNum(const int number)
 
 bool CreditCard::is_valid() const
 {
-	return bool(CC_NUM % 2);
+	bool b = static_cast<bool>(CC_NUM % 2);
+	return b;
 }
