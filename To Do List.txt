@@ -18,7 +18,7 @@ VendingMachine.cpp
 - Split Letters from Numbers 
 - Add Timeout function
 - Add Clear Button function (a manual timeout button)
-- Complete the logic of each transition
+- Complete the logic of each transition //KM now checks if credit card is valid or not, not sure what else there is for this
 
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it //Finished?
