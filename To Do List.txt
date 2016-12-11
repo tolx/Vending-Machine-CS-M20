@@ -15,14 +15,10 @@ VendingMachine.cpp
 - Split Letters from Numbers 
 - Add Timeout function
 - Add Clear Button function (a manual timeout button)
-- CheckCard should interact with a bank class
 - Complete the logic of each transition
 
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it
-
-CreditCard.h and .cpp
-- Change so it only has credit card number, if we want *and modulus 2*
 
 If we finish early
 - Add different prices for the items
