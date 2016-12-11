@@ -98,9 +98,9 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 	ifstream inFile(filename);
 	while (!inFile)
 	{
-		cout << filename << " cannot be opened. Please enter another file name, or [C]ancle: ";
+		cout << filename << " cannot be opened. Please enter another file name, or [C]ancel: ";
 		cin >> filename;
-		if (filename == "C" || filename == "c" || filename == "[C]ancle" || filename == "[C]" || filename == "[c]" || filename == "Cancle") //for the smart @$$ out there
+		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel") //for the smart @$$ out there
 			return false;
 		cin.ignore();  // get rid of newline after filename entry
 		inFile.clear();
@@ -170,7 +170,7 @@ void displayMachine(const vector<vector<drinkSlot>> inputMachine) throw(PrecondV
 	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
 	{
 		if (inputMachine.at(j).size() != 9)
-			throw PrecondViolatedExcept("Incorrect colums in the Machine"); //Error, atleast one row doesn't have exactly 9 colums
+			throw PrecondViolatedExcept("Incorrect columns in the Machine"); //Error, atleast one row doesn't have exactly 9 columns
 
 		for (size_t i{ 0 }; i < 9; i++) //numbered colums 1->9
 			cout << (posL = 65 + (char)j) << (posN = 49 + (char)i) << " = " << inputMachine.at(j).at(i).name << ", " << inputMachine.at(j).at(i).amount << endl;
@@ -187,9 +187,9 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 	ifstream inFile(filename);
 	while (!inFile)
 	{
-		cout << filename << " cannot be opened. Please enter another file name, or [C]ancle: ";
+		cout << filename << " cannot be opened. Please enter another file name, or [C]ancel: ";
 		cin >> filename;
-		if (filename == "C" || filename == "c" || filename == "[C]ancle" || filename == "[C]" || filename == "[c]" || filename == "Cancle") //for the smart @$$ out there
+		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel") //for the smart @$$ out there
 			return 1;
 		cin.ignore();  // get rid of newline after filename entry
 		inFile.clear();
@@ -198,16 +198,6 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 	
 	//File opened success
 	VendingMachine vm;
-	/*vm.pushButton("D4");
-	vm.insertCash(1.50);
-	vm.pushButton("D6");
-	vm.swipeCard("VISA");
-	vm.pushButton("D4");
-	vm.swipeCard("AMX");
-	vm.pushButton("D4");
-	vm.insertCash(0.70);
-	vm.cancelOrder();*/
-
 	string action, entry;
 	double cash;
 	while (!inFile.eof())
