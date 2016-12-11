@@ -33,7 +33,7 @@ using namespace std;
 
 bool inputMachine(VendingMachine &inputMachine);
 void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept);
-char simulateMachine(VendingMachine &inputMachine);
+char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj);
 void machineOutput(VendingMachine &inputMachine);
 void programWait();
 void endProgram(const int reason);
@@ -46,12 +46,16 @@ int main()
 		 << lineV << setw(40) << "Welcome to the WWVM VM001 Simulator!" << setw(5) << lineV << endl
 		 << lineH << endl
 		 << endl;
+
+    ofstream outFile("simOutputResults.txt");
 	
-	VendingMachine machine;
+	VendingMachine machine(outFile);
 
 	if (!inputMachine(machine))
 		endProgram(1); //Input file cancel
 
+    /*
+    //remove?
 	try
 	{
 		displayMachine(machine); //This is more for debugging, and probably won't be here on final version.
@@ -61,11 +65,12 @@ int main()
 	{
 		cout << exc.what();
 	}
+    */
 
-	switch (simulateMachine(machine))
+	switch (simulateMachine(machine, outFile))
 	{
 		case 1:
-			endProgram(2); //Input file cancle
+			endProgram(2); //Input file cancel
 		default:
 			endProgram(3); //All other errors
 		case 0:
@@ -79,6 +84,9 @@ int main()
 		 << "Water World Vending Machines" << endl
 		 << "      VM001 Simulator" << endl
 		 << lineH << endl;
+
+    outFile.close();
+
 
 	endProgram(0);
     return 0;
@@ -143,7 +151,7 @@ bool inputMachine(VendingMachine &inputMachine)
 	} // end for (letter rows)
 	inFile.close();
 
-
+    //Remove?
 	////Now, inspect the machine to ensure every slot is filled with something. If not, fill it with Empty 0
 	//input.amount = 0;
 	//input.name = "Empty";
@@ -185,7 +193,7 @@ void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept)
 	} //end for (letter rows)
 } // end displayMachine
 
-char simulateMachine(VendingMachine &inputMachine)
+char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 {
 	string filename("VM001-Command-Input.txt");
 	cout << "This program needs to input commands using the inputfile:" << endl
@@ -203,17 +211,6 @@ char simulateMachine(VendingMachine &inputMachine)
 		inFile.clear();
 		inFile.open(filename);
 	} // end while
-	
-	//File opened success
-	/*inputMachine.pushButton("D4");
-	inputMachine.insertCash(1.50);
-	inputMachine.pushButton("D6");
-	inputMachine.swipeCard("VISA");
-	inputMachine.pushButton("D4");
-	inputMachine.swipeCard("AMX");
-	inputMachine.pushButton("D4");
-	inputMachine.insertCash(0.70);
-	inputMachine.cancelOrder();*/
 
 	string action, entry;
 	double cash;
@@ -225,7 +222,10 @@ char simulateMachine(VendingMachine &inputMachine)
 
 		inFile.ignore();
 
-		cout << "****Simulating the command " << action << " " << entry << "****" << endl;
+		//Remove?
+        //cout << "****Simulating the command " << action << " " << entry << "****" << endl;
+        outFileObj << "****Simulating the command " << action << " " << entry << "****" << endl;
+
 		if (action == "PressButton")
 		{
 			if (entry == "Cancel")

@@ -6,7 +6,7 @@ To Do:
 Output File
 - Create it //RW Use constructor with ostream parameter and it should write whatever VendingMachine outputs
 - Send the current console output (cout) to the file instead //RW (only for VendingMachine)
-- Also, make sure to send the simulated input to the output file, so it makes sense
+- Also, make sure to send the simulated input to the output file, so it makes sense //RW though some changes may be needed
 
 FinalProject.cpp
 - Configure inputMachine() to work with any dimension of machine //Finished?
