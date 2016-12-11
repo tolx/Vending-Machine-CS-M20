@@ -8,6 +8,8 @@ Output File
 - Send the current console output (cout) to the file instead //RW (only for VendingMachine)
 - Also, make sure to send the simulated input to the output file, so it makes sense //RW though some changes may be needed
 
+- Implement Dos interface
+
 FinalProject.cpp
 - Configure inputMachine() to work with any dimension of machine //Finished?
 - Have the output function actually make a console output file //Finished?
@@ -15,9 +17,6 @@ FinalProject.cpp
 
 VendingMachine.cpp
 - Should not call cout. Replace cout with ostream parameter that main sends cout as an argument. //RW
-- Split Letters from Numbers 
-- Add Timeout function
-- Add Clear Button function (a manual timeout button)
 - Complete the logic of each transition //KM now checks if credit card is valid or not, not sure what else there is for this
 
 VM001-Command-Input.txt
@@ -25,3 +24,6 @@ VM001-Command-Input.txt
 
 If we finish early
 - Add different prices for the items
+- Split Letters from Numbers 
+- Add Timeout function
+- Add Clear Button function (a manual timeout button)
