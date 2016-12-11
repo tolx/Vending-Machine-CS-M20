@@ -9,6 +9,7 @@ Riley Wallace
 
 #include "Graph.h"
 #include "Timer.h"
+#include "CreditCard.h"
 #include <fstream>
 #include <iostream>
 
@@ -21,8 +22,8 @@ class VendingMachine
 private:
 	Graph<string, string> statesMachine;
 	map <string, class Slot> prodList;
-    ostream& displayObj;
-    Timer systemTimer;
+	ostream& displayObj;
+	Timer systemTimer;
 
 	void BuildProdList();
 	void BuildStateMachine();
@@ -33,12 +34,13 @@ private:
 	double coin_max;
 	string ProdCodePushed;
 	bool  paidByCreditCard;
+	int   ccNum; // Credit card Number 
 	double total_coins;
 	string currentState;
 
 public:
-    VendingMachine();
-    VendingMachine(ostream& obj);
+	VendingMachine();
+	VendingMachine(ostream& obj);
 
 	void pushButton(string prodCode);
 	void insertCash(double amt);
