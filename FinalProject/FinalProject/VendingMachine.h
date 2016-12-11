@@ -6,7 +6,6 @@ Kelton Malhotra
 Justin Kephart
 */
 
-#include "Slot.h"
 #include "Graph.h"
 
 static const double COIN_MAX = 1.50;
@@ -37,4 +36,24 @@ public:
 	void swipeCard(string cardType);
 	void cancelOrder();
 	void coinReturn();
+};
+
+class Slot
+{
+private:
+	string name;
+	double  price; // in cents
+	int stock;
+public:
+	Slot(string Name = "", double Price = 0, int Stock = 0)
+		: name(Name), price(Price), stock(Stock) {}
+
+	string	getName() { return name; }
+	double	getPrice() { return price; }
+	int		getStock() { return stock; }
+
+	void	setName(string Name) { name = Name; }
+	void	setPrice(double Price) { price = Price; }
+	void	setStock(int Stock) { stock = Stock; }
+
 };
