@@ -405,18 +405,40 @@ void VendingMachine::insertCash(double amt)
 
 void VendingMachine::swipeCard(string cardNum)
 {
-	ccNum = stoi(cardNum);
-	if ((total_coins < coin_max) && !paidByCreditCard)
+	if (!cardNum.empty())
 	{
-		if (GoToNextState("Card Swiped"))
+		bool isDeclined = false;
+		for (size_t i = 0; i < cardNum.size(); i++)
+			if (!isdigit(cardNum[i]))
+			{
+				isDeclined = true;
+			}
+		if (!isDeclined)
 		{
-			// goes from Idle to CheckCard and then to Update or Idle
-		} // end if (can go to next state)
+			char* endptr;
+			ccNum = strtol(cardNum.c_str(), &endptr, 10);
+			if ((total_coins < coin_max) && !paidByCreditCard)
+			{
+				if (GoToNextState("Card Swiped"))
+				{
+					// goes from Idle to CheckCard and then to Update or Idle
+				} // end if (can go to next state)
+			}
+			else
+			{
+				//displayObj << "Card already used, no more credit has been added." << endl; //This should not do anything, just like a real machine
+			} // end if (we have enough cash alreay (which could be because we already swipped a card))
+		}
+		else
+		{
+			// Card declined - do nothing
+		}
 	}
 	else
 	{
-		//displayObj << "Card already used, no more credit has been added." << endl; //This should not do anything, just like a real machine
-	} // end if (we have enough cash alreay (which could be because we already swipped a card))
+		// Decline card - do nothing
+	}
+
 } // end swipeCard
 
 void VendingMachine::cancelOrder()
