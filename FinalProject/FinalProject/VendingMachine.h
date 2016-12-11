@@ -14,7 +14,7 @@ class VendingMachine
 {
 private:
 	Graph<string, string> statesMachine;
-	map <string, class prod> prodList;
+	map <string, class Slot> prodList;
 
 	void BuildProdList();
 	void BuildStateMachine();
@@ -36,6 +36,8 @@ public:
 	void swipeCard(string cardType);
 	void cancelOrder();
 	void coinReturn();
+	bool addSlot(string location, string Name = "", double Price = 0, int Stock = 0);
+	bool getSlot(string location, string &Name, double &Price, int &Stock);
 };
 
 class Slot

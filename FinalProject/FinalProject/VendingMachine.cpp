@@ -17,7 +17,6 @@ VendingMachine::VendingMachine()
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	BuildStateMachine();
-	BuildProdList();
 	GoToIdleState();
 } // end VendingMachine default constructor
 
@@ -95,63 +94,8 @@ void VendingMachine::BuildStateMachine()
 
 	Edge<string, string> DC_U("DispenseChange", "Update", "Has Credit");
 	statesMachine.add(DC_U);
-	/*
-
-	sm[i].action = PUSH_BUTTON;
-	sm[i].curState = IDLE;
-	sm[i].cb = &VendingMachine::DisplayProdPrice;
-	++i;
-
-	sm[i].action = INSERT_CASH;
-	sm[i].curState = IDLE;
-	sm[i].cb = &VendingMachine::CashInserted;
-	i++;
-	sm[i].action = INSERT_CASH;
-	sm[i].curState = CASH_INSERTED;
-	sm[i].cb = &VendingMachine::CashInserted;
-	i++;
-	sm[i].action = PUSH_BUTTON;
-	sm[i].curState = CASH_INSERTED;
-	sm[i].cb = &VendingMachine::DispenseProduct;
-	i++;
-	sm[i].action = PUSH_BUTTON;
-	sm[i].curState = CARD_ACCEPTED;
-	sm[i].cb = &VendingMachine::DispenseProduct;
-	i++;
-
-	sm[i].action = SWIPE_CREDIT_CARD;
-	sm[i].curState = IDLE;
-	sm[i].cb = &VendingMachine::CardSwiped;
-	i++;
-
-	sm[i].action = SWIPE_CREDIT_CARD;
-	sm[i].curState = CASH_INSERTED;
-	sm[i].cb = &VendingMachine::CardSwiped;
-	i++;
-
-	sm[i].action = CANCEL_ORDER;
-	sm[i].curState = CASH_INSERTED;
-	sm[i].cb = &VendingMachine::OrderCancelled;
-	i++;
-	sm[i].action = CANCEL_ORDER;
-	sm[i].curState = CARD_ACCEPTED;
-	sm[i].cb = &VendingMachine::OrderCancelled;
-
-	*/
+	
 } // end build state machine
-
-void VendingMachine::BuildProdList() //Get back to this, needs to be more dynamic
-{
-	prod p1("Costco Water", coin_max);
-	prod p2("Crystal Geyser", coin_max);
-	prod p3("Aquafina", coin_max);
-
-	prodList.insert(make_pair("D4", p1));
-
-	prodList.insert(make_pair("D5", p2));
-
-	prodList.insert(make_pair("D6", p3));
-} // end BuildProdList
 
 void VendingMachine::GoToIdleState()
 {
@@ -284,7 +228,7 @@ void VendingMachine::pushButton(string prodCode)
 	bool isValidPosition = true;
 
 	// Check if it'Idle a valid entry
-	map<string, prod>::iterator it;
+	map<string, Slot>::iterator it;
 	it = prodList.find(ProdCodePushed);
 	if (it != prodList.end()) // ensure position is valid / find if no drinks available. 
 	{
@@ -392,5 +336,26 @@ void VendingMachine::coinReturn()
 		//cout << "Coin Return is not available!" << endl; //It should not do anything if it can't be done, just like a real machine
 	} // end if (it can go to next state)
 } // end voinReturn
+
+bool VendingMachine::addSlot(string location, string Name, double Price, int Stock)
+{
+	prodList.insert(make_pair(location, Slot(Name, Price, Stock)));
+
+	return true;
+}
+
+bool VendingMachine::getSlot(string location, string & Name, double & Price, int & Stock) 
+{
+	if (prodList.find(location) == prodList.end())
+		return false;
+	
+	else
+	{
+		Name = prodList[location].getName();
+		Price = prodList[location].getPrice();
+		Stock = prodList[location].getStock();
+	}
+	return true;
+}
 
 // END of Client functions

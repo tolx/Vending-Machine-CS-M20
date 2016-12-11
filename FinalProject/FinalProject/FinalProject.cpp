@@ -29,16 +29,11 @@
 #include <vector>
 using namespace std;
 
-struct drinkSlot 
-{
-	string name;
-	int amount;
-};
 
-bool inputMachine(vector<vector<drinkSlot>> &inputMachine);
-void displayMachine(const vector<vector<drinkSlot>> inputMachine) throw(PrecondViolatedExcept);
-char simulateMachine(vector<vector<drinkSlot>> &inputMachine);
-void machineOutput(const vector<vector<drinkSlot>> inputMachine);
+bool inputMachine(VendingMachine &inputMachine);
+void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept);
+char simulateMachine(VendingMachine &inputMachine);
+void machineOutput(VendingMachine &inputMachine);
 void programWait();
 void endProgram(const int reason);
 
@@ -51,7 +46,8 @@ int main()
 		 << lineH << endl
 		 << endl;
 	
-	vector<vector<drinkSlot>> machine;
+	VendingMachine machine;
+
 	if (!inputMachine(machine))
 		endProgram(1); //Input file cancel
 
@@ -87,7 +83,7 @@ int main()
     return 0;
 } // end main
 
-bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
+bool inputMachine(VendingMachine &inputMachine)
 {
 	string filename("VM001-Drinks-Input.csv"), placeHolder("");
 
@@ -108,76 +104,87 @@ bool inputMachine(vector<vector<drinkSlot>> &inputMachine)
 	} // end while
 
 	char *endPtr; //for strtol
-	//vector<vector<drinkSlot>> machine; //passed as an argument now
-	inputMachine.clear(); //This function will empty the machine and fill exactly per the input file, any previous drinks will no longer be present
-	inputMachine.reserve(4); //reserving the space before push_back apparently is more effecient, according to http://lemire.me/blog/2012/06/20/do-not-waste-time-with-stl-vectors/
-	vector<drinkSlot> row;
-	row.reserve(9); //reserve does NOT change the .size, and push_back still starts at 0
-	drinkSlot input;
-	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
+	
+	string name;
+	double price = COIN_MAX;
+	int stock;
+
+	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	for (char c : alphabet)
 	{
+		if (inFile.peek() == EOF)
+			break;
+
 		getline(inFile, placeHolder); //for each letter row
 									  //cout << placeHolder << endl;
+		
 		for (size_t i{ 1 }; i <= 9 && !placeHolder.empty() && placeHolder.find_first_of(',') != 0; i++) //numbered colums 1->9
 		{
-			input.name = placeHolder.substr(0, placeHolder.find_first_of(',')); //get the name
+			name = placeHolder.substr(0, placeHolder.find_first_of(',')); //get the name
 			placeHolder.erase(0, placeHolder.find_first_of(',') + 1); //remove the name from the file
+			
 			if (!placeHolder.empty() && placeHolder.find_first_of(',') != 0) //there is still content
 			{
-				input.amount = static_cast<int>(strtol(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr, 10)); //get the quantity and convert to int
+				stock = static_cast<int>(strtol(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr, 10)); //get the quantity and convert to int
 				placeHolder.erase(0, placeHolder.find_first_of(',') + 1); //remove the quantity from the file
 			}
+
 			else
 			{
-				input.amount = 0;
+				stock = 0;
 			} // end if
-			row.push_back(input);
+
+			string location(1,c);
+			location += to_string(i);
+			inputMachine.addSlot(location, name, price, stock);
 		} // end for (numbered colums)
-		inputMachine.push_back(row);
-		row.clear();
 	} // end for (letter rows)
 	inFile.close();
 
 
-	//Now, inspect the machine to ensure every slot is filled with something. If not, fill it with Empty 0
-	input.amount = 0;
-	input.name = "Empty";
-	//row.clear(); redundant, the last thing row did is clear()
+	////Now, inspect the machine to ensure every slot is filled with something. If not, fill it with Empty 0
+	//input.amount = 0;
+	//input.name = "Empty";
+	////row.clear(); redundant, the last thing row did is clear()
 
-	if (inputMachine.size() != 4)
-	{
-		for (size_t i{ 0 }; i < 9; i++)
-			row.push_back(input); //generate a row of 9 empty inputs
-		inputMachine.resize(4, row); //resize will remove extra data, or fill missing data with empty row
-	}
+	//if (inputMachine.size() != 4)
+	//{
+	//	for (size_t i{ 0 }; i < 9; i++)
+	//		row.push_back(input); //generate a row of 9 empty inputs
+	//	inputMachine.resize(4, row); //resize will remove extra data, or fill missing data with empty row
+	//}
 
-	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
-	{
-		if (inputMachine.at(j).size() != 9)
-			inputMachine.at(j).resize(9, input); //resize will remove extra data, or fill missing data with empty input
-	}
+	//for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
+	//{
+	//	if (inputMachine.at(j).size() != 9)
+	//		inputMachine.at(j).resize(9, input); //resize will remove extra data, or fill missing data with empty input
+	//}
 
 	return true;
 }
 
 //Pre-Condition: There are exactly 4 rows, and exactly 9 colums for every row
-void displayMachine(const vector<vector<drinkSlot>> inputMachine) throw(PrecondViolatedExcept)
+void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept)
 {
-	if (inputMachine.size() != 4)
-		throw PrecondViolatedExcept("Incorrect rows in Machine"); //Error, there are not exactly 4 rows (A->D)
+	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	string name;
+	double price = COIN_MAX;
+	int stock;
 
-	char posL{ 'A' }, posN{ '1' }; //A = 65, 1 = 49
-	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
+	for (char c : alphabet)
 	{
-		if (inputMachine.at(j).size() != 9)
-			throw PrecondViolatedExcept("Incorrect colums in the Machine"); //Error, atleast one row doesn't have exactly 9 colums
-
-		for (size_t i{ 0 }; i < 9; i++) //numbered colums 1->9
-			cout << (posL = 65 + (char)j) << (posN = 49 + (char)i) << " = " << inputMachine.at(j).at(i).name << ", " << inputMachine.at(j).at(i).amount << endl;
+		for (size_t i{ 1 }; i <= 9; i++) //numbered colums 1->9
+		{
+			string location(1, c);
+			location += to_string(i);
+			if (inputMachine.getSlot(location, name, price, stock))
+				cout << c << i << " = " << name << ", " << stock << endl;
+		}
 	} //end for (letter rows)
 } // end displayMachine
 
-char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
+char simulateMachine(VendingMachine &inputMachine)
 {
 	string filename("VM001-Command-Input.txt");
 	cout << "This program needs to input commands using the inputfile:" << endl
@@ -187,9 +194,9 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 	ifstream inFile(filename);
 	while (!inFile)
 	{
-		cout << filename << " cannot be opened. Please enter another file name, or [C]ancle: ";
+		cout << filename << " cannot be opened. Please enter another file name, or [C]ancel: ";
 		cin >> filename;
-		if (filename == "C" || filename == "c" || filename == "[C]ancle" || filename == "[C]" || filename == "[c]" || filename == "Cancle") //for the smart @$$ out there
+		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel") //for the smart @$$ out there
 			return 1;
 		cin.ignore();  // get rid of newline after filename entry
 		inFile.clear();
@@ -197,16 +204,15 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 	} // end while
 	
 	//File opened success
-	VendingMachine vm;
-	/*vm.pushButton("D4");
-	vm.insertCash(1.50);
-	vm.pushButton("D6");
-	vm.swipeCard("VISA");
-	vm.pushButton("D4");
-	vm.swipeCard("AMX");
-	vm.pushButton("D4");
-	vm.insertCash(0.70);
-	vm.cancelOrder();*/
+	/*inputMachine.pushButton("D4");
+	inputMachine.insertCash(1.50);
+	inputMachine.pushButton("D6");
+	inputMachine.swipeCard("VISA");
+	inputMachine.pushButton("D4");
+	inputMachine.swipeCard("AMX");
+	inputMachine.pushButton("D4");
+	inputMachine.insertCash(0.70);
+	inputMachine.cancelOrder();*/
 
 	string action, entry;
 	double cash;
@@ -223,25 +229,25 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 		{
 			if (entry == "Cancel")
 			{
-				vm.cancelOrder();
+				inputMachine.cancelOrder();
 			}
 			else if (entry == "CoinReturn")
 			{
-				vm.coinReturn();
+				inputMachine.coinReturn();
 			}
 			else
 			{
-				vm.pushButton(entry);
+				inputMachine.pushButton(entry);
 			}
 		}
 		else if (action == "Swipe")
 		{
-			vm.swipeCard(entry);
+			inputMachine.swipeCard(entry);
 		}
 		else if (action == "InsertCash")
 		{
 			cash = stod(entry);
-			vm.insertCash(cash);
+			inputMachine.insertCash(cash);
 		}
 
 	}
@@ -249,7 +255,7 @@ char simulateMachine(vector<vector<drinkSlot>> &inputMachine)
 	return 0; //or any other number for an error at anypoint!
 } // end simulateMachine
 
-void machineOutput(const vector<vector<drinkSlot>> inputMachine)
+void machineOutput(VendingMachine &inputMachine)
 {
 	const string filename("VM001-Machine-Output.csv");
 	ifstream checkFile(filename);
@@ -266,25 +272,34 @@ void machineOutput(const vector<vector<drinkSlot>> inputMachine)
 	checkFile.close();
 	ofstream outFile(filename, ios::trunc);
 
-	//Output current amount of drinks
-	if (inputMachine.size() != 4)
-		return; //Error, there are not exactly 4 rows (A->D)
+	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	string name;
+	double price = COIN_MAX;
+	int stock;
 
-	for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
+	for (char c : alphabet)
 	{
-		if (inputMachine.at(j).size() != 9)
-			return; //Error, atleast one row doesn't have exactly 9 colums
-
-		for (size_t i{ 0 }; i < 8; i++) //numbered colums 1->9
-			outFile << inputMachine.at(j).at(i).name << "," << inputMachine.at(j).at(i).amount << ",";
-		outFile << inputMachine.at(j).at(8).name << "," << inputMachine.at(j).at(8).amount << endl; //the last item is different
-	} //end for (letter rows)
-
+		for (size_t i{ 1 }; i <= 9; i++) //numbered colums 1->9
+		{
+			string location(1, c);
+			location += to_string(i);
+			if (inputMachine.getSlot(location, name, price, stock))
+			{
+				location.clear();
+				location += c + to_string(i + 1);
+				if (inputMachine.getSlot(location, name, price, stock))
+					outFile << name << "," << stock << ",";
+				else
+					outFile << name << "," << stock << endl; //the last item is different
+			}
+		} //end for (letter rows)
+	}
+		
 	outFile.close();
 	cout << "And the vending machine quantities in the file:" << endl
 		 << filename << endl;
 } // end machineOutput
-
+	
 void programWait()
 {
 	cout << "Press Enter to continue...";
