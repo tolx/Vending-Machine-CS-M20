@@ -1,5 +1,13 @@
 To Do:
 
+-BEFORE SUBMIT-
+*Make sure the correct #includes are in the correct files
+
+Output File
+- Create it
+- Send the current console output (cout) to the file instead
+- Also, make sure to send the simulated input to the output file, so it makes sense
+
 FinalProject.cpp
 - Configure inputMachine() to work with any dimension of machine
 - Have the output function actually make an console output file
@@ -10,18 +18,10 @@ VendingMachine.cpp
 - Split Letters from Numbers 
 - Add Timeout function
 - Add Clear Button function (a manual timeout button)
-- CheckCard should interact with a bank class
 - Complete the logic of each transition
-
-Bank.h
-Bank.cpp
-- Make these
 
 VM001-Command-Input.txt
 - Make it work with the program or make the program work with it
-
-CreditCard.h and .cpp
-- Change so it only has credit card number, if we want
 
 If we finish early
 - Add different prices for the items

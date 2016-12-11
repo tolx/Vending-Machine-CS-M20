@@ -13,15 +13,12 @@
 class CreditCard
 {
 public:
-	CreditCard(const std::string number, const std::string name,
-			   const std::string exp,	 const std::string code);
+	CreditCard(const int number);
 
-	const std::string getCCNum	 () const { return CC_NUM; }
-	const std::string getName	 () const { return NAME; }
-	const std::string getExpDate () const { return (EXP_MONTH + "/" + EXP_YEAR); }
-	const std::string getCode	 () const { return SEC_CODE; }
+	const int getCCNum() const { return CC_NUM; }
 
-//	const CreditCard swipe() const;
+	bool isValid() const;
+
 private:
 	// No credit card should be constructed with default values.
 	CreditCard() = delete;
@@ -31,19 +28,11 @@ private:
 	CreditCard operator =(const CreditCard&) = delete;
 
 	// Set functions inaccessible to the client
-	void setCCNum (const std::string number);
-	void setName  (const std::string name);
-	void setExp   (const std::string exp);
-	void setCode  (const std::string code);
-
+	void setCCNum(const int number);
 
 	// Private Data Members are to be set by the set function
 	// in the constructor, and never changed again
-	mutable std::string CC_NUM;
-	mutable std::string NAME;
-	mutable int			EXP_MONTH;
-	mutable int			EXP_YEAR;
-	mutable std::string	SEC_CODE;
+	mutable int CC_NUM;
 };
 
 #endif
