@@ -105,7 +105,7 @@ bool inputMachine(VendingMachine &inputMachine)
 	{
 		cout << filename << " cannot be opened. Please enter another file name, or [C]ancel: ";
 		cin >> filename;
-		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel") //for the smart @$$ out there
+		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel" || filename == "cancel") //for the smart @$$ out there
 			return false;
 		cin.ignore();  // get rid of newline after filename entry
 		inFile.clear();
@@ -205,7 +205,7 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 	{
 		cout << filename << " cannot be opened. Please enter another file name, or [C]ancel: ";
 		cin >> filename;
-		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel") //for the smart @$$ out there
+		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel" || filename == "cancel") //for the smart @$$ out there
 			return 1;
 		cin.ignore();  // get rid of newline after filename entry
 		inFile.clear();
