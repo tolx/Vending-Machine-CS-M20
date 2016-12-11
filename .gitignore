@@ -1,7 +1,7 @@
 # Debugging info
 Debug/
 x64/
-#FinalProject/.vs/FinalProject/v14/.suo
+FinalProject/.vs/FinalProject/v14/.suo
 # Open Files info
 *.opendb
 .~lock*
