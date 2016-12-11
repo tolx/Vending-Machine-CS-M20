@@ -52,6 +52,9 @@
     <ClInclude Include="CreditCard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="VM001-Command-Input.txt">

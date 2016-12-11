@@ -160,6 +160,7 @@
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="PrecondViolatedExcept.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="VendingMachine.h" />
   </ItemGroup>
   <ItemGroup>

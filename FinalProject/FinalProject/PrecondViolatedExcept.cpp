@@ -2,7 +2,7 @@
 CS M20 - Final Project
 Team Water
 Members who worked on this:
-The textbook :P
+The textbook
 */
 /** Listing 7-6.
     @file PrecondViolatedExcept.cpp */
