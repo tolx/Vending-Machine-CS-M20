@@ -4,9 +4,14 @@ Team Water
 Members who worked on this:
 Kelton Malhotra
 Justin Kephart
+Riley Wallace
 */
 
 #include "Graph.h"
+#include <fstream>
+#include <iostream>
+
+using namespace std;
 
 static const double COIN_MAX = 1.50;
 
@@ -15,6 +20,7 @@ class VendingMachine
 private:
 	Graph<string, string> statesMachine;
 	map <string, class Slot> prodList;
+    ostream& displayObj;
 
 	void BuildProdList();
 	void BuildStateMachine();
@@ -29,7 +35,8 @@ private:
 	string currentState;
 
 public:
-	VendingMachine();
+    VendingMachine();
+    VendingMachine(ostream& obj);
 
 	void pushButton(string prodCode);
 	void insertCash(double amt);

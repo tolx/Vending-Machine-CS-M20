@@ -5,21 +5,29 @@ Members who worked on this:
 Kelton Malhotra
 Sam Rice
 Justin Kephart
+Riley Wallace
 */
 
 #include "VendingMachine.h"
 
-using namespace std;
-#include <iostream>
 
-VendingMachine::VendingMachine()
+VendingMachine::VendingMachine() : displayObj(cout)
+{
+    coin_max = COIN_MAX;
+    currentState = "Idle";
+    // Build State Machine table - Connect states (vertices) with Action(Edges)	
+    BuildStateMachine();
+    GoToIdleState();
+} // end VendingMachine default constructor
+
+VendingMachine::VendingMachine(ostream& obj) : displayObj(obj)
 {
 	coin_max = COIN_MAX;
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	BuildStateMachine();
 	GoToIdleState();
-} // end VendingMachine default constructor
+} // end VendingMachine constructor
 
 void VendingMachine::BuildStateMachine()
 {
@@ -103,7 +111,7 @@ void VendingMachine::GoToIdleState()
 	currentState = "Idle";
 	paidByCreditCard = false;
 	total_coins = 0;
-	cout << "In idle state " << endl;
+	displayObj << "In idle state " << endl;
 } // end GoToIdleState
 
 bool VendingMachine::GoToNextState(string transition)
@@ -115,7 +123,7 @@ bool VendingMachine::GoToNextState(string transition)
 
 			if (currentState == "ShowPrice")
 			{
-				cout << "Price is $" << coin_max << " for " << ProdCodePushed << endl;
+				displayObj << "Price is $" << coin_max << " for " << ProdCodePushed << endl;
 				if (total_coins > 0)
 				{
 					GoToNextState("Has Cash");
@@ -127,13 +135,13 @@ bool VendingMachine::GoToNextState(string transition)
 			}
 			else if (currentState == "Update")
 			{
-				cout << "We have " << total_coins << endl;
+				displayObj << "We have " << total_coins << endl;
 			}
 			else if (currentState == "CancelCard")
 			{
 				paidByCreditCard = false;
 				total_coins -= coin_max;
-				cout << "Card Transaction Canceled" << endl;
+				displayObj << "Card Transaction Canceled" << endl;
 				if (total_coins > 0)
 				{
 					GoToNextState("Has Cash");
@@ -145,7 +153,7 @@ bool VendingMachine::GoToNextState(string transition)
 			}
 			else if (currentState == "DispenseDrink")
 			{
-				cout << "Dispensing Drink.." << endl;
+				displayObj << "Dispensing Drink.." << endl;
 				total_coins -= coin_max;
 				paidByCreditCard = false;
 				if (total_coins == 0)
@@ -163,12 +171,12 @@ bool VendingMachine::GoToNextState(string transition)
 
 				if (is_card_approved)
 				{
-					cout << "Checking Card... Approved" << endl;
+					displayObj << "Checking Card... Approved" << endl;
 					paidByCreditCard = true;
 				}
 				else
 				{
-					cout << "Checking Card... Declined" << endl;
+					displayObj << "Checking Card... Declined" << endl;
 				}
 				
 				total_coins += coin_max;
@@ -185,24 +193,24 @@ bool VendingMachine::GoToNextState(string transition)
 			{
 					if (!paidByCreditCard)
 					{
-						cout << "Dispensing cash " << total_coins << endl;
+						displayObj << "Dispensing cash " << total_coins << endl;
 						total_coins = 0;
 						GoToNextState("Change Dispensed");
 					}
 					else
 					{
-						cout << "Dispensing cash " << (total_coins - 1.5) << endl;
+						displayObj << "Dispensing cash " << (total_coins - 1.5) << endl;
 						total_coins = coin_max;
 						GoToNextState("Has Credit");
 					}
 			}
 			else if (currentState == "Idle")
 			{
-				cout << "In idle state" << endl;
+				displayObj << "In idle state" << endl;
 			}
 			else if (currentState == "InvalidPosition")
 			{
-				cout << "Invalid Input!" << endl;
+				displayObj << "Invalid Input!" << endl;
 				if (total_coins > 0)
 				{
 					GoToNextState("Has Cash/Credit");
@@ -287,12 +295,12 @@ void VendingMachine::insertCash(double amt)
 		}
 		else
 		{
-			cout << "Too much cash in the machine. $" << amt << " has been returned." << endl; //format this later
+			displayObj << "Too much cash in the machine. $" << amt << " has been returned." << endl; //format this later
 		} // end if (not enough cash yet)
 	}
 	else
 	{
-		cout << "Cannot insert this type of cash! $" << amt << " has been returned." << endl;
+		displayObj << "Cannot insert this type of cash! $" << amt << " has been returned." << endl;
 	} // end if (valid amount of cash)
 } // end insertCash
 
@@ -307,7 +315,7 @@ void VendingMachine::swipeCard(string cardType)
 	}
 	else
 	{
-		//cout << "Card already used, no more credit has been added." << endl; //This should not do anything, just like a real machine
+		//displayObj << "Card already used, no more credit has been added." << endl; //This should not do anything, just like a real machine
 	} // end if (we have enough cash alreay (which could be because we already swipped a card))
 } // end swipeCard
 
@@ -322,7 +330,7 @@ void VendingMachine::cancelOrder()
 	}
 	else
 	{
-		cout << "No card has been used, nothing to cancel." << endl;
+		displayObj << "No card has been used, nothing to cancel." << endl;
 	} // end if (already used a card)
 } // end cancleOrder
 
@@ -334,7 +342,7 @@ void VendingMachine::coinReturn()
 	}
 	else
 	{
-		//cout << "Coin Return is not available!" << endl; //It should not do anything if it can't be done, just like a real machine
+		//displayObj << "Coin Return is not available!" << endl; //It should not do anything if it can't be done, just like a real machine
 	} // end if (it can go to next state)
 } // end voinReturn
 

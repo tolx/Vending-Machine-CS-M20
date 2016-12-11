@@ -46,8 +46,11 @@ int main()
 		 << lineV << setw(40) << "Welcome to the WWVM VM001 Simulator!" << setw(5) << lineV << endl
 		 << lineH << endl
 		 << endl;
+
+    //remove, simply for testing
+    ofstream outFileTest("outTest.txt");
 	
-	VendingMachine machine;
+	VendingMachine machine(outFileTest);
 
 	if (!inputMachine(machine))
 		endProgram(1); //Input file cancel
