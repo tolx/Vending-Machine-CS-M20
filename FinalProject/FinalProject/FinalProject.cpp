@@ -286,12 +286,13 @@ void machineOutput(VendingMachine &inputMachine)
 			location += to_string(i);
 			if (inputMachine.getSlot(location, name, price, stock))
 			{
+				outFile << name << "," << stock;
 				location.clear();
 				location += c + to_string(i + 1);
 				if (inputMachine.getSlot(location, name, price, stock))
-					outFile << name << "," << stock << ",";
+					outFile << ",";
 				else
-					outFile << name << "," << stock << endl; //the last item is different
+					outFile << endl; //the last item is different
 			}
 		} //end for (letter rows)
 	}
