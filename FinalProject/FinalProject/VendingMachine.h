@@ -69,4 +69,6 @@ public:
 	void	setPrice(double Price) { price = Price; }
 	void	setStock(int Stock) { stock = Stock; }
 
+	bool notEmpty() { return stock > 0; }
+	string dispense() { stock--; return name + " dispensed"; }
 };
