@@ -27,9 +27,45 @@ VendingMachine::VendingMachine(ostream& obj) : displayObj(obj)
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	BuildStateMachine();
+	BuildActionTable(); // Input new current state and callback function to complete action
 	GoToIdleState();
 } // end VendingMachine constructor
 
+void VendingMachine::BuildActionTable()
+{
+	int i = 0;
+
+	Atable[i].curState = "ShowPrice";
+	Atable[i].cb = &VendingMachine::DisplayPrice;
+	i++;
+
+	Atable[i].curState = "Update";
+	Atable[i].cb = &VendingMachine::DisplayTotalCoins;
+
+	i++;
+	Atable[i].curState = "DispenseDrink";
+	Atable[i].cb = &VendingMachine::DispenseDrink;
+
+	i++;
+	Atable[i].curState = "CheckCard";
+	Atable[i].cb = &VendingMachine::ProcessCreditCard;
+
+	i++;
+	Atable[i].curState = "DispenseChange";
+	Atable[i].cb = &VendingMachine::RefundChange;
+
+	i++;
+
+	Atable[i].curState = "Idle";
+	Atable[i].cb = &VendingMachine::ProcessIdleState;
+
+	i++;
+	Atable[i].curState = "InvalidPosition";
+	Atable[i].cb = &VendingMachine::ProcessInvalidState;
+
+
+
+}
 void VendingMachine::BuildStateMachine()
 {
 	int i = 0;
@@ -114,7 +150,116 @@ void VendingMachine::GoToIdleState()
 	total_coins = 0;
 	displayObj << "In idle state " << endl;
 } // end GoToIdleState
+// Following methods called by GoToNextState
 
+void VendingMachine::DisplayPrice()
+{
+	displayObj << "Price is $" << coin_max << " for " << ProdCodePushed << endl;
+	if (total_coins > 0)
+	{
+		GoToNextState("Has Cash");
+	}
+	else
+	{
+		GoToNextState("No Cash");
+	}
+}
+
+void VendingMachine::DisplayTotalCoins()
+{
+	displayObj << "We have " << total_coins << endl;
+}
+
+void VendingMachine::CancelCreditTransaction()
+{
+	paidByCreditCard = false;
+	total_coins -= coin_max;
+	displayObj << "Card Transaction Canceled" << endl;
+	if (total_coins > 0)
+	{
+		GoToNextState("Has Cash");
+	}
+	else
+	{
+		GoToNextState("No Cash");
+	}
+}
+
+void VendingMachine::DispenseDrink()
+{
+
+	displayObj << "Dispensing Drink.." << endl;
+	total_coins -= coin_max;
+	paidByCreditCard = false;
+	if (total_coins == 0)
+	{
+		GoToNextState("No Leftover Cash");
+	}
+	else
+	{
+		GoToNextState("Cash Leftover");
+	}
+}
+void VendingMachine::ProcessCreditCard()
+{
+	CreditCard c(ccNum);
+
+	bool is_card_approved = c.isValid();
+
+	if (is_card_approved)
+	{
+		displayObj << "Checking Card... Approved" << endl;
+		paidByCreditCard = true;
+	}
+	else
+	{
+		displayObj << "Checking Card... Declined" << endl;
+	}
+
+	total_coins += coin_max;
+	if (is_card_approved || (!is_card_approved && total_coins > 0))
+	{
+		GoToNextState("Card Approved Or Declined and Has Cash");
+	}
+	else if (!is_card_approved && total_coins == 0)
+	{
+		GoToNextState("Card Declined and No Cash");
+	}
+}
+
+void VendingMachine::RefundChange()
+{
+	if (!paidByCreditCard)
+	{
+		displayObj << "Dispensing cash " << total_coins << endl;
+		total_coins = 0;
+		GoToNextState("Change Dispensed");
+	}
+	else
+	{
+		displayObj << "Dispensing cash " << (total_coins - 1.5) << endl;
+		total_coins = coin_max;
+		GoToNextState("Has Credit");
+	}
+}
+
+void VendingMachine::ProcessInvalidState()
+{
+	displayObj << "Invalid Input!" << endl;
+	if (total_coins > 0)
+	{
+		GoToNextState("Has Cash/Credit");
+	}
+	else
+	{
+		GoToNextState("No Cash/Credit");
+	}
+}
+
+void VendingMachine::ProcessIdleState()
+{
+	displayObj << "In idle state" << endl;
+}
 bool VendingMachine::GoToNextState(string transition)
 {
 	try
@@ -122,107 +267,58 @@ bool VendingMachine::GoToNextState(string transition)
 		string newState = statesMachine.findEnd(currentState, transition);
 		currentState = newState;
 
+
+		// Take Action based on new state
+
+		for (int i = 0; i < TOTAL_STATE; i++)
+		{
+			if (Atable[i].curState == currentState)
+
+				(this->*Atable[i].cb)();
+		}
+		/*
 		if (currentState == "ShowPrice")
 		{
-			displayObj << "Price is $" << coin_max << " for " << ProdCodePushed << endl;
-			if (total_coins > 0)
-			{
-				GoToNextState("Has Cash");
-			}
-			else
-			{
-				GoToNextState("No Cash");
-			}
+		DisplayPrice();
+
 		}
 		else if (currentState == "Update")
 		{
-			displayObj << "We have " << total_coins << endl;
+		DisplayTotalCoins();
 		}
 		else if (currentState == "CancelCard")
 		{
-			paidByCreditCard = false;
-			total_coins -= coin_max;
-			displayObj << "Card Transaction Canceled" << endl;
-			if (total_coins > 0)
-			{
-				GoToNextState("Has Cash");
-			}
-			else
-			{
-				GoToNextState("No Cash");
-			}
+		CancelCreditTransaction();
+
 		}
 		else if (currentState == "DispenseDrink")
 		{
-			displayObj << "Dispensing Drink.." << endl;
-			total_coins -= coin_max;
-			paidByCreditCard = false;
-			if (total_coins == 0)
-			{
-				GoToNextState("No Leftover Cash");
-			}
-			else
-			{
-				GoToNextState("Cash Leftover");
-			}
+		DispenseDrink();
+
+
 		}
 		else if (currentState == "CheckCard")
 		{
-			CreditCard c(ccNum);
-			
-			bool is_card_approved = c.isValid(); //FIX THIS!!?!?!?!? -- Set to the bank class function call
 
-			if (is_card_approved)
-			{
-				displayObj << "Checking Card... Approved" << endl;
-				paidByCreditCard = true;
-			}
-			else
-			{
-				displayObj << "Checking Card... Declined" << endl;
-			}
+		ProcessCreditCard();
 
-			total_coins += coin_max;
-			if (is_card_approved || (!is_card_approved && total_coins > 0))
-			{
-				GoToNextState("Card Approved Or Declined and Has Cash");
-			}
-			else if (!is_card_approved && total_coins == 0)
-			{
-				GoToNextState("Card Declined and No Cash");
-			}
 		}
 		else if (currentState == "DispenseChange")
 		{
-			if (!paidByCreditCard)
-			{
-				displayObj << "Dispensing cash " << total_coins << endl;
-				total_coins = 0;
-				GoToNextState("Change Dispensed");
-			}
-			else
-			{
-				displayObj << "Dispensing cash " << (total_coins - 1.5) << endl;
-				total_coins = coin_max;
-				GoToNextState("Has Credit");
-			}
+		RefundChange();
+
 		}
 		else if (currentState == "Idle")
 		{
-			displayObj << "In idle state" << endl;
+		ProcessIdleState();
+
 		}
 		else if (currentState == "InvalidPosition")
 		{
-			displayObj << "Invalid Input!" << endl;
-			if (total_coins > 0)
-			{
-				GoToNextState("Has Cash/Credit");
-			}
-			else
-			{
-				GoToNextState("No Cash/Credit");
-			}
+		ProcessInvalidState();
+
 		}
+		*/
 		return true;
 	}
 	catch (...)

@@ -16,6 +16,7 @@ Riley Wallace
 using namespace std;
 
 static const double COIN_MAX = 1.50;
+static const int TOTAL_STATE = 8;
 
 class VendingMachine
 {
@@ -28,6 +29,7 @@ private:
 	void BuildProdList();
 	void BuildStateMachine();
 	void GoToIdleState();
+	void BuildActionTable();
 
 	bool GoToNextState(string transition);
 
@@ -37,6 +39,33 @@ private:
 	int   ccNum; // Credit card Number 
 	double total_coins;
 	string currentState;
+
+private: // called by GotoNextState
+	void DisplayPrice();
+	void DisplayTotalCoins();
+
+	void CancelCreditTransaction();
+	void DispenseDrink();
+	void ProcessCreditCard();
+	void ProcessIdleState();
+	void RefundChange();
+
+	void ProcessInvalidState();
+private:
+	// Action table - Execeute callback based on new current state
+
+	typedef void (VendingMachine::*DoAction)(void);
+
+
+	struct ActionTable
+	{
+		string curState;
+
+		DoAction cb;
+
+	};
+	ActionTable Atable[TOTAL_STATE];
+
 
 public:
 	VendingMachine();
