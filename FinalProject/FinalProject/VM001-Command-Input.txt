@@ -2,8 +2,6 @@
 //This is a comment!
 //The input is seperated by what is happening, and organizaed to test every possible outcome! (I think)
 
-// indicates it works, and has been removed for testing purposes
-
 //Testing all valid/invalid positions from Idle
 PressButton A1
 PressButton Z9

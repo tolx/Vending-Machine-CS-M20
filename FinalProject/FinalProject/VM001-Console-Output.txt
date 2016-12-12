@@ -6,10 +6,6 @@
 
 
 
-// indicates it works, and has been removed for testing purposes
-
-
-
 //Testing all valid/invalid positions from Idle
 
 PressButton A1
