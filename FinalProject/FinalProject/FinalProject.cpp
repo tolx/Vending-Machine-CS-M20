@@ -47,7 +47,24 @@ int main()
 		 << lineH << endl
 		 << endl;
 
-    ofstream outFile("VM001-Console-Output.txt");
+	string filename("VM001-Console-Output.txt");
+	ifstream checkFile(filename);
+	if (checkFile)
+	{
+		cout << filename << " already exists, do you want to overwrite? [Y]/[N]" << endl;
+		string input;
+		cin >> input;
+		cin.ignore();  // get rid of newline after filename entry
+		if (!(input == "Y" || input == "y" || input == "[Y]" || input == "[y]" || input == "Yes" || input == "yes" || input == "YES"))
+		{
+			cout << "Type the filename where would you like to save the output*" << endl
+				 << "*NOTE: Whatever you type will be created if it doesn't exist, or overwritten if it does." << endl;
+			cin >> filename;
+		}
+	}
+	checkFile.clear();
+	checkFile.close();
+	ofstream outFile(filename, ios::trunc);
 	VendingMachine machine(outFile);
 
 	if (!inputMachine(machine))
