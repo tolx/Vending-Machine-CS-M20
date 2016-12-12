@@ -205,45 +205,49 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 	size_t position;
 	while (!inFile.eof())
 	{
-	getline(inFile, action);
-	entry = action;
-	position = action.find_first_of(" ");
-	if (!(position == string::npos || position == action.size()))
-	{
-		entry.erase(0, action.find_first_of(" ")+1);
-		action.erase(action.find_first_of(" "), action.size());
-
-        //outFileObj << "****" << action << " " << entry << "****" << endl; //<-for debugging
-		outFileObj	<< action << " " << entry << endl
-					<< endl;
-
-		if (action == "PressButton")
+		getline(inFile, action);
+		entry = action;
+		position = action.find_first_of(" ");
+		if (!(position == string::npos || position == action.size()))
 		{
-			if (entry == "Cancel")
-			{
-				inputMachine.cancelOrder();
-			}
-			else if (entry == "CoinReturn")
-			{
-				inputMachine.coinReturn();
-			}
-			else
-			{
-				inputMachine.pushButton(entry);
-			}
-		}
-		else if (action == "Swipe")
-		{
-			inputMachine.swipeCard(entry);
-		}
-		else if (action == "InsertCash")
-		{
-			cash = stod(entry);
-			inputMachine.insertCash(cash);
-		}
+			entry.erase(0, action.find_first_of(" ")+1); //remove the action from the string, to leave only the entry
+			action.erase(action.find_first_of(" "), action.size()); //remove the entry from the string, to leave only the action
 
-	   }
-	}
+			//outFileObj << "****" << action << " " << entry << "****" << endl; //<-for debugging
+			outFileObj	<< action << " " << entry << endl
+						<< endl;
+
+			if (action == "PressButton")
+			{
+				if (entry == "Cancel")
+				{
+					inputMachine.cancelOrder();
+				}
+				else if (entry == "CoinReturn")
+				{
+					inputMachine.coinReturn();
+				}
+				else
+				{
+					inputMachine.pushButton(entry);
+				} // end if (entry == __ )
+			}
+			else if (action == "Swipe")
+			{
+				inputMachine.swipeCard(entry);
+			}
+			else if (action == "InsertCash")
+			{
+				cash = stod(entry);
+				inputMachine.insertCash(cash);
+			} // end if (action == ____ )
+		} // end if (there is an action and entry)
+		else
+		{
+			outFileObj	<< action << endl
+						<< endl;
+		}
+	} // end while
 	return 0; //or any other number for an error at anypoint!
 } // end simulateMachine
 

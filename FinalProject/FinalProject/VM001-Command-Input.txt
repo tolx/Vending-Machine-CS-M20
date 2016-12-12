@@ -1,5 +1,7 @@
+khafsd
 InsertCash .5
 PressButton A3
+askdh ahsdkj
 PressButton ZD4
 PressButton Cancel
 PressButton CoinReturn
