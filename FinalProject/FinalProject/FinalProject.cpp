@@ -47,25 +47,11 @@ int main()
 		 << lineH << endl
 		 << endl;
 
-    ofstream outFile("simOutputResults.txt");
-	
+    ofstream outFile("VM001-Console-Output.txt");
 	VendingMachine machine(outFile);
 
 	if (!inputMachine(machine))
 		endProgram(1); //Input file cancel
-
-    /*
-    //remove?
-	try
-	{
-		displayMachine(machine); //This is more for debugging, and probably won't be here on final version.
-		cout << endl;
-	}
-	catch (PrecondViolatedExcept &exc)
-	{
-		cout << exc.what();
-	}
-    */
 
 	switch (simulateMachine(machine, outFile))
 	{
@@ -76,6 +62,7 @@ int main()
 		case 0:
 			cout << endl;//Do nothing, no errors!
 	}
+	outFile.close();
 
 	machineOutput(machine);
 
@@ -84,9 +71,6 @@ int main()
 		 << "Water World Vending Machines" << endl
 		 << "      VM001 Simulator" << endl
 		 << lineH << endl;
-
-    outFile.close();
-
 
 	endProgram(0);
     return 0;
@@ -150,26 +134,6 @@ bool inputMachine(VendingMachine &inputMachine)
 		} // end for (numbered colums)
 	} // end for (letter rows)
 	inFile.close();
-
-    //Remove?
-	////Now, inspect the machine to ensure every slot is filled with something. If not, fill it with Empty 0
-	//input.amount = 0;
-	//input.name = "Empty";
-	////row.clear(); redundant, the last thing row did is clear()
-
-	//if (inputMachine.size() != 4)
-	//{
-	//	for (size_t i{ 0 }; i < 9; i++)
-	//		row.push_back(input); //generate a row of 9 empty inputs
-	//	inputMachine.resize(4, row); //resize will remove extra data, or fill missing data with empty row
-	//}
-
-	//for (size_t j{ 0 }; j < 4; j++) //letter rows A->D
-	//{
-	//	if (inputMachine.at(j).size() != 9)
-	//		inputMachine.at(j).resize(9, input); //resize will remove extra data, or fill missing data with empty input
-	//}
-
 	return true;
 }
 
