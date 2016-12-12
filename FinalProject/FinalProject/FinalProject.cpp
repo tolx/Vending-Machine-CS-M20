@@ -329,7 +329,7 @@ void endProgram(const int reason)
 	//Inspired by the same named function written by Prof.
 	cout << endl
 		 << "Program ending ";
-	cout << ((reason == 0) ? "successfully." : ((reason < 4) ? "due to user canceling the program." : "unexpectantly due to error(s)!")) << endl;
+	cout << ((reason == 0) ? "successfully." : ((reason < 4) ? "due to user canceling the program." : "unexpectedly due to error(s)!")) << endl;
 	cout << endl
 		 << "Press Enter to end";
 	cin.ignore();
