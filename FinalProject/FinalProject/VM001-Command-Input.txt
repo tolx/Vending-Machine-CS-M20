@@ -54,38 +54,38 @@
 *PressButton A1
 
 //Testing if we can dispence while we have exactly $1.50, and if we get change back (we should not!)
-InsertCash 1
-InsertCash .5
-PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
 
 //Testing if we can sell out of something!
-InsertCash 1
-InsertCash .5
-PressButton A1
-InsertCash 1
-InsertCash .5
-PressButton A1
-InsertCash 1
-InsertCash .5
-PressButton A1
-InsertCash 1
-InsertCash .5
-PressButton A1
-InsertCash 1
-InsertCash .5
-PressButton A1
-InsertCash 1
-InsertCash .5
-PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
+*InsertCash 1
+*InsertCash .5
+*PressButton A1
 
 //Since we sold out of A1, we have leftover cash. Can we get it back from coinReturn?
-PressButton CoinReturn
+*PressButton CoinReturn
 
 //Can we still get cash back, now that we don't have any?
-PressButton CoinReturn
+*PressButton CoinReturn
 
 //What happens if we swipe an invalid card (even number)?
-Swipe 1234
+*Swipe 1234
 
 //What happens if we swipe valid?
 Swipe 123

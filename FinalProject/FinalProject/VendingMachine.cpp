@@ -12,6 +12,7 @@ VendingMachine::VendingMachine() : displayObj(std::cout)
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	buildStateMachine();
+	buildActionTable(); // Input new current state and callback function to complete action
 	goToIdleState();
 	displayObj << std::setprecision(2) << std::fixed;
 } // end VendingMachine default constructor
@@ -58,6 +59,10 @@ void VendingMachine::buildActionTable()
 	i++;
 	Atable[i].curState = "CheckCard";
 	Atable[i].cb = &VendingMachine::processCreditCard;
+
+	i++;
+	Atable[i].curState = "CancelCard";
+	Atable[i].cb = &VendingMachine::cancelCreditTransaction; //********
 
 	i++;
 	Atable[i].curState = "DispenseChange";
@@ -224,6 +229,7 @@ void VendingMachine::processCreditCard()
 	{
 		displayObj	<< lineH << std::endl
 					<< std::left << std::setw(2) << lineV << std::setw(67) << "Credit Card approved." << std::right << std::setw(2) << lineV << std::endl;
+		total_coins += coin_max;
 		paidByCreditCard = true;
 	}
 	else
@@ -232,7 +238,6 @@ void VendingMachine::processCreditCard()
 					<< std::left << std::setw(2) << lineV << std::setw(67) << "Credit Card declined." << std::right << std::setw(2) << lineV << std::endl;
 	}
 
-	total_coins += coin_max;
 	if (is_card_approved || (!is_card_approved && total_coins > 0))
 	{
 		goToNextState("Card Approved Or Declined and Has Cash");
@@ -252,7 +257,7 @@ void VendingMachine::refundChange()
 		total_coins = 0;
 		goToNextState("Change Dispensed");
 	}
-	else
+	else if (total_coins > 1.5)
 	{
 		displayObj	<< lineH << std::endl
 					<< std::left << std::setw(2) << lineV << "Returning Change: $" << std::setw(48) << (total_coins-1.5) << std::right << std::setw(2) << lineV << std::endl;
@@ -303,6 +308,7 @@ bool VendingMachine::goToNextState(std::string transition)
 	}
 	catch (...)
 	{
+		std::cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << std::endl;
 		return false;
 	}
 	return false;
@@ -428,6 +434,10 @@ void VendingMachine::cancelOrder()
 		{
 			// goes from Update to CancelCard and then to Update or Idle
 		} // end if (it can go to next state)
+		else
+		{
+			std::cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << std::endl;
+		}
 	}
 	else
 	{
