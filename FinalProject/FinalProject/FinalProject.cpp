@@ -22,7 +22,7 @@
 *	Errors:		No
 ************************************************/
 
-#pragma warning( disable: 4290 )  // disable warnings about the use of throw in function headers
+//#pragma warning( disable: 4290 )  // disable warnings about the use of throw in function headers
 
 #include "VendingMachine.h"
 #include "PrecondViolatedExcept.h"
@@ -33,74 +33,102 @@
 #include <vector>
 using namespace std;
 
-
+void headerSplash();
+ofstream openOutputFile();
 bool inputMachine(VendingMachine &inputMachine);
-void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept);
+//void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept); //<- For debugging only, move this to vending machine class
 char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj);
 void machineOutput(VendingMachine &inputMachine);
+void footerSplash();
 void programWait();
 void endProgram(const int reason);
 
-const string lineH{ "----------------------------------------------" }, lineV{ "|" };
+const string lineH{ "---------------------------------------" }, lineV{ "|" }; //These are used for graphic-like interface
 
 int main()
 {
-	cout << lineH << endl
-		 << lineV << setw(40) << "Welcome to the WWVM VM001 Simulator!" << setw(5) << lineV << endl
-		 << lineH << endl
-		 << endl;
+	headerSplash(); //Display the Header cout stuff, like the name of the program and who made it
 
-	string filename("VM001-Console-Output.txt");
-	ifstream checkFile(filename);
-	if (checkFile)
-	{
-		cout << filename << " already exists, do you want to overwrite? [Y]/[N]" << endl;
-		string input;
-		cin >> input;
-		cin.ignore();  // get rid of newline after filename entry
-		if (!(input == "Y" || input == "y" || input == "[Y]" || input == "[y]" || input == "Yes" || input == "yes" || input == "YES"))
-		{
-			cout << "Type the filename where would you like to save the output*" << endl
-				 << "*NOTE: Whatever you type will be created if it doesn't exist, or overwritten if it does." << endl;
-			cin >> filename;
-		}
-	}
-	checkFile.clear();
-	checkFile.close();
-	ofstream outFile(filename, ios::trunc);
-	VendingMachine machine(outFile);
+	ofstream outFile = openOutputFile(); //This prompts the user to acknowledge we will be outputting to a file, and what file
+	VendingMachine machine(outFile); //Creates the virtual vending machine
 
-	if (!inputMachine(machine))
-		endProgram(1); //Input file cancel
+	if (!inputMachine(machine)) //Attempts to fill the vending machine with drinks
+		endProgram(1); //Drinks (Machine) Input file cancel
 
-	switch (simulateMachine(machine, outFile))
+	switch (simulateMachine(machine, outFile)) //Attempts to smulate user input in the machine
 	{
 		case 1:
 			endProgram(2); //Input file cancel
 		default:
-			endProgram(3); //All other errors
+			endProgram(4); //All other errors
 		case 0:
-			cout << endl;//Do nothing, no errors!
+			cout << "Simulation Complete!" << endl
+				 << endl; //No errors, yay!
 	}
 	outFile.close();
 
-	machineOutput(machine);
+	machineOutput(machine); //Saves the machine drink stock to an output file
 
-	cout << lineH << endl
-		 << "  Thank you for using the" << endl
-		 << "Water World Vending Machines" << endl
-		 << "      VM001 Simulator" << endl
-		 << lineH << endl;
+	footerSplash(); //This essentially says goodbye to the user
 
-	endProgram(0);
+	endProgram(0); //0 means success!!!
     return 0;
 } // end main
+
+/*******************************************/
+// --- Begin Function Definitions ---
+/*******************************************/
+
+void headerSplash()
+{
+	cout << lineH << endl
+		 << left << setw(2) << lineV << setw(35) << "Welcome to the WWVM VM001 Simulator"	<< right << setw(2) << lineV << endl
+		 << left << setw(2) << lineV << setw(35) << "    CS M20 Final - Team Water"			<< right << setw(2) << lineV << endl
+		 << lineH << endl
+		 << left << setw(2) << lineV << setw(35) << "          Created By:"					<< setw(2) << right << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "MEMBER'S NAME"		<< setw(3) << "-" << setw(15) << "Git USERNAME"		<< right << setw(2) << lineV << endl
+		 << lineH << endl
+		 << left << setw(3) << lineV << setw(16) << "Sam Rice"			<< setw(3) << "-" << setw(15) << "RoboticRice"		<< right << setw(2) << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "Ivan Martinez"		<< setw(3) << "-" << setw(15) << "tolx"				<< right << setw(2) << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "Justin Kephart"	<< setw(3) << "-" << setw(15) << "AshnakAGQ"		<< right << setw(2) << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "Kelton Malhotra"	<< setw(3) << "-" << setw(15) << "KeltonAM"			<< right << setw(2) << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "Jake Lyon"			<< setw(3) << "-" << setw(15) << "jlyon805"			<< right << setw(2) << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "Kiefer Solberg"	<< setw(3) << "-" << setw(15) << "potatoMoorpark"	<< right << setw(2) << lineV << endl
+		 << left << setw(3) << lineV << setw(16) << "Riley Wallace"		<< setw(3) << "-" << setw(15) << "RileyWallace"		<< right << setw(2) << lineV << endl
+		 << lineH << endl
+		 << left << setw(35) << " github.com/tolx/Vending-Machine-CS-M20" << right << endl
+		 << lineH << endl
+		 << endl;
+} // end headerSplash
+
+ofstream openOutputFile()
+{
+	string filename("VM001-Console-Output.txt");
+	cout << "This program will write console output to the file:" << endl
+		 << filename << endl;
+	programWait();
+	ifstream checkFile(filename);
+	if (checkFile)
+	{
+		cout << filename << " already exists, do you want to overwrite? [Y]/[N]" << endl
+			 << "Selecting [N]o will end the program." << endl;
+		string input;
+		cin >> input;
+		cin.ignore();
+		cout << endl;
+		if (!(input == "Y" || input == "y" || input == "[Y]" || input == "[y]" || input == "Yes" || input == "yes" || input == "YES"))
+			endProgram(3);
+	}
+	checkFile.clear();
+	checkFile.close();
+	ofstream outFile(filename, ios::trunc);
+	return outFile;
+} // end openOutputFile
 
 bool inputMachine(VendingMachine &inputMachine)
 {
 	string filename("VM001-Drinks-Input.csv"), placeHolder("");
-
-	cout << "This program needs to fill the machine using the inputfile: " << endl
+	cout << "This program needs to fill the machine using the inputfile:" << endl
 		 << filename << endl;
 	programWait();
 
@@ -111,7 +139,7 @@ bool inputMachine(VendingMachine &inputMachine)
 		cin >> filename;
 		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel" || filename == "cancel") //for the smart @$$ out there
 			return false;
-		cin.ignore();  // get rid of newline after filename entry
+		cin.ignore();
 		inFile.clear();
 		inFile.open(filename);
 	} // end while
@@ -157,6 +185,7 @@ bool inputMachine(VendingMachine &inputMachine)
 	return true;
 }
 
+/* -- Add to vending machine class
 //Pre-Condition: There are exactly 4 rows, and exactly 9 colums for every row
 void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept)
 {
@@ -176,6 +205,7 @@ void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept)
 		}
 	} //end for (letter rows)
 } // end displayMachine
+*/
 
 char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 {
@@ -191,7 +221,7 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 		cin >> filename;
 		if (filename == "C" || filename == "c" || filename == "[C]ancel" || filename == "[C]" || filename == "[c]" || filename == "Cancel" || filename == "cancel") //for the smart @$$ out there
 			return 1;
-		cin.ignore();  // get rid of newline after filename entry
+		cin.ignore();
 		inFile.clear();
 		inFile.open(filename);
 	} // end while
@@ -244,13 +274,17 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 void machineOutput(VendingMachine &inputMachine)
 {
 	const string filename("VM001-Machine-Output.csv");
+	cout << "This program will save the machine's drink stock to the file:" << endl
+		 << filename << endl;
+	programWait();
 	ifstream checkFile(filename);
 	if (checkFile)
 	{
 		cout << filename << " already exists, do you want to overwrite? [Y]/[N]" << endl;
 		string input;
 		cin >> input;
-		cin.ignore();  // get rid of newline after filename entry
+		cin.ignore();
+		cout << endl;
 		if (!(input == "Y" || input == "y" || input == "[Y]" || input == "[y]" || input == "Yes" || input == "yes" || input == "YES"))
 			return;
 	}
@@ -281,30 +315,42 @@ void machineOutput(VendingMachine &inputMachine)
 			}
 		} //end for (letter rows)
 	}
-		
+
 	outFile.close();
-	cout << "And the vending machine quantities in the file:" << endl
-		 << filename << endl;
 } // end machineOutput
 	
+void footerSplash()
+{
+	cout << lineH << endl
+		 << left << setw(2) << lineV << setw(35) << "     Thank you for using the"		<< right << setw(2) << lineV << endl
+		 << left << setw(2) << lineV << setw(35) << "   Water World Vending Machines"	<< right << setw(2) << lineV << endl
+		 << left << setw(2) << lineV << setw(35) << "         VM001 Simulator"			<< right << setw(2) << lineV << endl
+		 << lineH << endl;
+} // end footerSplash
+
 void programWait()
 {
 	cout << "Press Enter to continue...";
 	cin.ignore();
-	cout << endl
-		 << endl;
+	cout << endl;
 } // end programWait
 
 void endProgram(const int reason)
 {
 	//Inspired by the same named function written by Prof.
-	//It's functionally the exact same function
 	cout << endl
-		 << endl
 		 << "Program ending ";
-	cout << ((reason == 0) ? "successfully." : "unexpectantly due to error(s)!") << endl;
+	cout << ((reason == 0) ? "successfully." : ((reason < 4) ? "due to user canceling the program." : "unexpectantly due to error(s)!")) << endl;
 	cout << endl
 		 << "Press Enter to end";
 	cin.ignore();
 	exit(reason);
+	/*
+	ERROR LIST:
+	0 - No Errors
+	1 - Canceled Filling the Machine with Drinks from an Input File
+	2 - Canceled Providing Commands for the Machines from an Input File
+	3 - Canceled Writing Console Output to an Output File
+	4 - Other Errors Related to SimulateMachine
+	*/
 } // end endProgram

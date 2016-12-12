@@ -12,7 +12,7 @@ Riley Wallace
 
 
 
-VendingMachine::VendingMachine() : displayObj(cout)
+VendingMachine::VendingMachine() : displayObj(std::cout)
 {
 	coin_max = COIN_MAX;
 	currentState = "Idle";
