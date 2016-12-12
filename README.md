@@ -4,13 +4,19 @@ Water World Vending Machines, VM001 Simulator
 ![Water World Vending Machines](https://github.com/tolx/Vending-Machine-CS-M20/blob/master/WaterWorldVendingMachines.png)
 
 # Project Members:
-Sam Rice
-Ivan Martinez
-Justin Kephart
-Kelton Malhotra
-Jake Lyon
-Kiefer Soldberg
-Riley Wallace
+Sam Rice, [RobotiRice](https://github.com/RoboticRice)
+
+Ivan Martinez, [tolx](https://github.com/tolx)
+
+Justin Kephart, [AshnakAGQ](https://github.com/AshnakAGQ)
+
+Kelton Malhotra, [KeltonAM](https://github.com/KeltonAM)
+
+Jake Lyon, [jlyon805](https://github.com/jlyon805)
+
+Kiefer Soldberg, [potatoMoorpark](https://github.com/potatoMoorpark)
+
+Riley Wallace, [RileyWallace](https://github.com/RileyWallace)
 
 # Instructions for Use:
 This project has now been configured to manualy work with visual studio.
