@@ -60,7 +60,7 @@
     <Text Include="VM001-Prices.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="simOutputResults.txt">
+    <Text Include="VM001-Console-Output.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

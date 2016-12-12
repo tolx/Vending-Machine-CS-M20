@@ -1,6 +1,7 @@
 In idle state 
 ****PressButton D4****
-Invalid Input!
+Price is $1.5 for D4
+In idle state
 In idle state
 ****PressButton ZD4****
 Invalid Input!
@@ -17,7 +18,8 @@ In idle state
 ****InsertCash 1.00****
 We have 1
 ****PressButton D4****
-Invalid Input!
+Price is $1.5 for D4
+We have 1
 We have 1
 ****PressButton ZD4****
 Invalid Input!
@@ -31,99 +33,70 @@ Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****PressButton D4****
-Invalid Input!
-We have 1.5
+Dispensing Drink..
+In idle state
+In idle state
 ****Swipe 7511****
+Checking Card... Approved
+We have 1.5
 ****PressButton ZD4****
 Invalid Input!
 We have 1.5
 ****PressButton D4****
-Invalid Input!
-We have 1.5
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****Swipe 9417****
-****PressButton CoinReturn****
-Dispensing cash 1.5
+Dispensing Drink..
 In idle state
 In idle state
-****PressButton Cancel****
-No card has been used, nothing to cancel.
 ****InsertCash 0.25****
 We have 0.25
-****Swipe 1220****
-Checking Card... Declined
+****Swipe 9417****
+Checking Card... Approved
 We have 1.75
-****PressButton Cancel****
-No card has been used, nothing to cancel.
 ****PressButton CoinReturn****
-Dispensing cash 1.75
-In idle state
-In idle state
-****InsertCash 0.10****
-We have 0.1
-****InsertCash 0.05****
-We have 0.15
+Dispensing cash 0.25
+We have 1.5
 ****PressButton Cancel****
-No card has been used, nothing to cancel.
 ****InsertCash 0.25****
-We have 0.4
+Too much cash in the machine. $0.25 has been returned.
+****Swipe 1220****
+****PressButton Cancel****
 ****PressButton CoinReturn****
-Dispensing cash 0.4
-In idle state
-In idle state
+****InsertCash 0.10****
+Too much cash in the machine. $0.1 has been returned.
+****InsertCash 0.05****
+Too much cash in the machine. $0.05 has been returned.
+****PressButton Cancel****
+****InsertCash 0.25****
+Too much cash in the machine. $0.25 has been returned.
+****PressButton CoinReturn****
 ****Swipe 7516****
-Checking Card... Declined
-We have 1.5
 ****PressButton A100****
-Invalid Input!
-We have 1.5
 ****InsertCash 0.01****
 Too much cash in the machine. $0.01 has been returned.
 ****InsertCash 0.99****
 Cannot insert this type of cash! $0.99 has been returned.
 ****PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
-In idle state
 ****InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****InsertCash 0.25****
-We have 1.25
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
-We have 1.5
+Too much cash in the machine. $0.25 has been returned.
 ****PressButton A3****
-Dispensing Drink..
-In idle state
-In idle state
 ****PressButton D4****
-Invalid Input!
-In idle state
 ****InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****PressButton D4****
-Invalid Input!
-We have 1
 ****Swipe 1337****
-Checking Card... Approved
-We have 2.5
 ****Swipe 7201****
 ****PressButton D6****
-Invalid Input!
-We have 2.5
 ****PressButton D1****
-Dispensing Drink..
-Dispensing cash 1
-In idle state
-In idle state
-In idle state
 ****PressButton CoinReturn****
 ****InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****InsertCash 0.25****
-We have 1.25
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
-We have 1.5
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.10****
 Too much cash in the machine. $0.1 has been returned.
 ****InsertCash 0.05****
@@ -138,19 +111,10 @@ Too much cash in the machine. $0.1 has been returned.
 Too much cash in the machine. $0.05 has been returned.
 ****Swipe 9810****
 ****PressButton A9****
-Dispensing Drink..
-In idle state
-In idle state
 ****PressButton A1****
-Price is $1.5 for A1
-In idle state
-In idle state
 ****PressButton CoinReturn****
 ****PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Swipe 1371****
-Checking Card... Approved
-We have 1.5
 ****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
@@ -169,27 +133,20 @@ Too much cash in the machine. $0.25 has been returned.
 Too much cash in the machine. $0.25 has been returned.
 ****Swipe 9114****
 ****PressButton CoinReturn****
-Dispensing cash 0
-We have 1.5
 ****PressButton D1****
-Dispensing Drink..
-In idle state
-In idle state
 ****InsertCash 0.25****
-We have 0.25
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
-We have 0.5
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
-We have 0.75
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
-We have 1
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
-We have 1.25
+Too much cash in the machine. $0.25 has been returned.
 ****PressButton F1****
-Invalid Input!
-We have 1.25
 ****InsertCash 0.25****
-We have 1.5
+Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
@@ -199,37 +156,24 @@ Too much cash in the machine. $0.25 has been returned.
 ****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
 ****PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
-In idle state
 ****InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****InsertCash 1.00****
-We have 2
+Too much cash in the machine. $1 has been returned.
 ****InsertCash 5.00****
 Too much cash in the machine. $5 has been returned.
 ****PressButton F2****
-Invalid Input!
-We have 2
 ****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
 ****InsertCash 100.00****
 Cannot insert this type of cash! $100 has been returned.
 ****PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Swipe 5640****
 ****PressButton Cancel****
-No card has been used, nothing to cancel.
 ****Swipe 7812****
 ****PressButton CoinReturn****
-Dispensing cash 2
-In idle state
-In idle state
 ****InsertCash 1.00****
-We have 1
+Too much cash in the machine. $1 has been returned.
 ****InsertCash 0.50****
-We have 1.5
+Too much cash in the machine. $0.5 has been returned.
 ****PressButton A1****
-Dispensing Drink..
-In idle state
-In idle state
