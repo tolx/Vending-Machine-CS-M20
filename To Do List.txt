@@ -1,8 +1,7 @@
 To Do:
 
 -BEFORE SUBMIT-
-*Make sure the correct #includes are in the correct files
-*Clean up console output - Rice
+*Convert item costs from double to short - efficiency
 *Clean up/create command prompts in output file
 
 If we finish early
