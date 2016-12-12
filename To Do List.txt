@@ -2,25 +2,8 @@ To Do:
 
 -BEFORE SUBMIT-
 *Make sure the correct #includes are in the correct files
-
-Output File
-- Create it //RW Use constructor with ostream parameter and it should write whatever VendingMachine outputs
-- Send the current console output (cout) to the file instead //RW (only for VendingMachine)
-- Also, make sure to send the simulated input to the output file, so it makes sense //RW though some changes may be needed
-
-- Implement Dos interface
-
-FinalProject.cpp
-- Configure inputMachine() to work with any dimension of machine //Finished?
-- Have the output function actually make a console output file //Finished?
-- Have the input function actually interact with the vending machine
-
-VendingMachine.cpp
-- Should not call cout. Replace cout with ostream parameter that main sends cout as an argument. //RW
-- Complete the logic of each transition //KM now checks if credit card is valid or not, not sure what else there is for this
-
-VM001-Command-Input.txt
-- Make it work with the program or make the program work with it //Finished?
+*Clean up console output - Rice
+*Clean up/create command prompts in output file
 
 If we finish early
 - Add different prices for the items
