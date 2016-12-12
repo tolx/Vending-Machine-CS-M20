@@ -157,7 +157,7 @@ bool inputMachine(VendingMachine &inputMachine)
 
 		getline(inFile, placeHolder); //for each letter row
 		
-		for (size_t i{ 1 }; i <= 9 && !placeHolder.empty() && placeHolder.find_first_of(',') != 0; i++) //numbered colums 1->9
+		for (size_t i{ 0 }; i <= 9 && !placeHolder.empty() && placeHolder.find_first_of(',') != 0; i++) //numbered colums 1->9
 		{
 			name = placeHolder.substr(0, placeHolder.find_first_of(',')); //get the name
 			placeHolder.erase(0, placeHolder.find_first_of(',') + 1); //remove the name from the file
@@ -165,7 +165,7 @@ bool inputMachine(VendingMachine &inputMachine)
 			if (!placeHolder.empty() && placeHolder.find_first_of(',') != 0) //there is still content
 			{
 				stock = static_cast<int>(strtol(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr, 10)); //get the quantity and convert to int
-				placeHolder.erase(0, placeHolder.find_first_of(',') + 1); //remove the quantity from the file
+				placeHolder.erase(0, (placeHolder.find_first_of(',') != string::npos ? (placeHolder.find_first_of(',') + 1) : placeHolder.size())); //remove the quantity from the file
 			}
 			else
 			{
@@ -288,7 +288,7 @@ void machineOutput(VendingMachine &inputMachine)
 
 	for (char c : alphabet)
 	{
-		for (size_t i{ 1 }; i <= 9; i++) //numbered colums 1->9
+		for (size_t i{ 0 }; i <= 9; i++) //numbered colums 0->9
 		{
 			string location(1, c);
 			location += to_string(i);
