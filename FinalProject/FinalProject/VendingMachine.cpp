@@ -81,6 +81,9 @@ void VendingMachine::buildStateMachine()
 	Edge<std::string, std::string> S_U("Idle", "Update", "Insert Cash");
 	statesMachine.add(S_U);
 
+	Edge<std::string, std::string> S_S("Idle", "Idle", "Insert Invalid Cash");
+	statesMachine.add(S_S);
+
 	Edge<std::string, std::string> U_U("Update", "Update", "Insert Cash");
 	statesMachine.add(U_U);
 
@@ -291,7 +294,10 @@ bool VendingMachine::goToNextState(std::string transition)
 		for (int i = 0; i < TOTAL_STATE; i++)
 		{
 			if (Atable[i].curState == currentState)
+			{
 				(this->*Atable[i].cb)();
+				i = TOTAL_STATE;
+			}
 		}
 		return true;
 	}
@@ -356,12 +362,24 @@ void VendingMachine::insertCash(double amt)
 		{
 			displayObj	<< lineH << std::endl
 						<< std::left << std::setw(2) << lineV << "Too much cash in the machine. Returning Change: $" << std::setw(18) << amt << std::right << std::setw(2) << lineV << std::endl;
+			if (goToNextState("Insert Cash"))
+			{
+				// goes from Update to Update
+			} // end if (can go to next state)
 		} // end if (not enough cash yet)
 	}
 	else
 	{
 		displayObj	<< lineH << std::endl
 					<< std::left << std::setw(2) << lineV << "Inserted invalid cash type. Returning Change: $" << std::setw(20) << amt << std::right << std::setw(2) << lineV << std::endl;
+		if (goToNextState("Insert Invalid Cash"))
+		{
+			// goes from idle to idle
+		}
+		else if (goToNextState("Insert Cash"))
+		{
+			// goes from Update to Update
+		} // end if (can go to next state)
 	} // end if (valid amount of cash)
 } // end insertCash
 

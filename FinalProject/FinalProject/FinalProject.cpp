@@ -205,6 +205,8 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 	size_t position;
 	while (!inFile.eof())
 	{
+		action.clear();
+		entry.clear();
 		getline(inFile, action);
 		entry = action;
 		position = action.find_first_of(" ");
@@ -238,7 +240,14 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 			}
 			else if (action == "InsertCash")
 			{
-				cash = stod(entry);
+				try
+				{
+					cash = stod(entry);
+				}
+				catch (...)
+				{
+					cash = 0;
+				}
 				inputMachine.insertCash(cash);
 			} // end if (action == ____ )
 		} // end if (there is an action and entry)
