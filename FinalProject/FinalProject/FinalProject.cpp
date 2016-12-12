@@ -156,7 +156,6 @@ bool inputMachine(VendingMachine &inputMachine)
 			break;
 
 		getline(inFile, placeHolder); //for each letter row
-									  //cout << placeHolder << endl;
 		
 		for (size_t i{ 1 }; i <= 9 && !placeHolder.empty() && placeHolder.find_first_of(',') != 0; i++) //numbered colums 1->9
 		{
@@ -168,7 +167,6 @@ bool inputMachine(VendingMachine &inputMachine)
 				stock = static_cast<int>(strtol(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr, 10)); //get the quantity and convert to int
 				placeHolder.erase(0, placeHolder.find_first_of(',') + 1); //remove the quantity from the file
 			}
-
 			else
 			{
 				stock = 0;
