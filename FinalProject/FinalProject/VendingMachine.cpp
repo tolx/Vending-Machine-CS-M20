@@ -66,6 +66,7 @@ void VendingMachine::BuildActionTable()
 
 
 }
+
 void VendingMachine::BuildStateMachine()
 {
 	int i = 0;
@@ -187,8 +188,9 @@ void VendingMachine::CancelCreditTransaction()
 
 void VendingMachine::DispenseDrink()
 {
-
 	displayObj << "Dispensing Drink.." << endl;
+	prodList[ProdCodePushed].dispense();
+
 	total_coins -= coin_max;
 	paidByCreditCard = false;
 	if (total_coins == 0)
@@ -200,6 +202,7 @@ void VendingMachine::DispenseDrink()
 		GoToNextState("Cash Leftover");
 	}
 }
+
 void VendingMachine::ProcessCreditCard()
 {
 	CreditCard c(ccNum);
@@ -260,6 +263,7 @@ void VendingMachine::ProcessIdleState()
 {
 	displayObj << "In idle state" << endl;
 }
+
 bool VendingMachine::GoToNextState(string transition)
 {
 	try
@@ -333,19 +337,7 @@ bool VendingMachine::GoToNextState(string transition)
 void VendingMachine::pushButton(string prodCode)
 {
 	ProdCodePushed = prodCode;
-	bool isValidPosition = true;
-
-	// Check if it'Idle a valid entry
-	map<string, Slot>::iterator it;
-	it = prodList.find(ProdCodePushed);
-	if (it == prodList.end()) // ensure position is valid / find if no drinks available. 
-	{
-		isValidPosition = false;
-	}
-	else
-	{
-		isValidPosition = true;
-	} // end if (???)
+	bool isValidPosition = (prodList.find(ProdCodePushed) != prodList.end() && prodList[ProdCodePushed].notEmpty()) ;
 
 	if (isValidPosition)
 	{

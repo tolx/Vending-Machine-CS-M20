@@ -24,7 +24,6 @@ private:
 	map <string, class Slot> prodList;
 	ostream& displayObj;
 
-	void BuildProdList();
 	void BuildStateMachine();
 	void GoToIdleState();
 	void BuildActionTable();
