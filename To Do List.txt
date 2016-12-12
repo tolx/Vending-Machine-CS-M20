@@ -2,9 +2,10 @@ To Do:
 
 -BEFORE SUBMIT-
 *Convert item costs from double to short - efficiency
-*Clean up/create command prompts in output file
-*Figure out why there are sometimes duplicates in the output file...?
-*Figure out why there's missing states in the output file...?
+*Add functionality for the 0th position in the machine, we say we can use it, but we don't at all...
+*Finish Design Document
+*Finish User's Manual
+*Take the updated FSA, and move it into the Design Document
 
 If we finish early
 - Add different prices for the items
