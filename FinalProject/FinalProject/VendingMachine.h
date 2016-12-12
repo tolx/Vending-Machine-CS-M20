@@ -21,30 +21,30 @@ private:
 	std::map<std::string, class Slot> prodList;
 	std::ostream& displayObj;
 
-	void BuildStateMachine();
-	void GoToIdleState();
-	void BuildActionTable();
+	void buildStateMachine();
+	void goToIdleState();
+	void buildActionTable();
 
-	bool GoToNextState(std::string transition);
+	bool goToNextState(std::string transition);
 
 	double coin_max;
-	std::string ProdCodePushed;
+	std::string prodCodePushed;
 	bool  paidByCreditCard;
 	int   ccNum; // Credit card Number 
 	double total_coins;
 	std::string currentState;
 
 private: // called by GotoNextState
-	void DisplayPrice();
-	void DisplayTotalCoins();
+	void displayPrice();
+	void displayTotalCoins();
 
-	void CancelCreditTransaction();
-	void DispenseDrink();
-	void ProcessCreditCard();
-	void ProcessIdleState();
-	void RefundChange();
+	void cancelCreditTransaction();
+	void dispenseDrink();
+	void processCreditCard();
+	void processIdleState();
+	void refundChange();
 
-	void ProcessInvalidState();
+	void processInvalidState();
 
 private:// Action table - Execeute callback based on new current state
 	typedef void (VendingMachine::*DoAction)(void);

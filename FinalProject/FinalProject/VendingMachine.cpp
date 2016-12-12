@@ -11,8 +11,8 @@ VendingMachine::VendingMachine() : displayObj(std::cout)
 	coin_max = COIN_MAX;
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
-	BuildStateMachine();
-	GoToIdleState();
+	buildStateMachine();
+	goToIdleState();
 } // end VendingMachine default constructor
 
 VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
@@ -20,44 +20,44 @@ VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
 	coin_max = COIN_MAX;
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
-	BuildStateMachine();
-	BuildActionTable(); // Input new current state and callback function to complete action
-	GoToIdleState();
+	buildStateMachine();
+	buildActionTable(); // Input new current state and callback function to complete action
+	goToIdleState();
 } // end VendingMachine constructor
 
-void VendingMachine::BuildActionTable()
+void VendingMachine::buildActionTable()
 {
 	int i = 0;
 
 	Atable[i].curState = "ShowPrice";
-	Atable[i].cb = &VendingMachine::DisplayPrice;
+	Atable[i].cb = &VendingMachine::displayPrice;
 
 	i++;
 	Atable[i].curState = "Update";
-	Atable[i].cb = &VendingMachine::DisplayTotalCoins;
+	Atable[i].cb = &VendingMachine::displayTotalCoins;
 
 	i++;
-	Atable[i].curState = "DispenseDrink";
-	Atable[i].cb = &VendingMachine::DispenseDrink;
+	Atable[i].curState = "dispenseDrink";
+	Atable[i].cb = &VendingMachine::dispenseDrink;
 
 	i++;
 	Atable[i].curState = "CheckCard";
-	Atable[i].cb = &VendingMachine::ProcessCreditCard;
+	Atable[i].cb = &VendingMachine::processCreditCard;
 
 	i++;
 	Atable[i].curState = "DispenseChange";
-	Atable[i].cb = &VendingMachine::RefundChange;
+	Atable[i].cb = &VendingMachine::refundChange;
 
 	i++;
 	Atable[i].curState = "Idle";
-	Atable[i].cb = &VendingMachine::ProcessIdleState;
+	Atable[i].cb = &VendingMachine::processIdleState;
 
 	i++;
 	Atable[i].curState = "InvalidPosition";
-	Atable[i].cb = &VendingMachine::ProcessInvalidState;
+	Atable[i].cb = &VendingMachine::processInvalidState;
 } // end buildActionTable
 
-void VendingMachine::BuildStateMachine()
+void VendingMachine::buildStateMachine()
 {
 	int i = 0;
 
@@ -87,13 +87,13 @@ void VendingMachine::BuildStateMachine()
 	Edge<std::string, std::string> U_SP("Update", "ShowPrice", "Valid Position & Not Enough Cash");
 	statesMachine.add(U_SP);
 
-	Edge<std::string, std::string> U_D("Update", "DispenseDrink", "Valid Position & Enough Cash/Credit");
+	Edge<std::string, std::string> U_D("Update", "dispenseDrink", "Valid Position & Enough Cash/Credit");
 	statesMachine.add(U_D);
 
-	Edge<std::string, std::string> D_S("DispenseDrink", "Idle", "No Leftover Cash");
+	Edge<std::string, std::string> D_S("dispenseDrink", "Idle", "No Leftover Cash");
 	statesMachine.add(D_S);
 
-	Edge<std::string, std::string> D_DC("DispenseDrink", "DispenseChange", "Cash Leftover");
+	Edge<std::string, std::string> D_DC("dispenseDrink", "DispenseChange", "Cash Leftover");
 	statesMachine.add(D_DC);
 
 	Edge<std::string, std::string> DC_S("DispenseChange", "Idle", "Change Dispensed");
@@ -133,66 +133,66 @@ void VendingMachine::BuildStateMachine()
 	statesMachine.add(DC_U);
 } // end build state machine
 
-void VendingMachine::GoToIdleState()
+void VendingMachine::goToIdleState()
 {
 	currentState = "Idle";
 	paidByCreditCard = false;
 	total_coins = 0;
 	displayObj << "In idle state " << std::endl;
-} // end GoToIdleState
-// Following methods called by GoToNextState
+} // end goToIdleState
+// Following methods called by goToNextState
 
-void VendingMachine::DisplayPrice()
+void VendingMachine::displayPrice()
 {
-	displayObj << "Price is $" << coin_max << " for " << ProdCodePushed << std::endl;
+	displayObj << "Price is $" << coin_max << " for " << prodCodePushed << std::endl;
 	if (total_coins > 0)
 	{
-		GoToNextState("Has Cash");
+		goToNextState("Has Cash");
 	}
 	else
 	{
-		GoToNextState("No Cash");
+		goToNextState("No Cash");
 	}
-} // end DisplayPrice
+} // end displayPrice
 
-void VendingMachine::DisplayTotalCoins()
+void VendingMachine::displayTotalCoins()
 {
 	displayObj << "We have " << total_coins << std::endl;
-} // end DisplayTotalCoins
+} // end displayTotalCoins
 
-void VendingMachine::CancelCreditTransaction()
+void VendingMachine::cancelCreditTransaction()
 {
 	paidByCreditCard = false;
 	total_coins -= coin_max;
 	displayObj << "Card Transaction Canceled" << std::endl;
 	if (total_coins > 0)
 	{
-		GoToNextState("Has Cash");
+		goToNextState("Has Cash");
 	}
 	else
 	{
-		GoToNextState("No Cash");
+		goToNextState("No Cash");
 	}
-} // end CancelCreditTransaction
+} // end cancelCreditTransaction
 
-void VendingMachine::DispenseDrink()
+void VendingMachine::dispenseDrink()
 {
 	displayObj << "Dispensing Drink.." << std::endl;
-	prodList[ProdCodePushed].dispense();
+	prodList[prodCodePushed].dispense();
 
 	total_coins -= coin_max;
 	paidByCreditCard = false;
 	if (total_coins == 0)
 	{
-		GoToNextState("No Leftover Cash");
+		goToNextState("No Leftover Cash");
 	}
 	else
 	{
-		GoToNextState("Cash Leftover");
+		goToNextState("Cash Leftover");
 	}
-} // end DispenseDrink
+} // end dispenseDrink
 
-void VendingMachine::ProcessCreditCard()
+void VendingMachine::processCreditCard()
 {
 	CreditCard c(ccNum);
 
@@ -211,49 +211,49 @@ void VendingMachine::ProcessCreditCard()
 	total_coins += coin_max;
 	if (is_card_approved || (!is_card_approved && total_coins > 0))
 	{
-		GoToNextState("Card Approved Or Declined and Has Cash");
+		goToNextState("Card Approved Or Declined and Has Cash");
 	}
 	else if (!is_card_approved && total_coins == 0)
 	{
-		GoToNextState("Card Declined and No Cash");
+		goToNextState("Card Declined and No Cash");
 	}
-} // end ProcessCreditCard
+} // end processCreditCard
 
-void VendingMachine::RefundChange()
+void VendingMachine::refundChange()
 {
 	if (!paidByCreditCard)
 	{
 		displayObj << "Dispensing cash " << total_coins << std::endl;
 		total_coins = 0;
-		GoToNextState("Change Dispensed");
+		goToNextState("Change Dispensed");
 	}
 	else
 	{
 		displayObj << "Dispensing cash " << (total_coins - 1.5) << std::endl;
 		total_coins = coin_max;
-		GoToNextState("Has Credit");
+		goToNextState("Has Credit");
 	}
-} // end RefundChange
+} // end refundChange
 
-void VendingMachine::ProcessInvalidState()
+void VendingMachine::processInvalidState()
 {
 	displayObj << "Invalid Input!" << std::endl;
 	if (total_coins > 0)
 	{
-		GoToNextState("Has Cash/Credit");
+		goToNextState("Has Cash/Credit");
 	}
 	else
 	{
-		GoToNextState("No Cash/Credit");
+		goToNextState("No Cash/Credit");
 	}
-} // end ProcessInvalidState
+} // end processInvalidState
 
-void VendingMachine::ProcessIdleState()
+void VendingMachine::processIdleState()
 {
 	displayObj << "In idle state" << std::endl;
 } // end ProccessIdleState
 
-bool VendingMachine::GoToNextState(std::string transition)
+bool VendingMachine::goToNextState(std::string transition)
 {
 	try
 	{
@@ -278,12 +278,12 @@ bool VendingMachine::GoToNextState(std::string transition)
 
 void VendingMachine::pushButton(std::string prodCode)
 {
-	ProdCodePushed = prodCode;
-	bool isValidPosition = (prodList.find(ProdCodePushed) != prodList.end() && prodList[ProdCodePushed].notEmpty()) ;
+	prodCodePushed = prodCode;
+	bool isValidPosition = (prodList.find(prodCodePushed) != prodList.end() && prodList[prodCodePushed].notEmpty()) ;
 
 	if (isValidPosition)
 	{
-		if (GoToNextState("Valid Position"))
+		if (goToNextState("Valid Position"))
 		{
 			// Went to ShowPrice and then to Idle
 		}
@@ -291,14 +291,14 @@ void VendingMachine::pushButton(std::string prodCode)
 		{
 			if (total_coins >= coin_max)
 			{
-				if (GoToNextState("Valid Position & Enough Cash/Credit"))
+				if (goToNextState("Valid Position & Enough Cash/Credit"))
 				{
-					// Goes to DispenseDrink and then to Idle
+					// Goes to dispenseDrink and then to Idle
 				} // end if (can go to next state)
 			}
 			else
 			{
-				if (GoToNextState("Valid Position & Not Enough Cash"))
+				if (goToNextState("Valid Position & Not Enough Cash"))
 				{
 					// Goes to ShowPrice
 				} // end if (can go to next state)
@@ -307,7 +307,7 @@ void VendingMachine::pushButton(std::string prodCode)
 	}
 	else
 	{
-		if (GoToNextState("Invalid Position"))
+		if (goToNextState("Invalid Position"))
 		{
 			// Went to InvalidPosition and then to Update or Idle
 		} // end if (can go to next state)
@@ -321,7 +321,7 @@ void VendingMachine::insertCash(double amt)
 		if (total_coins < coin_max)
 		{
 			total_coins += amt;
-			if (GoToNextState("Insert Cash"))
+			if (goToNextState("Insert Cash"))
 			{
 				// goes from Idle to Update or goes from Update to Update
 			} // end if (can go to next state)
@@ -353,7 +353,7 @@ void VendingMachine::swipeCard(std::string cardNum)
 			ccNum = strtol(cardNum.c_str(), &endptr, 10);
 			if ((total_coins < coin_max) && !paidByCreditCard)
 			{
-				if (GoToNextState("Card Swiped"))
+				if (goToNextState("Card Swiped"))
 				{
 					// goes from Idle to CheckCard and then to Update or Idle
 				} // end if (can go to next state)
@@ -378,7 +378,7 @@ void VendingMachine::cancelOrder()
 {
 	if (paidByCreditCard)
 	{
-		if (GoToNextState("Has Credit and Card Cancel Pressed"))
+		if (goToNextState("Has Credit and Card Cancel Pressed"))
 		{
 			// goes from Update to CancelCard and then to Update or Idle
 		} // end if (it can go to next state)
@@ -391,7 +391,7 @@ void VendingMachine::cancelOrder()
 
 void VendingMachine::coinReturn()
 {
-	if (GoToNextState("Coin Return"))
+	if (goToNextState("Coin Return"))
 	{
 		// goes from Update to CancelCard and then to Update or Idle
 	}
