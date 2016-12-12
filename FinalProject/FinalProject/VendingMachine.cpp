@@ -31,8 +31,8 @@ void VendingMachine::BuildActionTable()
 
 	Atable[i].curState = "ShowPrice";
 	Atable[i].cb = &VendingMachine::DisplayPrice;
-	i++;
 
+	i++;
 	Atable[i].curState = "Update";
 	Atable[i].cb = &VendingMachine::DisplayTotalCoins;
 
@@ -49,7 +49,6 @@ void VendingMachine::BuildActionTable()
 	Atable[i].cb = &VendingMachine::RefundChange;
 
 	i++;
-
 	Atable[i].curState = "Idle";
 	Atable[i].cb = &VendingMachine::ProcessIdleState;
 
@@ -132,7 +131,6 @@ void VendingMachine::BuildStateMachine()
 
 	Edge<std::string, std::string> DC_U("DispenseChange", "Update", "Has Credit");
 	statesMachine.add(DC_U);
-
 } // end build state machine
 
 void VendingMachine::GoToIdleState()
@@ -277,8 +275,6 @@ bool VendingMachine::GoToNextState(std::string transition)
 	}
 	return false;
 } // end GoToNextstate
-
-// Public functions called by client
 
 void VendingMachine::pushButton(std::string prodCode)
 {
