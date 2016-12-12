@@ -113,6 +113,9 @@ void VendingMachine::buildStateMachine()
 	Edge<std::string, std::string> U_D("Update", "dispenseDrink", "Valid Position & Enough Cash/Credit");
 	statesMachine.add(U_D);
 
+	Edge<std::string, std::string> U_CA("Update", "CancelCard", "Has Credit and Card Cancel Pressed");
+	statesMachine.add(U_CA);
+
 	Edge<std::string, std::string> D_S("dispenseDrink", "Idle", "No Leftover Cash");
 	statesMachine.add(D_S);
 
@@ -139,9 +142,6 @@ void VendingMachine::buildStateMachine()
 
 	Edge<std::string, std::string> CH_S("CheckCard", "Idle", "Card Declined and No Cash");
 	statesMachine.add(CH_S);
-
-	Edge<std::string, std::string> U_CA("Update", "CancelCard", "Has Credit and Card Cancel Pressed");
-	statesMachine.add(U_CA);
 
 	Edge<std::string, std::string> CA_U("CancelCard", "Update", "Has Cash");
 	statesMachine.add(CA_U);
@@ -257,7 +257,7 @@ void VendingMachine::refundChange()
 		total_coins = 0;
 		goToNextState("Change Dispensed");
 	}
-	else if (total_coins > 1.5)
+	else //if (total_coins > 1.5) //can only get here if it has cash, preCondition
 	{
 		displayObj	<< lineH << std::endl
 					<< std::left << std::setw(2) << lineV << "Returning Change: $" << std::setw(48) << (total_coins-1.5) << std::right << std::setw(2) << lineV << std::endl;
@@ -308,7 +308,6 @@ bool VendingMachine::goToNextState(std::string transition)
 	}
 	catch (...)
 	{
-		std::cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << std::endl;
 		return false;
 	}
 	return false;
@@ -367,7 +366,7 @@ void VendingMachine::insertCash(double amt)
 		else
 		{
 			displayObj	<< lineH << std::endl
-						<< std::left << std::setw(2) << lineV << "Too much cash in the machine. Returning Change: $" << std::setw(18) << amt << std::right << std::setw(2) << lineV << std::endl;
+						<< std::left << std::setw(2) << lineV << "Too much money in the machine. Returning Change: $" << std::setw(17) << amt << std::right << std::setw(2) << lineV << std::endl;
 			if (goToNextState("Insert Cash"))
 			{
 				// goes from Update to Update
@@ -434,10 +433,6 @@ void VendingMachine::cancelOrder()
 		{
 			// goes from Update to CancelCard and then to Update or Idle
 		} // end if (it can go to next state)
-		else
-		{
-			std::cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << std::endl;
-		}
 	}
 	else
 	{
@@ -447,14 +442,11 @@ void VendingMachine::cancelOrder()
 
 void VendingMachine::coinReturn()
 {
-	if (goToNextState("Coin Return"))
-	{
-		// goes from Update to CancelCard and then to Update or Idle
-	}
-	else
-	{
-		//displayObj << "Coin Return is not available!" << endl; //It should not do anything if it can't be done, just like a real machine
-	} // end if (it can go to next state)
+	if ((paidByCreditCard && total_coins > 1.5) || (!paidByCreditCard && total_coins > 0))
+		if (goToNextState("Coin Return"))
+			{
+				// goes from Update to CancelCard and then to Update or Idle
+			} // end if (it can go to next state)
 } // end voinReturn
 
 bool VendingMachine::addSlot(std::string location, std::string Name, double Price, int Stock)

@@ -2,90 +2,90 @@
 //This is a comment!
 //The input is seperated by what is happening, and organizaed to test every possible outcome! (I think)
 
-//* indicates it works, and has been removed for testing purposes
+// indicates it works, and has been removed for testing purposes
 
 //Testing all valid/invalid positions from Idle
-*PressButton A1
-*PressButton Z9
-*PressButton DZ9
-*PressButton D99
-*PressButton askdhjl
-*PressButton a1
+PressButton A1
+PressButton Z9
+PressButton DZ9
+PressButton D99
+PressButton askdhjl
+PressButton a1
 
 //Testing inserting invalid cash from idle
-*InsertCash 1.50
-*InsertCash 2000000
-*InsertCash asdkjh
+InsertCash 1.50
+InsertCash 2000000
+InsertCash asdkjh
 
 //Testing inserting valid amounts of cash, while still not have more than $1.50
-*InsertCash .01
-*InsertCash .1
+InsertCash .01
+InsertCash .1
 
 //Testing Valid and Invalid positions while we have cash, but not enough
-*PressButton Z9
-*PressButton DZ9
-*PressButton D99
-*PressButton askdhjl
-*PressButton a1
-*PressButton A1
+PressButton Z9
+PressButton DZ9
+PressButton D99
+PressButton askdhjl
+PressButton a1
+PressButton A1
 
 //Testing inserting invalid amounts of cash, while still not have more than $1.50
-*InsertCash 2000000
-*InsertCash asdkjh
+InsertCash 2000000
+InsertCash asdkjh
 
 //Testing inserting valid and invalid amounts of cash, while over $1.50
-*InsertCash 5
-*InsertCash 5.00
-*InsertCash 5
-*InsertCash ajsgd
-*InsertCash 123
+InsertCash 5
+InsertCash 5.00
+InsertCash 5
+InsertCash ajsgd
+InsertCash 123
 
 //Testing Invalid positions while we have enough cash
-*PressButton Z9
-*PressButton DZ9
-*PressButton D99
-*PressButton askdhjl
-*PressButton a1
+PressButton Z9
+PressButton DZ9
+PressButton D99
+PressButton askdhjl
+PressButton a1
 
 //Testing if we can dispence while we have enough cash, and if we get change back
-*PressButton A1
+PressButton A1
 
 //Testing if we can still purchase something, after a completed transaction
-*PressButton A1
+PressButton A1
 
 //Testing if we can dispence while we have exactly $1.50, and if we get change back (we should not!)
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
 
 //Testing if we can sell out of something!
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
-*InsertCash 1
-*InsertCash .5
-*PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
+InsertCash 1
+InsertCash .5
+PressButton A1
 
 //Since we sold out of A1, we have leftover cash. Can we get it back from coinReturn?
-*PressButton CoinReturn
+PressButton CoinReturn
 
 //Can we still get cash back, now that we don't have any?
-*PressButton CoinReturn
+PressButton CoinReturn
 
 //What happens if we swipe an invalid card (even number)?
-*Swipe 1234
+Swipe 1234
 
 //What happens if we swipe valid?
 Swipe 123
