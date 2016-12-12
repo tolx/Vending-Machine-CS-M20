@@ -4,6 +4,7 @@ To Do:
 *Add functionality for the 0th position in the machine, we say we can use it, but we don't at all...
 *Finish Design Document
 **Perhaps use info or inspiration from last semmester's final? https://github.com/radiofreq10/csm20final/blob/master/DesignDocument.pdf
+**From the prof: A design document detailing what the design strategies are, why the data structures, classes, algorithms, etc. used were chosen (and why others were not), and the overall design architecture of the project.
 *Finish User's Manual
 **Polish the look of things, if needed
 **How to read command output
