@@ -214,27 +214,18 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 
 	string action, entry;
 	double cash;
+	size_t position;
 	while (!inFile.eof())
 	{
-
-	string line;
-	getline(inFile, line);
-	std::istringstream buf(line);
-	std::istream_iterator<std::string> beg(buf), end;
-
-	std::vector<std::string> tokens(beg, end);
-
-	if (tokens.size() == 2)
+	getline(inFile, action);
+	entry = action;
+	position = action.find_first_of(" ");
+	if (!(position == string::npos || position == action.size()))
 	{
+		entry.erase(0, action.find_first_of(" ")+1);
+		action.erase(action.find_first_of(" "), action.size());
 
-		action = tokens[0];
-		entry = tokens[1];
-
-
-
-		//Remove?
-        //cout << "****Simulating the command " << action << " " << entry << "****" << endl;
-        outFileObj << "****Simulating the command " << action << " " << entry << "****" << endl;
+        outFileObj << "****" << action << " " << entry << "****" << endl;
 
 		if (action == "PressButton")
 		{

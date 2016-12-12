@@ -1,180 +1,179 @@
 In idle state 
-****Simulating the command PressButton D4****
+****PressButton D4****
 Price is $1.5 for D4
 In idle state
 In idle state
-****Simulating the command PressButton ZD4****
+****PressButton ZD4****
 Invalid Input!
 In idle state
-****Simulating the command PressButton Cancel****
+****PressButton Cancel****
 No card has been used, nothing to cancel.
-****Simulating the command PressButton CoinReturn****
-****Simulating the command InsertCash 1.00****
+****PressButton CoinReturn****
+****InsertCash 1.00****
 We have 1
-****Simulating the command PressButton CoinReturn****
+****PressButton CoinReturn****
 Dispensing cash 1
 In idle state
 In idle state
-****Simulating the command InsertCash 1.00****
+****InsertCash 1.00****
 We have 1
-****Simulating the command PressButton D4****
+****PressButton D4****
 Price is $1.5 for D4
 We have 1
 We have 1
-****Simulating the command PressButton ZD4****
+****PressButton ZD4****
 Invalid Input!
 We have 1
-****Simulating the command InsertCash 0.5****
+****InsertCash 0.5****
 We have 1.5
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command Swipe 2017****
-****Simulating the command Swipe 3365****
-****Simulating the command InsertCash 0.25****
+****Swipe 2017****
+****Swipe 3365****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command PressButton D4****
+****PressButton D4****
 Dispensing Drink..
 In idle state
 In idle state
-****Simulating the command Swipe 7511****
+****Swipe 7511****
 Checking Card... Approved
 We have 1.5
-****Simulating the command PressButton ZD4****
+****PressButton ZD4****
 Invalid Input!
 We have 1.5
-****Simulating the command PressButton D4****
+****PressButton D4****
 Dispensing Drink..
 In idle state
 In idle state
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 We have 0.25
-****Simulating the command Swipe 9417****
+****Swipe 9417****
 Checking Card... Approved
 We have 1.75
-****Simulating the command PressButton CoinReturn****
+****PressButton CoinReturn****
 Dispensing cash 0.25
 We have 1.5
-****Simulating the command PressButton Cancel****
-****Simulating the command InsertCash 0.25****
+****PressButton Cancel****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command Swipe 1220****
-****Simulating the command PressButton Cancel****
-****Simulating the command PressButton CoinReturn****
-****Simulating the command InsertCash 0.10****
+****Swipe 1220****
+****PressButton Cancel****
+****PressButton CoinReturn****
+****InsertCash 0.10****
 Too much cash in the machine. $0.1 has been returned.
-****Simulating the command InsertCash 0.05****
+****InsertCash 0.05****
 Too much cash in the machine. $0.05 has been returned.
-****Simulating the command PressButton Cancel****
-****Simulating the command InsertCash 0.25****
+****PressButton Cancel****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command PressButton CoinReturn****
-****Simulating the command Swipe 7516****
-****Simulating the command PressButton A100****
-****Simulating the command InsertCash 0.01****
+****PressButton CoinReturn****
+****Swipe 7516****
+****PressButton A100****
+****InsertCash 0.01****
 Too much cash in the machine. $0.01 has been returned.
-****Simulating the command InsertCash 0.99****
+****InsertCash 0.99****
 Cannot insert this type of cash! $0.99 has been returned.
-****Simulating the command PressButton CoinReturn****
-****Simulating the command InsertCash 1.00****
+****PressButton CoinReturn****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command PressButton A3****
-****Simulating the command PressButton D4****
-****Simulating the command InsertCash 1.00****
+****PressButton A3****
+****PressButton D4****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command PressButton D4****
-****Simulating the command Swipe 1337****
-****Simulating the command Swipe 7201****
-****Simulating the command PressButton D6****
-****Simulating the command PressButton D1****
-****Simulating the command PressButton CoinReturn****
-****Simulating the command InsertCash 1.00****
+****PressButton D4****
+****Swipe 1337****
+****Swipe 7201****
+****PressButton D6****
+****PressButton D1****
+****PressButton CoinReturn****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.10****
+****InsertCash 0.10****
 Too much cash in the machine. $0.1 has been returned.
-****Simulating the command InsertCash 0.05****
+****InsertCash 0.05****
 Too much cash in the machine. $0.05 has been returned.
-****Simulating the command InsertCash 0.10****
+****InsertCash 0.10****
 Too much cash in the machine. $0.1 has been returned.
-****Simulating the command InsertCash 0.05****
+****InsertCash 0.05****
 Too much cash in the machine. $0.05 has been returned.
-****Simulating the command InsertCash 0.10****
+****InsertCash 0.10****
 Too much cash in the machine. $0.1 has been returned.
-****Simulating the command InsertCash 0.05****
+****InsertCash 0.05****
 Too much cash in the machine. $0.05 has been returned.
-****Simulating the command Swipe 9810****
-****Simulating the command PressButton A9****
-****Simulating the command PressButton A1****
-****Simulating the command PressButton CoinReturn****
-****Simulating the command PressButton Cancel****
-****Simulating the command Swipe 1371****
-****Simulating the command InsertCash 0.25****
+****Swipe 9810****
+****PressButton A9****
+****PressButton A1****
+****PressButton CoinReturn****
+****PressButton Cancel****
+****Swipe 1371****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command Swipe 9114****
-****Simulating the command PressButton CoinReturn****
-****Simulating the command PressButton D1****
-****Simulating the command InsertCash 0.25****
+****Swipe 9114****
+****PressButton CoinReturn****
+****PressButton D1****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command PressButton F1****
-****Simulating the command InsertCash 0.25****
+****PressButton F1****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command InsertCash 0.25****
+****InsertCash 0.25****
 Too much cash in the machine. $0.25 has been returned.
-****Simulating the command PressButton CoinReturn****
-****Simulating the command InsertCash 1.00****
+****PressButton CoinReturn****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command InsertCash 1.00****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command InsertCash 5.00****
+****InsertCash 5.00****
 Too much cash in the machine. $5 has been returned.
-****Simulating the command PressButton F2****
-****Simulating the command InsertCash 1.00****
+****PressButton F2****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command InsertCash 100.00****
+****InsertCash 100.00****
 Cannot insert this type of cash! $100 has been returned.
-****Simulating the command PressButton Cancel****
-****Simulating the command Swipe 5640****
-****Simulating the command PressButton Cancel****
-****Simulating the command Swipe 7812****
-****Simulating the command PressButton CoinReturn****
-****Simulating the command InsertCash 1.00****
+****PressButton Cancel****
+****Swipe 5640****
+****PressButton Cancel****
+****Swipe 7812****
+****PressButton CoinReturn****
+****InsertCash 1.00****
 Too much cash in the machine. $1 has been returned.
-****Simulating the command InsertCash 0.50****
+****InsertCash 0.50****
 Too much cash in the machine. $0.5 has been returned.
-****Simulating the command PressButton A1****
-****Simulating the command PressButton A1****
+****PressButton A1****
