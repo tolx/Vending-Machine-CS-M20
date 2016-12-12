@@ -1,23 +1,26 @@
 // FinalProject.cpp : Defines the entry point for the console application.
 // CS M20 - Object Oreinted Data Structure and Algorithm Detection
-/*	Team Water
-* Group Members:
-*	Sam Rice
-*	Ivan Martinez
-*	Justin Kephart
-*	Kelton Malhotra
-*	Jake Lyon
-*	Kiefer Solberg
-*	Riley Wallace
+/************************************************
+*	Water World Vending Machines (WWVM)
+*	AKA, Team Water
+*	GitHub:
+* https://github.com/tolx/Vending-Machine-CS-M20
+*************************************************
+*	GROUP MEMBER'S NAME	-	Git USERNAME		*
+*-----------------------------------------------*
+*	Sam Rice			-	RoboticRice			*
+*	Ivan Martinez		-	tolx				*
+*	Justin Kephart		-	AshnakAGQ			*
+*	Kelton Malhotra		-	KeltonAM			*
+*	Jake Lyon			-	jlyon805			*
+*	Kiefer Solberg		-	potatoMoorpark		*
+*	Riley Wallace		-	RileyWallace		*
+*************************************************
 * Program Status:
-*	Complete:	No
+*	Complete:	Pending
 *	Builds:		Yes
 *	Errors:		No
-* Members who worked on this file:
-*   Sam Rice
-*   Kelton Malhotra
-*	Justin Kephart
-*/
+************************************************/
 
 #pragma warning( disable: 4290 )  // disable warnings about the use of throw in function headers
 
