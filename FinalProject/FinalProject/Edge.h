@@ -1,8 +1,10 @@
+/***************************************************
+*	Final Project 2016
+*	Team Water
+*	Edge header file, inspired by the textbook.
+***************************************************/
 #ifndef EDGE_PROJECT
-
 #define EDGE_PROJECT
-
-/** @file Edge.h */
 
 /** @class Edge
 * An Edge class for graph implementations. */

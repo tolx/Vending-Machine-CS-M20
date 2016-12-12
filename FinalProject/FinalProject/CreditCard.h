@@ -1,12 +1,10 @@
-/*************************************************
+/***************************************************
 *	Final Project 2016
-*	Credit Card class file
-*	Jake Lyon
-*************************************************/
+*	Team Water
+*	Credit Card header file
+***************************************************/
 #ifndef _CREDIT_CARD
 #define _CREDIT_CARD
-
-#include <string>
 
 #include "PrecondViolatedExcept.h"
 

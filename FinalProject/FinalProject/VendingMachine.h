@@ -1,18 +1,15 @@
-/*
-CS M20 - Final Project
-Team Water
-Members who worked on this:
-Kelton Malhotra
-Justin Kephart
-Riley Wallace
-*/
+/***************************************************
+*	Final Project 2016
+*	Team Water
+*	Vending Machine header file
+***************************************************/
 
 #include "Graph.h"
 #include "CreditCard.h"
+#include <string>
 #include <fstream>
 #include <iostream>
-
-using namespace std;
+//#include <map> //This is not required, as we know Graph.h includes it, and this will always require Graph.h
 
 static const double COIN_MAX = 1.50;
 static const int TOTAL_STATE = 8;
@@ -20,22 +17,22 @@ static const int TOTAL_STATE = 8;
 class VendingMachine
 {
 private:
-	Graph<string, string> statesMachine;
-	map <string, class Slot> prodList;
-	ostream& displayObj;
+	Graph<std::string, std::string> statesMachine;
+	std::map<std::string, class Slot> prodList;
+	std::ostream& displayObj;
 
 	void BuildStateMachine();
 	void GoToIdleState();
 	void BuildActionTable();
 
-	bool GoToNextState(string transition);
+	bool GoToNextState(std::string transition);
 
 	double coin_max;
-	string ProdCodePushed;
+	std::string ProdCodePushed;
 	bool  paidByCreditCard;
 	int   ccNum; // Credit card Number 
 	double total_coins;
-	string currentState;
+	std::string currentState;
 
 private: // called by GotoNextState
 	void DisplayPrice();
@@ -48,53 +45,48 @@ private: // called by GotoNextState
 	void RefundChange();
 
 	void ProcessInvalidState();
-private:
-	// Action table - Execeute callback based on new current state
 
+private:// Action table - Execeute callback based on new current state
 	typedef void (VendingMachine::*DoAction)(void);
-
 
 	struct ActionTable
 	{
-		string curState;
-
+		std::string curState;
 		DoAction cb;
-
 	};
 	ActionTable Atable[TOTAL_STATE];
 
-
 public:
 	VendingMachine();
-	VendingMachine(ostream& obj);
+	VendingMachine(std::ostream& obj);
 
-	void pushButton(string prodCode);
+	void pushButton(std::string prodCode);
 	void insertCash(double amt);
-	void swipeCard(string cardType);
+	void swipeCard(std::string cardType);
 	void cancelOrder();
 	void coinReturn();
-	bool addSlot(string location, string Name = "", double Price = 0, int Stock = 0);
-	bool getSlot(string location, string &Name, double &Price, int &Stock);
+	bool addSlot(std::string location, std::string Name = "", double Price = 0, int Stock = 0);
+	bool getSlot(std::string location, std::string &Name, double &Price, int &Stock);
 };
 
 class Slot
 {
 private:
-	string name;
-	double  price; // in cents
+	std::string name;
+	double price; // in cents
 	int stock;
 public:
-	Slot(string Name = "", double Price = 0, int Stock = 0)
+	Slot(std::string Name = "", double Price = 0, int Stock = 0)
 		: name(Name), price(Price), stock(Stock) {}
 
-	string	getName() { return name; }
+	std::string	getName() { return name; }
 	double	getPrice() { return price; }
 	int		getStock() { return stock; }
 
-	void	setName(string Name) { name = Name; }
+	void	setName(std::string Name) { name = Name; }
 	void	setPrice(double Price) { price = Price; }
 	void	setStock(int Stock) { stock = Stock; }
 
 	bool notEmpty() { return stock > 0; }
-	string dispense() { stock--; return name + " dispensed"; }
+	std::string dispense() { stock--; return name + " dispensed"; }
 };

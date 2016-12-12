@@ -26,11 +26,10 @@
 
 #include "VendingMachine.h"
 #include "PrecondViolatedExcept.h"
-#include <iostream>
+#include <iostream> //This is included in VendingMachine.h, but as this is the client file, it is good practice to include it here as well
 #include <iomanip>
-#include <fstream>
-#include <string>
-#include <vector>
+#include <fstream> //This is included in VendingMachine.h, but as this is the client file, it is good practice to include it here as well
+#include <string> //This is included in VendingMachine.h, but as this is the client file, it is good practice to include it here as well
 using namespace std;
 
 void headerSplash();

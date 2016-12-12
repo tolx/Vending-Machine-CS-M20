@@ -1,12 +1,8 @@
 /***************************************************
 *	Final Project 2016
+*	Team Water
 *	Credit Card implementation file
-*	Jake Lyon
-*	Sam Rice
 ***************************************************/
-#include <iostream>
-#include <string>
-
 #include "CreditCard.h"
 
 CreditCard::CreditCard(const int number)
@@ -14,12 +10,10 @@ CreditCard::CreditCard(const int number)
 	setCCNum(number);
 }
 
-// Recieves number as "####-####-####-####"
 void CreditCard::setCCNum(const int number)
 {
 	CC_NUM = number;
 }
-
 
 bool CreditCard::isValid() const
 {

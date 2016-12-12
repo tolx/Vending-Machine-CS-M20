@@ -1,4 +1,8 @@
-/** @file Graph.h */
+/***************************************************
+*	Final Project 2016
+*	Team Water
+*	Graph header file, inspired by the textbook
+***************************************************/
 
 #ifndef GRAPH_PROJECT
 
@@ -9,8 +13,6 @@
 #include <map>
 #include "Edge.h"
 #include "PrecondViolatedExcept.h"
-
-
 
 /** An adjacency list representation of an undirected,
 * weighted graph. */
@@ -24,8 +26,8 @@ class Graph
 					   /** Adjacency list representation of the graph;
 					   * the map pair consists of the second vertex (key)
 					   * and the edge weight (value). */
-	vector<map<T, W> > adjList;
-	vector<T> vertices;	 /*  This vector stores all of the vertices in the graph           */
+	std::vector<std::map<T, W> > adjList;
+	std::vector<T> vertices;	 /*  This vector stores all of the vertices in the graph           */
 
 	/**
 		Return if the vertex exists in the graph
@@ -114,7 +116,7 @@ template<typename T, typename W>
  const unsigned int Graph<T, W>::vertexLoc(const T &v)
 {
 	 int i{ 0 };
-	 vector<T>::iterator it;
+	 std::vector<T>::iterator it;
 
 	 for (it = vertices.begin(); it < vertices.end(); it++, i++)
 	 {
@@ -129,7 +131,7 @@ template<typename T, typename W>
 template<typename T,typename W>
 Graph<T,W>::Graph(const int n)
 {
-	map<T, W> element;
+	std::map<T, W> element;
 	adjList.assign(n, element);
 	numVertices = n;
 	numEdges = 0;
@@ -143,7 +145,7 @@ Graph<T, W>::Graph()
 template<typename T, typename W>
 void Graph<T, W>::Init(const int n)
 {
-	map<T, W> element;
+	std::map<T, W> element;
 	adjList.assign(n, element);
 	numVertices = n;
 	numEdges = 0;
@@ -197,9 +199,9 @@ template<typename T,typename W>
 const W Graph<T,W>::findEnd(const T &v, const W &weight)
 {
 	int loc = vertexLoc(v);
-	map<T, W>::iterator it;
+	std::map<T, W>::iterator it;
 
-	map<T, W> m = adjList[loc];
+	std::map<T, W> m = adjList[loc];
 	for (it = m.begin(); it != m.end(); ++it)
 		if (it->second == weight)
 			return it->first;

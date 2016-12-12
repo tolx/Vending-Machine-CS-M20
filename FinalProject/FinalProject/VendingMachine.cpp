@@ -1,16 +1,10 @@
-/*
-CS M20 - Final Project
-Team Water
-Members who worked on this:
-Kelton Malhotra
-Sam Rice
-Justin Kephart
-Riley Wallace
-*/
+/***************************************************
+*	Final Project 2016
+*	Team Water
+*	Vending Machine implementation file
+***************************************************/
 
 #include "VendingMachine.h"
-
-
 
 VendingMachine::VendingMachine() : displayObj(std::cout)
 {
@@ -21,7 +15,7 @@ VendingMachine::VendingMachine() : displayObj(std::cout)
 	GoToIdleState();
 } // end VendingMachine default constructor
 
-VendingMachine::VendingMachine(ostream& obj) : displayObj(obj)
+VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
 {
 	coin_max = COIN_MAX;
 	currentState = "Idle";
@@ -62,10 +56,7 @@ void VendingMachine::BuildActionTable()
 	i++;
 	Atable[i].curState = "InvalidPosition";
 	Atable[i].cb = &VendingMachine::ProcessInvalidState;
-
-
-
-}
+} // end buildActionTable
 
 void VendingMachine::BuildStateMachine()
 {
@@ -73,73 +64,73 @@ void VendingMachine::BuildStateMachine()
 
 	statesMachine.Init(8);
 
-	Edge<string, string> S_U("Idle", "Update", "Insert Cash");
+	Edge<std::string, std::string> S_U("Idle", "Update", "Insert Cash");
 	statesMachine.add(S_U);
 
-	Edge<string, string> U_U("Update", "Update", "Insert Cash");
+	Edge<std::string, std::string> U_U("Update", "Update", "Insert Cash");
 	statesMachine.add(U_U);
 
-	Edge<string, string> S_SP("Idle", "ShowPrice", "Valid Position");
+	Edge<std::string, std::string> S_SP("Idle", "ShowPrice", "Valid Position");
 	statesMachine.add(S_SP);
 
-	Edge<string, string> S_IP("Idle", "InvalidPosition", "Invalid Position");
+	Edge<std::string, std::string> S_IP("Idle", "InvalidPosition", "Invalid Position");
 	statesMachine.add(S_IP);
 
-	Edge<string, string> S_CH("Idle", "CheckCard", "Card Swiped");
+	Edge<std::string, std::string> S_CH("Idle", "CheckCard", "Card Swiped");
 	statesMachine.add(S_CH);
 
-	Edge<string, string> SP_U("ShowPrice", "Update", "Has Cash");
+	Edge<std::string, std::string> SP_U("ShowPrice", "Update", "Has Cash");
 	statesMachine.add(SP_U);
 
-	Edge<string, string> SP_S("ShowPrice", "Idle", "No Cash");
+	Edge<std::string, std::string> SP_S("ShowPrice", "Idle", "No Cash");
 	statesMachine.add(SP_S);
 
-	Edge<string, string> U_SP("Update", "ShowPrice", "Valid Position & Not Enough Cash");
+	Edge<std::string, std::string> U_SP("Update", "ShowPrice", "Valid Position & Not Enough Cash");
 	statesMachine.add(U_SP);
 
-	Edge<string, string> U_D("Update", "DispenseDrink", "Valid Position & Enough Cash/Credit");
+	Edge<std::string, std::string> U_D("Update", "DispenseDrink", "Valid Position & Enough Cash/Credit");
 	statesMachine.add(U_D);
 
-	Edge<string, string> D_S("DispenseDrink", "Idle", "No Leftover Cash");
+	Edge<std::string, std::string> D_S("DispenseDrink", "Idle", "No Leftover Cash");
 	statesMachine.add(D_S);
 
-	Edge<string, string> D_DC("DispenseDrink", "DispenseChange", "Cash Leftover");
+	Edge<std::string, std::string> D_DC("DispenseDrink", "DispenseChange", "Cash Leftover");
 	statesMachine.add(D_DC);
 
-	Edge<string, string> DC_S("DispenseChange", "Idle", "Change Dispensed");
+	Edge<std::string, std::string> DC_S("DispenseChange", "Idle", "Change Dispensed");
 	statesMachine.add(DC_S);
 
-	Edge<string, string> IP_U("InvalidPosition", "Update", "Has Cash/Credit");
+	Edge<std::string, std::string> IP_U("InvalidPosition", "Update", "Has Cash/Credit");
 	statesMachine.add(IP_U);
 
-	Edge<string, string> U_IP("Update", "InvalidPosition", "Invalid Position");
+	Edge<std::string, std::string> U_IP("Update", "InvalidPosition", "Invalid Position");
 	statesMachine.add(U_IP);
 
-	Edge<string, string> IP_S("InvalidPosition", "Idle", "No Cash/Credit");
+	Edge<std::string, std::string> IP_S("InvalidPosition", "Idle", "No Cash/Credit");
 	statesMachine.add(IP_S);
 
-	Edge<string, string> U_CH("Update", "CheckCard", "Card Swiped");
+	Edge<std::string, std::string> U_CH("Update", "CheckCard", "Card Swiped");
 	statesMachine.add(U_CH);
 
-	Edge<string, string> CH_U("CheckCard", "Update", "Card Approved Or Declined and Has Cash");
+	Edge<std::string, std::string> CH_U("CheckCard", "Update", "Card Approved Or Declined and Has Cash");
 	statesMachine.add(CH_U);
 
-	Edge<string, string> CH_S("CheckCard", "Idle", "Card Declined and No Cash");
+	Edge<std::string, std::string> CH_S("CheckCard", "Idle", "Card Declined and No Cash");
 	statesMachine.add(CH_S);
 
-	Edge<string, string> U_CA("Update", "CancelCard", "Has Credit and Card Cancel Pressed");
+	Edge<std::string, std::string> U_CA("Update", "CancelCard", "Has Credit and Card Cancel Pressed");
 	statesMachine.add(U_CA);
 
-	Edge<string, string> CA_U("CancelCard", "Update", "Has Cash");
+	Edge<std::string, std::string> CA_U("CancelCard", "Update", "Has Cash");
 	statesMachine.add(CA_U);
 
-	Edge<string, string> CA_S("CancelCard", "Idle", "No Cash");
+	Edge<std::string, std::string> CA_S("CancelCard", "Idle", "No Cash");
 	statesMachine.add(CA_S);
 
-	Edge<string, string> U_DC("Update", "DispenseChange", "Coin Return");
+	Edge<std::string, std::string> U_DC("Update", "DispenseChange", "Coin Return");
 	statesMachine.add(U_DC);
 
-	Edge<string, string> DC_U("DispenseChange", "Update", "Has Credit");
+	Edge<std::string, std::string> DC_U("DispenseChange", "Update", "Has Credit");
 	statesMachine.add(DC_U);
 
 } // end build state machine
@@ -149,13 +140,13 @@ void VendingMachine::GoToIdleState()
 	currentState = "Idle";
 	paidByCreditCard = false;
 	total_coins = 0;
-	displayObj << "In idle state " << endl;
+	displayObj << "In idle state " << std::endl;
 } // end GoToIdleState
 // Following methods called by GoToNextState
 
 void VendingMachine::DisplayPrice()
 {
-	displayObj << "Price is $" << coin_max << " for " << ProdCodePushed << endl;
+	displayObj << "Price is $" << coin_max << " for " << ProdCodePushed << std::endl;
 	if (total_coins > 0)
 	{
 		GoToNextState("Has Cash");
@@ -164,18 +155,18 @@ void VendingMachine::DisplayPrice()
 	{
 		GoToNextState("No Cash");
 	}
-}
+} // end DisplayPrice
 
 void VendingMachine::DisplayTotalCoins()
 {
-	displayObj << "We have " << total_coins << endl;
-}
+	displayObj << "We have " << total_coins << std::endl;
+} // end DisplayTotalCoins
 
 void VendingMachine::CancelCreditTransaction()
 {
 	paidByCreditCard = false;
 	total_coins -= coin_max;
-	displayObj << "Card Transaction Canceled" << endl;
+	displayObj << "Card Transaction Canceled" << std::endl;
 	if (total_coins > 0)
 	{
 		GoToNextState("Has Cash");
@@ -184,11 +175,11 @@ void VendingMachine::CancelCreditTransaction()
 	{
 		GoToNextState("No Cash");
 	}
-}
+} // end CancelCreditTransaction
 
 void VendingMachine::DispenseDrink()
 {
-	displayObj << "Dispensing Drink.." << endl;
+	displayObj << "Dispensing Drink.." << std::endl;
 	prodList[ProdCodePushed].dispense();
 
 	total_coins -= coin_max;
@@ -201,7 +192,7 @@ void VendingMachine::DispenseDrink()
 	{
 		GoToNextState("Cash Leftover");
 	}
-}
+} // end DispenseDrink
 
 void VendingMachine::ProcessCreditCard()
 {
@@ -211,12 +202,12 @@ void VendingMachine::ProcessCreditCard()
 
 	if (is_card_approved)
 	{
-		displayObj << "Checking Card... Approved" << endl;
+		displayObj << "Checking Card... Approved" << std::endl;
 		paidByCreditCard = true;
 	}
 	else
 	{
-		displayObj << "Checking Card... Declined" << endl;
+		displayObj << "Checking Card... Declined" << std::endl;
 	}
 
 	total_coins += coin_max;
@@ -228,27 +219,27 @@ void VendingMachine::ProcessCreditCard()
 	{
 		GoToNextState("Card Declined and No Cash");
 	}
-}
+} // end ProcessCreditCard
 
 void VendingMachine::RefundChange()
 {
 	if (!paidByCreditCard)
 	{
-		displayObj << "Dispensing cash " << total_coins << endl;
+		displayObj << "Dispensing cash " << total_coins << std::endl;
 		total_coins = 0;
 		GoToNextState("Change Dispensed");
 	}
 	else
 	{
-		displayObj << "Dispensing cash " << (total_coins - 1.5) << endl;
+		displayObj << "Dispensing cash " << (total_coins - 1.5) << std::endl;
 		total_coins = coin_max;
 		GoToNextState("Has Credit");
 	}
-}
+} // end RefundChange
 
 void VendingMachine::ProcessInvalidState()
 {
-	displayObj << "Invalid Input!" << endl;
+	displayObj << "Invalid Input!" << std::endl;
 	if (total_coins > 0)
 	{
 		GoToNextState("Has Cash/Credit");
@@ -257,72 +248,27 @@ void VendingMachine::ProcessInvalidState()
 	{
 		GoToNextState("No Cash/Credit");
 	}
-}
+} // end ProcessInvalidState
 
 void VendingMachine::ProcessIdleState()
 {
-	displayObj << "In idle state" << endl;
-}
+	displayObj << "In idle state" << std::endl;
+} // end ProccessIdleState
 
-bool VendingMachine::GoToNextState(string transition)
+bool VendingMachine::GoToNextState(std::string transition)
 {
 	try
 	{
-		string newState = statesMachine.findEnd(currentState, transition);
+		std::string newState = statesMachine.findEnd(currentState, transition);
 		currentState = newState;
-
 
 		// Take Action based on new state
 
 		for (int i = 0; i < TOTAL_STATE; i++)
 		{
 			if (Atable[i].curState == currentState)
-
 				(this->*Atable[i].cb)();
 		}
-		/*
-		if (currentState == "ShowPrice")
-		{
-		DisplayPrice();
-
-		}
-		else if (currentState == "Update")
-		{
-		DisplayTotalCoins();
-		}
-		else if (currentState == "CancelCard")
-		{
-		CancelCreditTransaction();
-
-		}
-		else if (currentState == "DispenseDrink")
-		{
-		DispenseDrink();
-
-
-		}
-		else if (currentState == "CheckCard")
-		{
-
-		ProcessCreditCard();
-
-		}
-		else if (currentState == "DispenseChange")
-		{
-		RefundChange();
-
-		}
-		else if (currentState == "Idle")
-		{
-		ProcessIdleState();
-
-		}
-		else if (currentState == "InvalidPosition")
-		{
-		ProcessInvalidState();
-
-		}
-		*/
 		return true;
 	}
 	catch (...)
@@ -334,7 +280,7 @@ bool VendingMachine::GoToNextState(string transition)
 
 // Public functions called by client
 
-void VendingMachine::pushButton(string prodCode)
+void VendingMachine::pushButton(std::string prodCode)
 {
 	ProdCodePushed = prodCode;
 	bool isValidPosition = (prodList.find(ProdCodePushed) != prodList.end() && prodList[ProdCodePushed].notEmpty()) ;
@@ -386,16 +332,16 @@ void VendingMachine::insertCash(double amt)
 		}
 		else
 		{
-			displayObj << "Too much cash in the machine. $" << amt << " has been returned." << endl; //format this later
+			displayObj << "Too much cash in the machine. $" << amt << " has been returned." << std::endl; //format this later
 		} // end if (not enough cash yet)
 	}
 	else
 	{
-		displayObj << "Cannot insert this type of cash! $" << amt << " has been returned." << endl;
+		displayObj << "Cannot insert this type of cash! $" << amt << " has been returned." << std::endl;
 	} // end if (valid amount of cash)
 } // end insertCash
 
-void VendingMachine::swipeCard(string cardNum)
+void VendingMachine::swipeCard(std::string cardNum)
 {
 	if (!cardNum.empty())
 	{
@@ -430,7 +376,6 @@ void VendingMachine::swipeCard(string cardNum)
 	{
 		// Decline card - do nothing
 	}
-
 } // end swipeCard
 
 void VendingMachine::cancelOrder()
@@ -444,7 +389,7 @@ void VendingMachine::cancelOrder()
 	}
 	else
 	{
-		displayObj << "No card has been used, nothing to cancel." << endl;
+		displayObj << "No card has been used, nothing to cancel." << std::endl;
 	} // end if (already used a card)
 } // end cancleOrder
 
@@ -460,18 +405,16 @@ void VendingMachine::coinReturn()
 	} // end if (it can go to next state)
 } // end voinReturn
 
-bool VendingMachine::addSlot(string location, string Name, double Price, int Stock)
+bool VendingMachine::addSlot(std::string location, std::string Name, double Price, int Stock)
 {
 	prodList.insert(make_pair(location, Slot(Name, Price, Stock)));
-
 	return true;
-}
+} // end addSlot
 
-bool VendingMachine::getSlot(string location, string & Name, double & Price, int & Stock)
+bool VendingMachine::getSlot(std::string location, std::string & Name, double & Price, int & Stock)
 {
 	if (prodList.find(location) == prodList.end())
 		return false;
-
 	else
 	{
 		Name = prodList[location].getName();
@@ -479,6 +422,6 @@ bool VendingMachine::getSlot(string location, string & Name, double & Price, int
 		Stock = prodList[location].getStock();
 	}
 	return true;
-}
+} // end getSlot
 
 // END of Client functions

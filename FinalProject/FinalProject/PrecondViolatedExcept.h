@@ -1,9 +1,9 @@
-/*
-CS M20 - Final Project
-Team Water
-Members who worked on this:
-The textbook :P
-*/
+/***************************************************
+*	Final Project 2016
+*	Team Water
+*	Precondition Violated Exception header file
+*		from the textbook.
+***************************************************/
 /** Listing 7-5.
     @file PrecondViolatedExcept.h */
 
@@ -13,11 +13,9 @@ The textbook :P
 #include <stdexcept>
 #include <string>
 
-using namespace std;
-
-class PrecondViolatedExcept : public logic_error
+class PrecondViolatedExcept : public std::logic_error
 {
 public:
-   PrecondViolatedExcept(const string& message = "");
+   PrecondViolatedExcept(const std::string& message = "");
 }; // end PrecondViolatedExcep 
 #endif
