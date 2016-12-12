@@ -4,7 +4,7 @@ Water World Vending Machines, VM001 Simulator
 ![Water World Vending Machines](https://github.com/tolx/Vending-Machine-CS-M20/blob/master/WaterWorldVendingMachines.png)
 
 # Project Members:
-Sam Rice, [RobotiRice](https://github.com/RoboticRice)
+Sam Rice, [RoboticRice](https://github.com/RoboticRice)
 
 Ivan Martinez, [tolx](https://github.com/tolx)
 
