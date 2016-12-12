@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 //#include <map> //This is not required, as we know Graph.h includes it, and this will always require Graph.h
 
 static const double COIN_MAX = 1.50;
@@ -33,6 +34,9 @@ private:
 	int   ccNum; // Credit card Number 
 	double total_coins;
 	std::string currentState;
+
+	const std::string lineH{ "***********************************************************************" }, lineV{ "*" }; //These are used for graphic-like interface
+	void displayMenu() const;
 
 private: // called by GotoNextState
 	void displayPrice();

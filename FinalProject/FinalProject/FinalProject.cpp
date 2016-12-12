@@ -41,7 +41,7 @@ void footerSplash();
 void programWait();
 void endProgram(const int reason);
 
-const string lineH{ "---------------------------------------" }, lineV{ "|" }; //These are used for graphic-like interface
+static const string lineH{ "---------------------------------------" }, lineV{ "|" }; //These are used for graphic-like interface
 
 int main()
 {
@@ -213,7 +213,9 @@ char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 		entry.erase(0, action.find_first_of(" ")+1);
 		action.erase(action.find_first_of(" "), action.size());
 
-        outFileObj << "****" << action << " " << entry << "****" << endl;
+        //outFileObj << "****" << action << " " << entry << "****" << endl; //<-for debugging
+		outFileObj	<< action << " " << entry << endl
+					<< endl;
 
 		if (action == "PressButton")
 		{

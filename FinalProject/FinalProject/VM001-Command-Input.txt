@@ -1,4 +1,5 @@
-PressButton D4
+InsertCash .5
+PressButton A3
 PressButton ZD4
 PressButton Cancel
 PressButton CoinReturn

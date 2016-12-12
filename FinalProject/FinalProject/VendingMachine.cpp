@@ -13,6 +13,7 @@ VendingMachine::VendingMachine() : displayObj(std::cout)
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	buildStateMachine();
 	goToIdleState();
+	displayObj << std::setprecision(2) << std::fixed;
 } // end VendingMachine default constructor
 
 VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
@@ -23,7 +24,21 @@ VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
 	buildStateMachine();
 	buildActionTable(); // Input new current state and callback function to complete action
 	goToIdleState();
+	displayObj << std::setprecision(2) << std::fixed;
 } // end VendingMachine constructor
+
+void VendingMachine::displayMenu() const
+{
+	displayObj << lineH << std::endl
+		<< std::left << std::setw(2) << lineV << std::setw(67) << "Please type an Action, followed by an Entry, seperated by a space:" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(3) << lineV << std::setw(22) << "ACTION" << std::setw(44) << "ENTRY" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(3) << lineV << std::setw(22) << "Swipe" << std::setw(44) << "Card Number" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(3) << lineV << std::setw(22) << "InsertCash" << std::setw(44) << "0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(3) << lineV << std::setw(22) << "PressButton" << std::setw(44) << "Cancel" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(3) << lineV << std::setw(22) << "PressButton" << std::setw(44) << "CoinReturn" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(3) << lineV << std::setw(22) << "PressButton" << std::setw(44) << "A->Z, 0->9 (Example: \"D4\")" << std::right << std::setw(2) << lineV << std::endl
+		<< lineH << std::endl;
+}
 
 void VendingMachine::buildActionTable()
 {
@@ -138,13 +153,13 @@ void VendingMachine::goToIdleState()
 	currentState = "Idle";
 	paidByCreditCard = false;
 	total_coins = 0;
-	displayObj << "In idle state " << std::endl;
 } // end goToIdleState
 // Following methods called by goToNextState
 
 void VendingMachine::displayPrice()
 {
-	displayObj << "Price is $" << coin_max << " for " << prodCodePushed << std::endl;
+	displayObj	<< lineH << std::endl
+				<< std::left << std::setw(2) << lineV << "Price for selection " << prodCodePushed << " : $" << std::setw(41) << coin_max << std::right << std::setw(2) << lineV << std::endl;
 	if (total_coins > 0)
 	{
 		goToNextState("Has Cash");
@@ -157,14 +172,17 @@ void VendingMachine::displayPrice()
 
 void VendingMachine::displayTotalCoins()
 {
-	displayObj << "We have " << total_coins << std::endl;
+	displayObj	<< lineH << std::endl
+				<< std::left << std::setw(2) << lineV << "Current amount: $" << std::setw(50) << total_coins << std::right << std::setw(2) << lineV << std::endl;
+	displayMenu();
 } // end displayTotalCoins
 
 void VendingMachine::cancelCreditTransaction()
 {
 	paidByCreditCard = false;
 	total_coins -= coin_max;
-	displayObj << "Card Transaction Canceled" << std::endl;
+	displayObj	<< lineH << std::endl
+				<< std::left << std::setw(2) << lineV << std::setw(67) << "Credit Card transaction canceled." << std::right << std::setw(2) << lineV << std::endl;
 	if (total_coins > 0)
 	{
 		goToNextState("Has Cash");
@@ -177,7 +195,8 @@ void VendingMachine::cancelCreditTransaction()
 
 void VendingMachine::dispenseDrink()
 {
-	displayObj << "Dispensing Drink.." << std::endl;
+	displayObj	<< lineH << std::endl
+				<< std::left << std::setw(2) << lineV << "Dispensing " << std::setw(56) << prodList[prodCodePushed].getName() << std::right << std::setw(2) << lineV << std::endl;
 	prodList[prodCodePushed].dispense();
 
 	total_coins -= coin_max;
@@ -200,12 +219,14 @@ void VendingMachine::processCreditCard()
 
 	if (is_card_approved)
 	{
-		displayObj << "Checking Card... Approved" << std::endl;
+		displayObj	<< lineH << std::endl
+					<< std::left << std::setw(2) << lineV << std::setw(67) << "Credit Card approved." << std::right << std::setw(2) << lineV << std::endl;
 		paidByCreditCard = true;
 	}
 	else
 	{
-		displayObj << "Checking Card... Declined" << std::endl;
+		displayObj	<< lineH << std::endl
+					<< std::left << std::setw(2) << lineV << std::setw(67) << "Credit Card declined." << std::right << std::setw(2) << lineV << std::endl;
 	}
 
 	total_coins += coin_max;
@@ -223,13 +244,15 @@ void VendingMachine::refundChange()
 {
 	if (!paidByCreditCard)
 	{
-		displayObj << "Dispensing cash " << total_coins << std::endl;
+		displayObj	<< lineH << std::endl
+					<< std::left << std::setw(2) << lineV << "Returning Change: $" << std::setw(48) << total_coins << std::right << std::setw(2) << lineV << std::endl;
 		total_coins = 0;
 		goToNextState("Change Dispensed");
 	}
 	else
 	{
-		displayObj << "Dispensing cash " << (total_coins - 1.5) << std::endl;
+		displayObj	<< lineH << std::endl
+					<< std::left << std::setw(2) << lineV << "Returning Change: $" << std::setw(48) << (total_coins-1.5) << std::right << std::setw(2) << lineV << std::endl;
 		total_coins = coin_max;
 		goToNextState("Has Credit");
 	}
@@ -237,7 +260,8 @@ void VendingMachine::refundChange()
 
 void VendingMachine::processInvalidState()
 {
-	displayObj << "Invalid Input!" << std::endl;
+	displayObj	<< lineH << std::endl
+				<< std::left << std::setw(2) << lineV << "There are no drinks in the slot " << std::setw(35) << prodCodePushed << std::right << std::setw(2) << lineV << std::endl;
 	if (total_coins > 0)
 	{
 		goToNextState("Has Cash/Credit");
@@ -250,7 +274,9 @@ void VendingMachine::processInvalidState()
 
 void VendingMachine::processIdleState()
 {
-	displayObj << "In idle state" << std::endl;
+	displayObj	<< lineH << std::endl
+				<< std::left << std::setw(2) << lineV << std::setw(67) << "Welcome to the Water World Vending Machine!" << std::right << std::setw(2) << lineV << std::endl;
+	displayMenu();
 } // end ProccessIdleState
 
 bool VendingMachine::goToNextState(std::string transition)
@@ -328,12 +354,14 @@ void VendingMachine::insertCash(double amt)
 		}
 		else
 		{
-			displayObj << "Too much cash in the machine. $" << amt << " has been returned." << std::endl; //format this later
+			displayObj	<< lineH << std::endl
+						<< std::left << std::setw(2) << lineV << "Too much cash in the machine. Returning Change: $" << std::setw(18) << amt << std::right << std::setw(2) << lineV << std::endl;
 		} // end if (not enough cash yet)
 	}
 	else
 	{
-		displayObj << "Cannot insert this type of cash! $" << amt << " has been returned." << std::endl;
+		displayObj	<< lineH << std::endl
+					<< std::left << std::setw(2) << lineV << "Inserted invalid cash type. Returning Change: $" << std::setw(20) << amt << std::right << std::setw(2) << lineV << std::endl;
 	} // end if (valid amount of cash)
 } // end insertCash
 
@@ -385,7 +413,7 @@ void VendingMachine::cancelOrder()
 	}
 	else
 	{
-		displayObj << "No card has been used, nothing to cancel." << std::endl;
+		//displayObj << "No card has been used, nothing to cancel." << std::endl; //Does not display anything, just like the real machines
 	} // end if (already used a card)
 } // end cancleOrder
 

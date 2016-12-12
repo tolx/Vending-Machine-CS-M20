@@ -1,235 +1,1123 @@
-In idle state 
-****PressButton D4****
-Invalid Input!
-In idle state
-****PressButton ZD4****
-Invalid Input!
-In idle state
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****PressButton CoinReturn****
-****InsertCash 1.00****
-We have 1
-****PressButton CoinReturn****
-Dispensing cash 1
-In idle state
-In idle state
-****InsertCash 1.00****
-We have 1
-****PressButton D4****
-Invalid Input!
-We have 1
-****PressButton ZD4****
-Invalid Input!
-We have 1
-****InsertCash 0.5****
-We have 1.5
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****Swipe 2017****
-****Swipe 3365****
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****PressButton D4****
-Invalid Input!
-We have 1.5
-****Swipe 7511****
-****PressButton ZD4****
-Invalid Input!
-We have 1.5
-****PressButton D4****
-Invalid Input!
-We have 1.5
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****Swipe 9417****
-****PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
-In idle state
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****InsertCash 0.25****
-We have 0.25
-****Swipe 1220****
-Checking Card... Declined
-We have 1.75
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****PressButton CoinReturn****
-Dispensing cash 1.75
-In idle state
-In idle state
-****InsertCash 0.10****
-We have 0.1
-****InsertCash 0.05****
-We have 0.15
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****InsertCash 0.25****
-We have 0.4
-****PressButton CoinReturn****
-Dispensing cash 0.4
-In idle state
-In idle state
-****Swipe 7516****
-Checking Card... Declined
-We have 1.5
-****PressButton A100****
-Invalid Input!
-We have 1.5
-****InsertCash 0.01****
-Too much cash in the machine. $0.01 has been returned.
-****InsertCash 0.99****
-Cannot insert this type of cash! $0.99 has been returned.
-****PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
-In idle state
-****InsertCash 1.00****
-We have 1
-****InsertCash 0.25****
-We have 1.25
-****InsertCash 0.25****
-We have 1.5
-****PressButton A3****
-Dispensing Drink..
-In idle state
-In idle state
-****PressButton D4****
-Invalid Input!
-In idle state
-****InsertCash 1.00****
-We have 1
-****PressButton D4****
-Invalid Input!
-We have 1
-****Swipe 1337****
-Checking Card... Approved
-We have 2.5
-****Swipe 7201****
-****PressButton D6****
-Invalid Input!
-We have 2.5
-****PressButton D1****
-Dispensing Drink..
-Dispensing cash 1
-In idle state
-In idle state
-In idle state
-****PressButton CoinReturn****
-****InsertCash 1.00****
-We have 1
-****InsertCash 0.25****
-We have 1.25
-****InsertCash 0.25****
-We have 1.5
-****InsertCash 0.10****
-Too much cash in the machine. $0.1 has been returned.
-****InsertCash 0.05****
-Too much cash in the machine. $0.05 has been returned.
-****InsertCash 0.10****
-Too much cash in the machine. $0.1 has been returned.
-****InsertCash 0.05****
-Too much cash in the machine. $0.05 has been returned.
-****InsertCash 0.10****
-Too much cash in the machine. $0.1 has been returned.
-****InsertCash 0.05****
-Too much cash in the machine. $0.05 has been returned.
-****Swipe 9810****
-****PressButton A9****
-Dispensing Drink..
-In idle state
-In idle state
-****PressButton A1****
-Price is $1.5 for A1
-In idle state
-In idle state
-****PressButton CoinReturn****
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****Swipe 1371****
-Checking Card... Approved
-We have 1.5
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****Swipe 9114****
-****PressButton CoinReturn****
-Dispensing cash 0
-We have 1.5
-****PressButton D1****
-Dispensing Drink..
-In idle state
-In idle state
-****InsertCash 0.25****
-We have 0.25
-****InsertCash 0.25****
-We have 0.5
-****InsertCash 0.25****
-We have 0.75
-****InsertCash 0.25****
-We have 1
-****InsertCash 0.25****
-We have 1.25
-****PressButton F1****
-Invalid Input!
-We have 1.25
-****InsertCash 0.25****
-We have 1.5
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****InsertCash 0.25****
-Too much cash in the machine. $0.25 has been returned.
-****PressButton CoinReturn****
-Dispensing cash 1.5
-In idle state
-In idle state
-****InsertCash 1.00****
-We have 1
-****InsertCash 1.00****
-We have 2
-****InsertCash 5.00****
-Too much cash in the machine. $5 has been returned.
-****PressButton F2****
-Invalid Input!
-We have 2
-****InsertCash 1.00****
-Too much cash in the machine. $1 has been returned.
-****InsertCash 100.00****
-Cannot insert this type of cash! $100 has been returned.
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****Swipe 5640****
-****PressButton Cancel****
-No card has been used, nothing to cancel.
-****Swipe 7812****
-****PressButton CoinReturn****
-Dispensing cash 2
-In idle state
-In idle state
-****InsertCash 1.00****
-We have 1
-****InsertCash 0.50****
-We have 1.5
-****PressButton A1****
-Dispensing Drink..
-In idle state
-In idle state
+InsertCash .5
+
+***********************************************************************
+* Current amount: $0.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton A3
+
+***********************************************************************
+* Price for selection A3 : $1.50                                      *
+***********************************************************************
+* Current amount: $0.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Current amount: $0.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton ZD4
+
+***********************************************************************
+* There are no drinks in the slot ZD4                                 *
+***********************************************************************
+* Current amount: $0.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton Cancel
+
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $0.50                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $1.00                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton D4
+
+***********************************************************************
+* There are no drinks in the slot D4                                  *
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton ZD4
+
+***********************************************************************
+* There are no drinks in the slot ZD4                                 *
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.5
+
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+Swipe 2017
+
+Swipe 3365
+
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+PressButton D4
+
+***********************************************************************
+* There are no drinks in the slot D4                                  *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+Swipe 7511
+
+PressButton ZD4
+
+***********************************************************************
+* There are no drinks in the slot ZD4                                 *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton D4
+
+***********************************************************************
+* There are no drinks in the slot D4                                  *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+Swipe 9417
+
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $1.50                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton Cancel
+
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $0.25                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+Swipe 1220
+
+***********************************************************************
+* Credit Card declined.                                               *
+***********************************************************************
+* Current amount: $1.75                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton Cancel
+
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $1.75                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.10
+
+***********************************************************************
+* Current amount: $0.10                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.05
+
+***********************************************************************
+* Current amount: $0.15                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton Cancel
+
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $0.40                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $0.40                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+Swipe 7516
+
+***********************************************************************
+* Credit Card declined.                                               *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton A100
+
+***********************************************************************
+* There are no drinks in the slot A100                                *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.01
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.01               *
+InsertCash 0.99
+
+***********************************************************************
+* Inserted invalid cash type. Returning Change: $0.99                 *
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $1.50                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.25                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton A3
+
+***********************************************************************
+* Dispensing Aquafina                                                 *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton D4
+
+***********************************************************************
+* There are no drinks in the slot D4                                  *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton D4
+
+***********************************************************************
+* There are no drinks in the slot D4                                  *
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+Swipe 1337
+
+***********************************************************************
+* Credit Card approved.                                               *
+***********************************************************************
+* Current amount: $2.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+Swipe 7201
+
+PressButton D6
+
+***********************************************************************
+* There are no drinks in the slot D6                                  *
+***********************************************************************
+* Current amount: $2.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton D1
+
+***********************************************************************
+* Dispensing Costco Water                                             *
+***********************************************************************
+* Returning Change: $1.00                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton CoinReturn
+
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.25                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.10
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.10               *
+InsertCash 0.05
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.05               *
+InsertCash 0.10
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.10               *
+InsertCash 0.05
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.05               *
+InsertCash 0.10
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.10               *
+InsertCash 0.05
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.05               *
+Swipe 9810
+
+PressButton A9
+
+***********************************************************************
+* Dispensing Costco Water                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton A1
+
+***********************************************************************
+* Price for selection A1 : $1.50                                      *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton CoinReturn
+
+PressButton Cancel
+
+Swipe 1371
+
+***********************************************************************
+* Credit Card approved.                                               *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+Swipe 9114
+
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $0.00                                             *
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton D1
+
+***********************************************************************
+* Dispensing Costco Water                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $0.25                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $0.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $0.75                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.25                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton F1
+
+***********************************************************************
+* There are no drinks in the slot F1                                  *
+***********************************************************************
+* Current amount: $1.25                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+InsertCash 0.25
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $0.25               *
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $1.50                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $2.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 5.00
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $5.00               *
+PressButton F2
+
+***********************************************************************
+* There are no drinks in the slot F2                                  *
+***********************************************************************
+* Current amount: $2.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Too much cash in the machine. Returning Change: $1.00               *
+InsertCash 100.00
+
+***********************************************************************
+* Inserted invalid cash type. Returning Change: $100.00               *
+PressButton Cancel
+
+Swipe 5640
+
+PressButton Cancel
+
+Swipe 7812
+
+PressButton CoinReturn
+
+***********************************************************************
+* Returning Change: $2.00                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 1.00
+
+***********************************************************************
+* Current amount: $1.00                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+InsertCash 0.50
+
+***********************************************************************
+* Current amount: $1.50                                               *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+PressButton A1
+
+***********************************************************************
+* Dispensing Costco Water                                             *
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
+***********************************************************************
+* Welcome to the Water World Vending Machine!                         *
+***********************************************************************
+* Please type an Action, followed by an Entry, seperated by a space:  *
+*  ACTION                ENTRY                                        *
+*  Swipe                 Card Number                                  *
+*  InsertCash            0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00  *
+*  PressButton           Cancel                                       *
+*  PressButton           CoinReturn                                   *
+*  PressButton           A->Z, 0->9 (Example: "D4")                   *
+***********************************************************************
