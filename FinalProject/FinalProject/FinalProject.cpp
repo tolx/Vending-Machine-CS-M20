@@ -35,7 +35,6 @@ using namespace std;
 void headerSplash();
 ofstream openOutputFile();
 bool inputMachine(VendingMachine &inputMachine);
-//void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept); //<- For debugging only, move this to vending machine class
 char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj);
 void machineOutput(VendingMachine &inputMachine);
 void footerSplash();
@@ -183,28 +182,6 @@ bool inputMachine(VendingMachine &inputMachine)
 	inFile.close();
 	return true;
 }
-
-/* -- Add to vending machine class
-//Pre-Condition: There are exactly 4 rows, and exactly 9 colums for every row
-void displayMachine(VendingMachine &inputMachine) throw(PrecondViolatedExcept)
-{
-	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	string name;
-	double price = COIN_MAX;
-	int stock;
-
-	for (char c : alphabet)
-	{
-		for (size_t i{ 1 }; i <= 9; i++) //numbered colums 1->9
-		{
-			string location(1, c);
-			location += to_string(i);
-			if (inputMachine.getSlot(location, name, price, stock))
-				cout << c << i << " = " << name << ", " << stock << endl;
-		}
-	} //end for (letter rows)
-} // end displayMachine
-*/
 
 char simulateMachine(VendingMachine &inputMachine, ostream& outFileObj)
 {
