@@ -13,7 +13,7 @@ class CreditCard
 public:
 	CreditCard(const int number);
 
-	const int getCCNum() const { return CC_NUM; }
+	const int getCCNum() const { return CCNum; }
 
 	bool isValid() const;
 
@@ -30,7 +30,7 @@ private:
 
 	// Private Data Members are to be set by the set function
 	// in the constructor, and never changed again
-	mutable int CC_NUM;
+	int CCNum;
 };
 
 #endif
