@@ -31,7 +31,7 @@ VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
 void VendingMachine::displayMenu() const
 {
 	displayObj << lineH << std::endl
-		<< std::left << std::setw(2) << lineV << std::setw(67) << "Please type an Action, followed by an Entry, seperated by a space:" << std::right << std::setw(2) << lineV << std::endl
+		<< std::left << std::setw(2) << lineV << std::setw(67) << "Please type an Action, followed by an Entry, separated by a space:" << std::right << std::setw(2) << lineV << std::endl
 		<< std::left << std::setw(3) << lineV << std::setw(22) << "ACTION" << std::setw(44) << "ENTRY" << std::right << std::setw(2) << lineV << std::endl
 		<< std::left << std::setw(3) << lineV << std::setw(22) << "Swipe" << std::setw(44) << "Card Number" << std::right << std::setw(2) << lineV << std::endl
 		<< std::left << std::setw(3) << lineV << std::setw(22) << "InsertCash" << std::setw(44) << "0.01, 0.05, 0.10, 0.25, 0.50, 1.00, or 5.00" << std::right << std::setw(2) << lineV << std::endl
