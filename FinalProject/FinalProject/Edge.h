@@ -14,12 +14,7 @@ class Edge
 public:
 	T v, w;
 	W weight;
-	Edge(T firstVertex, T secondVertex, W  edgeWeight)
-	{
-		v = firstVertex;
-		w = secondVertex;
-		weight = edgeWeight;
-	}  // end constructor
+	Edge(T firstVertex, T secondVertex, W  edgeWeight) : v(firstVertex), w(secondVertex), weight(edgeWeight){}  // end constructor
 }; // end Edge
    // End of header file
 
