@@ -168,7 +168,7 @@ void VendingMachine::goToIdleState()
 void VendingMachine::displayPrice()
 {
 	displayObj	<< lineH << std::endl
-				<< std::left << std::setw(2) << lineV << "Price for selection " << prodCodePushed << " : $" << std::setw(41) << coin_max << std::right << std::setw(2) << lineV << std::endl;
+				<< std::left << std::setw(2) << lineV << "Price for selection " << prodCodePushed << " : $" << std::setw(41) << prodList[prodCodePushed].getPrice() << std::right << std::setw(2) << lineV << std::endl;
 	if (total_coins > 0)
 	{
 		goToNextState("Has Cash");
