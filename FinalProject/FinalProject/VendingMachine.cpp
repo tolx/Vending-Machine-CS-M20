@@ -8,7 +8,7 @@
 
 VendingMachine::VendingMachine() : displayObj(std::cout)
 {
-	coin_max = COIN_MAX;
+	coin_max = 0;
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	buildStateMachine();
@@ -19,7 +19,7 @@ VendingMachine::VendingMachine() : displayObj(std::cout)
 
 VendingMachine::VendingMachine(std::ostream& obj) : displayObj(obj)
 {
-	coin_max = COIN_MAX;
+	coin_max = 0;
 	currentState = "Idle";
 	// Build State Machine table - Connect states (vertices) with Action(Edges)	
 	buildStateMachine();
@@ -207,7 +207,7 @@ void VendingMachine::dispenseDrink()
 				<< std::left << std::setw(2) << lineV << "Dispensing " << std::setw(56) << prodList[prodCodePushed].getName() << std::right << std::setw(2) << lineV << std::endl;
 	prodList[prodCodePushed].dispense();
 
-	total_coins -= coin_max;
+	total_coins -= prodList[prodCodePushed].getPrice();
 	paidByCreditCard = false;
 	if (total_coins == 0)
 	{
@@ -451,8 +451,15 @@ void VendingMachine::coinReturn()
 
 bool VendingMachine::addSlot(std::string location, std::string Name, double Price, int Stock)
 {
-	prodList.insert(make_pair(location, Slot(Name, Price, Stock)));
-	return true;
+	if (prodList.find(location) == prodList.end())
+	{
+		prodList.insert(make_pair(location, Slot(Name, Price, Stock)));
+		if (Price > coin_max)
+			coin_max = Price;
+		return true;
+	}
+	else
+		return false;
 } // end addSlot
 
 bool VendingMachine::getSlot(std::string location, std::string & Name, double & Price, int & Stock)

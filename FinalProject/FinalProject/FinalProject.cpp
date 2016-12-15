@@ -283,7 +283,7 @@ void machineOutput(VendingMachine &inputMachine)
 
 	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	string name;
-	double price = COIN_MAX;
+	double price;
 	int stock;
 
 	for (char c : alphabet)
