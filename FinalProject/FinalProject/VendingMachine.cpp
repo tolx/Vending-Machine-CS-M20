@@ -214,6 +214,8 @@ void VendingMachine::dispenseDrink()
 	{
 		CC->chargeCard(prodList[prodCodePushed].getPrice());
 		total_coins -= coin_max;
+		displayObj << lineH << std::endl
+			<< std::left << std::setw(2) << lineV << "Charged to Card: $" << std::setw(49) << prodList[prodCodePushed].getPrice() << std::right << std::setw(2) << lineV << std::endl;
 	}
 	else
 		total_coins -= prodList[prodCodePushed].getPrice();
@@ -250,6 +252,7 @@ void VendingMachine::processCreditCard()
 	{
 		displayObj	<< lineH << std::endl
 					<< std::left << std::setw(2) << lineV << std::setw(67) << "Credit Card declined." << std::right << std::setw(2) << lineV << std::endl;
+		CC.reset();
 	}
 
 	if (is_card_approved || (!is_card_approved && total_coins > 0))
