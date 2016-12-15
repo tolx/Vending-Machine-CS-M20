@@ -1,7 +1,7 @@
 # Moorpark College CS M20 Final Project
 Water World Vending Machines, VM001 Simulator
 (Team Water)
-![Water World Vending Machines](https://github.com/tolx/Vending-Machine-CS-M20/blob/master/WaterWorldVendingMachines.png)
+![Water World Vending Machines](https://github.com/tolx/Vending-Machine-CS-M20/blob/master/SupportingDocs/WaterWorldVendingMachines.png)
 
 # Project Members:
 Sam Rice, [RoboticRice](https://github.com/RoboticRice)
@@ -30,8 +30,4 @@ Once you have completed making your changes to the project, go back to the Githu
 Please note, you can make multiple commits in one push, as that is normal for goot git editors. An example would be making changes to one section of code, then commit those changes, and make changes to another section of code, and commit those, then push both at the same time. That is better practice than pushing one large commit that makes changes to multiple sections, because you can revert individual commits.
 
 # Supporting Documents
-You can publicly view and comment on our supporting documents, such as the User's Manual, the Design Document, and the Finite State Automata (FSA) - but if you would like permission to make changes, please message me (Sam Rice/RoboticRice) in our group's Desire 2 Learn.
-
-FSA - https://docs.google.com/drawings/d/1Vmaf7CKyY93KJc9XiXZk7yghVFZ-R47xLwG8hdUDLBs/edit?usp=sharing
-Design Document - https://docs.google.com/document/d/1x6LC_aTqedr3zIEOl_iJNyCM7QSI3Ppk9a4VLa3Jtk4/edit?usp=sharing
-User's Manual - https://docs.google.com/document/d/1_IDlgwGGZSTuhE-DzauvLyDqxSJso9F3Ur_ph6AyLIM/edit?usp=sharing
+Can be found in PDF form in the SupportingDocs directory of this repo.
