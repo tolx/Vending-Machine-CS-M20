@@ -51,9 +51,9 @@ PressButton A1
 //Testing if we can still purchase something, after a completed transaction
 PressButton A1
 
-//Testing if we can dispence while we have exactly $1.50, and if we get change back (we should not!)
+//Testing if we can dispence while we have exactly $1.25 for a drink that costs $1.25, and if we get change back (we should not!)
 InsertCash 1
-InsertCash .5
+InsertCash .25
 PressButton A1
 
 //Testing if we can sell out of something!
