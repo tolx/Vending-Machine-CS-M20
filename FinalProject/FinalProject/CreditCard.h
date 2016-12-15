@@ -13,7 +13,7 @@ class CreditCard
 public:
 	CreditCard(const int number);
 
-	const int getCCNum() const { return CC_NUM; };
+	const int getCCNum() const { return CC_NUM; }
 
 	bool isValid() const;
 
