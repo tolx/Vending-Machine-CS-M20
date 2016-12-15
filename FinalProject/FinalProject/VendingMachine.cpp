@@ -257,10 +257,10 @@ void VendingMachine::refundChange()
 		total_coins = 0;
 		goToNextState("Change Dispensed");
 	}
-	else //if (total_coins > 1.5) //can only get here if it has cash, preCondition
+	else //if (total_coins > coin_max) //can only get here if it has cash, preCondition
 	{
 		displayObj	<< lineH << std::endl
-					<< std::left << std::setw(2) << lineV << "Returning Change: $" << std::setw(48) << (total_coins-1.5) << std::right << std::setw(2) << lineV << std::endl;
+					<< std::left << std::setw(2) << lineV << "Returning Change: $" << std::setw(48) << (total_coins-coin_max) << std::right << std::setw(2) << lineV << std::endl;
 		total_coins = coin_max;
 		goToNextState("Has Credit");
 	}
@@ -326,7 +326,7 @@ void VendingMachine::pushButton(std::string prodCode)
 		}
 		else
 		{
-			if (total_coins >= coin_max)
+			if (total_coins >= prodList[prodCodePushed].getPrice())
 			{
 				if (goToNextState("Valid Position & Enough Cash/Credit"))
 				{
@@ -442,7 +442,7 @@ void VendingMachine::cancelOrder()
 
 void VendingMachine::coinReturn()
 {
-	if ((paidByCreditCard && total_coins > 1.5) || (!paidByCreditCard && total_coins > 0))
+	if ((paidByCreditCard && total_coins > coin_max) || (!paidByCreditCard && total_coins > 0))
 		if (goToNextState("Coin Return"))
 			{
 				// goes from Update to CancelCard and then to Update or Idle

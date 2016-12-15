@@ -145,7 +145,7 @@ bool inputMachine(VendingMachine &inputMachine)
 	char *endPtr; //for strtol
 	
 	string name;
-	double price = COIN_MAX;
+	double price;
 	int stock;
 
 	string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -164,12 +164,22 @@ bool inputMachine(VendingMachine &inputMachine)
 			
 			if (!placeHolder.empty() && placeHolder.find_first_of(',') != 0) //there is still content
 			{
-				stock = static_cast<int>(strtol(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr, 10)); //get the quantity and convert to int
+				price = strtod(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr); //get the quantity and convert to double
 				placeHolder.erase(0, (placeHolder.find_first_of(',') != string::npos ? (placeHolder.find_first_of(',') + 1) : placeHolder.size())); //remove the quantity from the file
+
+				if (!placeHolder.empty() && placeHolder.find_first_of(',') != 0) //there is still content
+				{
+					stock = static_cast<int>(strtol(placeHolder.substr(0, placeHolder.find_first_of(',')).c_str(), &endPtr, 10)); //get the quantity and convert to int
+					placeHolder.erase(0, (placeHolder.find_first_of(',') != string::npos ? (placeHolder.find_first_of(',') + 1) : placeHolder.size())); //remove the quantity from the file
+				}
+				else
+				{
+					stock = 0;
+				} // end if
 			}
 			else
 			{
-				stock = 0;
+				price = 0;
 			} // end if
 
 			string location(1,c);
@@ -294,7 +304,7 @@ void machineOutput(VendingMachine &inputMachine)
 			location += to_string(i);
 			if (inputMachine.getSlot(location, name, price, stock))
 			{
-				outFile << name << "," << stock;
+				outFile << name << "," << price << ","<< stock;
 				location.clear();
 				location += c + to_string(i + 1);
 				if (inputMachine.getSlot(location, name, price, stock))
