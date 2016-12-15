@@ -17,14 +17,11 @@ public:
 
 	bool isValid() const;
 
+	bool chargeCard(double amount);
+	bool checkCredit(double amount);
+
 private:
-	// No credit card should be constructed with default values.
-	CreditCard() = delete;
-
-	// No credit card should be copied. Credit cards must be unique.
-	CreditCard(const CreditCard&) = delete;
-	CreditCard operator =(const CreditCard&) = delete;
-
+	
 	// Private Data Members are to be set by the set function
 	// in the constructor, and never changed again
 	const int CC_NUM;

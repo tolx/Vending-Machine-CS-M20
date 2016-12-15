@@ -9,7 +9,10 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <memory>
 #include <iomanip>
+
+using namespace std;
 //#include <map> //This is not required, as we know Graph.h includes it, and this will always require Graph.h
 
 static const int TOTAL_STATE = 8;
@@ -58,6 +61,8 @@ private:// Action table - Execeute callback based on new current state
 		DoAction cb;
 	};
 	ActionTable Atable[TOTAL_STATE];
+
+	std::unique_ptr<CreditCard> CC;
 
 public:
 	VendingMachine();

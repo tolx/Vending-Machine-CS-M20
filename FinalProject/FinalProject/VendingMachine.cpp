@@ -159,6 +159,7 @@ void VendingMachine::buildStateMachine()
 void VendingMachine::goToIdleState()
 {
 	currentState = "Idle";
+	CC.reset();
 	paidByCreditCard = false;
 	total_coins = 0;
 } // end goToIdleState
@@ -187,6 +188,7 @@ void VendingMachine::displayTotalCoins()
 
 void VendingMachine::cancelCreditTransaction()
 {
+	CC.reset();
 	paidByCreditCard = false;
 	total_coins -= coin_max;
 	displayObj	<< lineH << std::endl
@@ -203,12 +205,24 @@ void VendingMachine::cancelCreditTransaction()
 
 void VendingMachine::dispenseDrink()
 {
+	
+	
 	displayObj	<< lineH << std::endl
 				<< std::left << std::setw(2) << lineV << "Dispensing " << std::setw(56) << prodList[prodCodePushed].getName() << std::right << std::setw(2) << lineV << std::endl;
+	
+	if (paidByCreditCard)
+	{
+		CC->chargeCard(prodList[prodCodePushed].getPrice());
+		total_coins -= coin_max;
+	}
+	else
+		total_coins -= prodList[prodCodePushed].getPrice();
+	
 	prodList[prodCodePushed].dispense();
 
-	total_coins -= prodList[prodCodePushed].getPrice();
+	CC.reset();
 	paidByCreditCard = false;
+	
 	if (total_coins == 0)
 	{
 		goToNextState("No Leftover Cash");
@@ -221,9 +235,9 @@ void VendingMachine::dispenseDrink()
 
 void VendingMachine::processCreditCard()
 {
-	CreditCard c(ccNum);
+	CC = make_unique<CreditCard>(CreditCard(ccNum));
 
-	bool is_card_approved = c.isValid();
+	bool is_card_approved = CC->isValid() && CC->checkCredit(1.50);
 
 	if (is_card_approved)
 	{
