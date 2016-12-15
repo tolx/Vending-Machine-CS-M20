@@ -40,7 +40,7 @@ private:
 	const std::string lineH{ "***********************************************************************" }, lineV{ "*" }; //These are used for graphic-like interface
 	void displayMenu() const;
 
-private: // called by GotoNextState
+    // called by GotoNextState
 	void displayPrice();
 	void displayTotalCoins();
 
@@ -52,7 +52,7 @@ private: // called by GotoNextState
 
 	void processInvalidState();
 
-private:// Action table - Execeute callback based on new current state
+    // Action table - Execeute callback based on new current state
 	typedef void (VendingMachine::*DoAction)(void);
 
 	struct ActionTable
